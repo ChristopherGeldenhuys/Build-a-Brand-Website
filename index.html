@@ -1633,40 +1633,70 @@
             How It Works
           </h4>
 
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: left;" class="timeline-grid">
-            
-            <div style="background: rgba(30, 20, 48, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 22px 20px;">
-              <div style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; margin-bottom: 6px;">STEP 1</div>
-              <div style="font-weight: 600; font-size: 16px; color: var(--ivory); line-height: 1.35;">
-                Submit your enquiry &rarr;
-              </div>
-            </div>
+          <style>
+            .hiw-grid { display: grid; grid-template-columns: 1fr; gap: 22px; text-align: left; list-style: none; margin: 0; padding: 0; }
+            @media (min-width: 640px) { .hiw-grid { grid-template-columns: repeat(2, 1fr); } }
+            @media (min-width: 1024px) { .hiw-grid { grid-template-columns: repeat(4, 1fr); gap: 26px; } }
+            .hiw-card {
+              position: relative; display: flex; flex-direction: column; min-height: 196px; padding: 30px 28px 32px; border-radius: 24px;
+              background: linear-gradient(150deg, rgba(255, 255, 255, 0.22) 0%, rgba(255, 255, 255, 0.06) 48%, rgba(255, 255, 255, 0.02) 100%), rgba(30, 20, 48, 0.30);
+              -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+              border: 1px solid rgba(255, 255, 255, 0.28);
+              box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35), 0 20px 44px -22px rgba(30, 20, 48, 0.55);
+            }
+            .hiw-num {
+              font-family: var(--font-display); font-weight: 700; font-size: 60px; line-height: 0.9; letter-spacing: -0.045em;
+              background: linear-gradient(180deg, #FFD93B 0%, rgba(255, 217, 59, 0.55) 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--yellow);
+            }
+            .hiw-rule { width: 36px; height: 1px; background: rgba(249, 248, 245, 0.5); margin: 22px 0 16px; }
+            .hiw-text { font-family: var(--font-display); font-weight: 600; font-size: 18px; line-height: 1.4; letter-spacing: -0.01em; color: var(--ivory); }
+            /* understated connectors between steps */
+            .hiw-card::after { content: ''; position: absolute; pointer-events: none; }
+            @media (min-width: 1024px) {
+              .hiw-card:not(:last-child)::after { top: 57px; right: -27px; width: 28px; height: 1px; background: linear-gradient(90deg, rgba(249, 248, 245, 0.15), rgba(249, 248, 245, 0.7)); }
+            }
+            @media (max-width: 639px) {
+              .hiw-card { min-height: 190px; padding: 26px 24px 28px; }
+              .hiw-num { font-size: 52px; }
+              .hiw-card:not(:last-child)::after { left: 50px; bottom: -23px; width: 1px; height: 24px; background: linear-gradient(180deg, rgba(249, 248, 245, 0.15), rgba(249, 248, 245, 0.7)); }
+            }
+            .hiw-callout {
+              margin: 34px auto 0; max-width: 760px; padding: 20px 28px; border-radius: 20px; position: relative; overflow: hidden;
+              background: linear-gradient(150deg, rgba(255, 255, 255, 0.18) 0%, rgba(255, 255, 255, 0.04) 60%), rgba(30, 20, 48, 0.26);
+              -webkit-backdrop-filter: blur(18px) saturate(140%); backdrop-filter: blur(18px) saturate(140%);
+              border: 1px solid rgba(255, 255, 255, 0.24);
+              box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.3), 0 18px 40px -24px rgba(30, 20, 48, 0.5);
+            }
+            .hiw-callout::before { content: ''; position: absolute; left: 0; top: 18%; bottom: 18%; width: 3px; border-radius: 0 3px 3px 0; background: var(--yellow); }
+            .hiw-callout p { font-size: 16px; line-height: 1.5; color: rgba(249, 248, 245, 0.88); font-weight: 500; }
+            .hiw-callout strong { color: var(--ivory); font-weight: 700; }
+          </style>
 
-            <div style="background: rgba(30, 20, 48, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 22px 20px;">
-              <div style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; margin-bottom: 6px;">STEP 2</div>
-              <div style="font-weight: 600; font-size: 16px; color: var(--ivory); line-height: 1.35;">
-                We contact you to confirm scope &rarr;
-              </div>
-            </div>
+          <ol class="hiw-grid">
+            <li class="hiw-card reveal-on-scroll">
+              <span class="hiw-num">01</span>
+              <span class="hiw-rule" aria-hidden="true"></span>
+              <span class="hiw-text">Submit your enquiry</span>
+            </li>
+            <li class="hiw-card reveal-on-scroll">
+              <span class="hiw-num">02</span>
+              <span class="hiw-rule" aria-hidden="true"></span>
+              <span class="hiw-text">We contact you to confirm scope</span>
+            </li>
+            <li class="hiw-card reveal-on-scroll">
+              <span class="hiw-num">03</span>
+              <span class="hiw-rule" aria-hidden="true"></span>
+              <span class="hiw-text">You send text, images &amp; logo</span>
+            </li>
+            <li class="hiw-card reveal-on-scroll">
+              <span class="hiw-num">04</span>
+              <span class="hiw-rule" aria-hidden="true"></span>
+              <span class="hiw-text">We design and launch your site.</span>
+            </li>
+          </ol>
 
-            <div style="background: rgba(30, 20, 48, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 22px 20px;">
-              <div style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; margin-bottom: 6px;">STEP 3</div>
-              <div style="font-weight: 600; font-size: 16px; color: var(--ivory); line-height: 1.35;">
-                You send text, images &amp; logo &rarr;
-              </div>
-            </div>
-
-            <div style="background: rgba(30, 20, 48, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 22px 20px;">
-              <div style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; margin-bottom: 6px;">STEP 4</div>
-              <div style="font-weight: 600; font-size: 16px; color: var(--ivory); line-height: 1.35;">
-                We design and launch your site.
-              </div>
-            </div>
-
-          </div>
-
-          <div style="margin-top: 36px; padding: 18px 24px; background: rgba(30, 20, 48, 0.3); border-radius: 9999px; display: inline-block; border: 1px solid rgba(255, 255, 255, 0.12);">
-            <p style="font-size: 15px; color: var(--ivory); font-weight: 500;">
+          <div class="hiw-callout">
+            <p>
               <strong>Need something bigger?</strong> Enquire anyway. We'll quote the extra requirements separately.
             </p>
           </div>
