@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enquiry Received | Build a Brand Black Friday Special</title>
+  <meta name="description" content="Thank you for your enquiry. We will be in touch within 1 business day.">
+  <meta name="theme-color" content="#1E1430">
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Fonts: Inter via Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..800&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    /*
+      =======================================================
+      META PIXEL TRACKING [REPLACE '[PIXEL ID]' WITH YOUR ID]
+      =======================================================
+    */
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '[PIXEL ID]');
+    fbq('track', 'PageView');
+    
+    // ========================================================
+    // CONVERSION EVENT: Lead fired ONLY on the Thank You page
+    // ========================================================
+    fbq('track', 'Lead', {
+      content_name: 'Black Friday 2026 Website Enquiry',
+      value: 3500.00,
+      currency: 'ZAR'
+    });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=[PIXEL_ID]&ev=Lead&noscript=1"
+         alt="" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <style>
+    :root {
+      --ink: #1E1430;
+      --ink-soft: #5A4F6B;
+      --ivory: #F9F8F5;
+      --grey: #E9E9EC;
+      --deep-violet: #6B3FA0;
+      --magenta: #D81B8F;
+      --coral: #FF7A6B;
+      --peach: #FFA86B;
+      --yellow: #FFD93B;
+      --blush: #FFB6CC;
+
+      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--ink);
+      color: var(--ivory);
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.5;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    .hero-glow-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(95px);
+    }
+
+    .blob-1 {
+      width: 520px;
+      height: 520px;
+      top: -100px;
+      left: -100px;
+      background: radial-gradient(circle, rgba(107, 63, 160, 0.7) 0%, transparent 70%);
+    }
+
+    .blob-2 {
+      width: 550px;
+      height: 550px;
+      bottom: -100px;
+      right: -100px;
+      background: radial-gradient(circle, rgba(216, 27, 143, 0.35) 0%, transparent 70%);
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 32px 24px;
+      position: relative;
+      z-index: 2;
+      width: 100%;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--magenta);
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 18px;
+      padding: 18px 36px;
+      border-radius: 9999px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 0 8px rgba(216, 27, 143, 0.16), 0 12px 32px rgba(216, 27, 143, 0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 10px rgba(216, 27, 143, 0.24), 0 16px 40px rgba(216, 27, 143, 0.52);
+    }
+
+    .badge-yellow {
+      background-color: var(--yellow);
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .card-white {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid var(--grey);
+      box-shadow: 0 20px 50px rgba(10, 5, 20, 0.3);
+      color: var(--ink);
+      padding: 40px 36px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Glow Background -->
+  <div class="hero-glow-container" aria-hidden="true">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+  </div>
+
+  <!-- Header -->
+  <header style="padding: 32px 0; position: relative; z-index: 2;">
+    <div class="container" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="./" aria-label="Build a Brand Homepage" style="display: inline-flex; align-items: center; text-decoration: none; gap: 12px;">
+        <svg width="36" height="36" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#291B42" />
+          <path d="M12 10H22C25.3137 10 28 12.6863 28 16C28 18.2323 26.7828 20.1795 24.9754 21.217C27.3697 22.1852 29 24.5165 29 27.25C29 30.9779 25.9779 34 22.25 34H12V10Z" fill="url(#logo_grad_ty)" />
+          <path d="M16 14.5V19.5H21.5C22.8807 19.5 24 18.3807 24 17C24 15.6193 22.8807 14.5 21.5 14.5H16Z" fill="#1E1430" />
+          <path d="M16 23.5V29.5H22C23.6569 29.5 25 28.1569 25 26.5C25 24.8431 23.6569 23.5 22 23.5H16Z" fill="#1E1430" />
+          <defs>
+            <linearGradient id="logo_grad_ty" x1="12" y1="10" x2="29" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFD93B" />
+              <stop offset="0.5" stop-color="#D81B8F" />
+              <stop offset="1" stop-color="#FF7A6B" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span style="font-family: var(--font-display); font-weight: 700; font-size: 21px; letter-spacing: -0.03em; color: var(--ivory);">
+          Build a Brand
+        </span>
+      </a>
+
+      <div class="badge-yellow">
+        ENQUIRY CONFIRMED
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main style="flex: 1; display: flex; align-items: center; padding: 40px 0 60px 0;">
+    <div class="container" style="text-align: center;">
+      
+      <!-- Confirmation Check Icon -->
+      <div style="width: 72px; height: 72px; border-radius: 50%; background: linear-gradient(135deg, #FFD93B, #FFA86B); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 24px; box-shadow: 0 10px 30px rgba(255, 217, 59, 0.3);">
+        <svg width="34" height="34" viewBox="0 0 24 24" fill="none" stroke="#1E1430" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+
+      <h1 style="font-family: var(--font-display); font-weight: 600; font-size: clamp(34px, 5.5vw, 62px); letter-spacing: -0.025em; line-height: 1.05; color: var(--ivory); margin-bottom: 16px;">
+        Thanks, your enquiry is in.
+      </h1>
+
+      <p style="font-size: clamp(18px, 2.4vw, 22px); line-height: 1.5; color: rgba(249, 248, 245, 0.85); max-width: 620px; margin: 0 auto 36px auto;">
+        We'll contact you on WhatsApp or email within 1 business day.
+      </p>
+
+      <!-- Summary Card -->
+      <div class="card-white" style="text-align: left; max-width: 620px; margin: 0 auto 40px auto;">
+        <h2 style="font-family: var(--font-display); font-size: 19px; font-weight: 700; color: var(--ink); margin-bottom: 16px; letter-spacing: -0.01em;">
+          What happens next:
+        </h2>
+        <div style="display: flex; flex-direction: column; gap: 14px; font-size: 15.5px; color: var(--ink-soft); line-height: 1.45;">
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="font-weight: 700; color: var(--magenta);">1.</span>
+            <span>We review your business details and requirements.</span>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="font-weight: 700; color: var(--magenta);">2.</span>
+            <span>We reach out on WhatsApp or email to confirm project scope and lock in your R3,500 promotional special.</span>
+          </div>
+          <div style="display: flex; gap: 12px; align-items: flex-start;">
+            <span style="font-weight: 700; color: var(--magenta);">3.</span>
+            <span>You provide your text, images, and brand preferences so our studio can craft and launch your high-converting website.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Button Back to Homepage -->
+      <a href="./" class="btn-primary">
+        Back to homepage &rarr;
+      </a>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer style="padding: 30px 0; border-top: 1px solid rgba(233, 233, 236, 0.08); position: relative; z-index: 2;">
+    <div class="container" style="display: flex; flex-direction: column; md-direction: row; justify-content: space-between; align-items: center; gap: 12px; text-align: center;">
+      <p style="font-family: var(--font-display); font-size: 15px; color: var(--peach);">
+        Websites That Turn Traffic Into Revenue.
+      </p>
+      <p style="font-size: 13px; color: rgba(249, 248, 245, 0.45);">
+        &copy; 2026 Build a Brand. All rights reserved.
+      </p>
+    </div>
+  </footer>
+
+</body>
+</html>

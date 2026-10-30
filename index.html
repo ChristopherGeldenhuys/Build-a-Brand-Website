@@ -1,0 +1,1831 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <title>Black Friday Website Special: R3,500 | Build a Brand</title>
+  <meta name="description" content="Get a professionally designed business website for R3,500 once-off. Black Friday special ends 25 November 2026.">
+  <meta name="theme-color" content="#1E1430">
+  <link rel="canonical" href="https://buildabrand.co.za/">
+
+  <!-- Open Graph / Meta Ads -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://buildabrand.co.za/">
+  <meta property="og:title" content="Black Friday Website Special: R3,500 | Build a Brand">
+  <meta property="og:description" content="Get a professionally designed business website for R3,500 once-off. Black Friday special ends 25 November 2026.">
+  <!-- Open Graph image: [UPLOAD the 1080×1350 price-led ad] -->
+  <meta property="og:image" content="https://buildabrand.co.za/assets/og-black-friday-r3500.jpg">
+  <meta property="og:image:width" content="1080">
+  <meta property="og:image:height" content="1350">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Fonts: Inter Display & Inter via Google Fonts with optical sizing -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..800&display=swap" rel="stylesheet">
+
+  <!-- Meta Pixel Code -->
+  <script>
+    /*
+      =======================================================
+      META PIXEL TRACKING [REPLACE '[PIXEL ID]' WITH YOUR ID]
+      =======================================================
+    */
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    // Initialize with your Pixel ID
+    fbq('init', '[PIXEL ID]');
+    // PageView fired on every load
+    fbq('track', 'PageView');
+    // ViewContent event fired on landing page view
+    fbq('track', 'ViewContent', {
+      content_name: 'Black Friday 2026 Website Special',
+      content_category: 'Landing Page',
+      value: 3500.00,
+      currency: 'ZAR'
+    });
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+         src="https://www.facebook.com/tr?id=[PIXEL_ID]&ev=PageView&noscript=1"
+         alt="" />
+  </noscript>
+  <!-- End Meta Pixel Code -->
+
+  <!-- Meta Conversions API (CAPI) Integration Notes:
+       Server-side events should be sent to: https://graph.facebook.com/v19.0/{PIXEL_ID}/events
+       Payload contains: event_name: 'ViewContent' / 'Lead', event_time, user_data (em, ph, client_ip_address, client_user_agent), action_source: 'website'.
+  -->
+
+  <style>
+    /* -------------------------------------------------------------
+       CORE DESIGN SYSTEM TOKENS (Strictly adhere to specs)
+       Ink: #1E1430 | Ink Soft: #5A4F6B | Ivory: #F9F8F5 | Grey: #E9E9EC
+       Deep Violet: #6B3FA0 | Magenta: #D81B8F | Coral: #FF7A6B
+       Peach: #FFA86B | Yellow: #FFD93B | Blush: #FFB6CC
+       ------------------------------------------------------------- */
+    :root {
+      --ink: #1E1430;
+      --ink-soft: #5A4F6B;
+      --ivory: #F9F8F5;
+      --grey: #E9E9EC;
+      --deep-violet: #6B3FA0;
+      --magenta: #D81B8F;
+      --coral: #FF7A6B;
+      --peach: #FFA86B;
+      --yellow: #FFD93B;
+      --blush: #FFB6CC;
+
+      --font-display: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    /* Reset & Base */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--ink);
+      color: var(--ivory);
+      font-family: var(--font-body);
+      font-size: 18px;
+      line-height: 1.5;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+      selection-background-color: var(--magenta);
+      selection-color: #ffffff;
+    }
+
+    ::selection {
+      background-color: var(--magenta);
+      color: #ffffff;
+    }
+
+    /* Typography Specifications */
+    .heading-display {
+      font-family: var(--font-display);
+      font-weight: 600;
+      letter-spacing: -0.025em; /* -2.5% */
+      line-height: 1.02;
+      text-transform: none; /* sentence case */
+      font-optical-sizing: auto;
+    }
+
+    .eyebrow-label {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 13.5px;
+      letter-spacing: 0.14em; /* +14% */
+      text-transform: uppercase;
+      display: inline-block;
+    }
+
+    /* Price Text: Biggest element on page */
+    .hero-price-gradient {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.045em; /* -4.5% */
+      font-size: clamp(96px, 15vw, 210px);
+      line-height: 0.88;
+      display: inline-block;
+      background: linear-gradient(95deg, #FFD93B 0%, #FFA86B 34%, #FF7A6B 66%, #FFB6CC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 10px 30px rgba(255, 122, 107, 0.18));
+      user-select: text;
+      font-optical-sizing: auto;
+    }
+
+    .accent-price-yellow {
+      font-family: var(--font-display);
+      font-weight: 700;
+      letter-spacing: -0.045em;
+      font-size: clamp(84px, 13vw, 170px);
+      line-height: 0.88;
+      color: var(--yellow);
+      display: inline-block;
+      font-optical-sizing: auto;
+    }
+
+    /* Primary CTA Button */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: var(--magenta);
+      color: #ffffff;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 18px;
+      padding: 18px 36px;
+      border-radius: 9999px;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 0 0 8px rgba(216, 27, 143, 0.16), 0 12px 32px rgba(216, 27, 143, 0.4);
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 0 10px rgba(216, 27, 143, 0.24), 0 16px 40px rgba(216, 27, 143, 0.52);
+      background-color: #e42199;
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+      box-shadow: 0 0 0 6px rgba(216, 27, 143, 0.2), 0 8px 20px rgba(216, 27, 143, 0.4);
+    }
+
+    /* Badges */
+    .badge-yellow {
+      background-color: var(--yellow);
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      box-shadow: 0 2px 8px rgba(255, 217, 59, 0.3);
+    }
+
+    .badge-ink-yellow {
+      background-color: var(--ink);
+      color: var(--yellow);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 12.5px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 7px 18px;
+      border-radius: 9999px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(255, 217, 59, 0.2);
+    }
+
+    /* Glow Blobs Animation */
+    .hero-glow-container {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      will-change: transform;
+    }
+
+    .blob-top-left {
+      width: 580px;
+      height: 580px;
+      top: -120px;
+      left: -120px;
+      background: radial-gradient(circle, rgba(107, 63, 160, 0.75) 0%, rgba(107, 63, 160, 0) 70%);
+      animation: driftSlow1 24s ease-in-out infinite alternate;
+    }
+
+    .blob-right {
+      width: 620px;
+      height: 620px;
+      top: 15%;
+      right: -150px;
+      background: radial-gradient(circle, rgba(216, 27, 143, 0.40) 0%, rgba(216, 27, 143, 0) 70%);
+      animation: driftSlow2 28s ease-in-out infinite alternate;
+    }
+
+    .blob-bottom {
+      width: 680px;
+      height: 680px;
+      bottom: -180px;
+      left: 20%;
+      background: radial-gradient(circle, rgba(255, 122, 107, 0.30) 0%, rgba(255, 122, 107, 0) 70%);
+      animation: driftSlow3 22s ease-in-out infinite alternate;
+    }
+
+    @keyframes driftSlow1 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(50px, 40px) scale(1.08); }
+      100% { transform: translate(-30px, 60px) scale(0.95); }
+    }
+
+    @keyframes driftSlow2 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(-60px, -50px) scale(1.06); }
+      100% { transform: translate(40px, 30px) scale(0.92); }
+    }
+
+    @keyframes driftSlow3 {
+      0% { transform: translate(0, 0) scale(1); }
+      50% { transform: translate(70px, -40px) scale(1.1); }
+      100% { transform: translate(-40px, -20px) scale(0.98); }
+    }
+
+    /* Light Sections Styling */
+    .section-light {
+      background-color: var(--ivory);
+      color: var(--ink);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .light-blob {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    .light-blob-tr {
+      width: 520px;
+      height: 520px;
+      top: -100px;
+      right: -100px;
+      background: radial-gradient(circle, var(--blush) 0%, var(--peach) 40%, transparent 75%);
+    }
+
+    .light-blob-bl {
+      width: 560px;
+      height: 560px;
+      bottom: -120px;
+      left: -120px;
+      background: radial-gradient(circle, var(--coral) 0%, var(--yellow) 40%, transparent 75%);
+      opacity: 0.25;
+    }
+
+    /* Accent Band */
+    .section-accent-band {
+      background: linear-gradient(168deg, #B4208F 0%, #D81B8F 30%, #FF7A6B 64%, #FFA86B 100%);
+      color: var(--ivory);
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Cards */
+    .card-white {
+      background-color: #FFFFFF;
+      border-radius: 16px;
+      border: 1px solid var(--grey);
+      box-shadow: 0 12px 36px -8px rgba(30, 20, 48, 0.05);
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .card-ivory {
+      background-color: var(--ivory);
+      border-radius: 16px;
+      border: 1px solid var(--grey);
+      box-shadow: 0 12px 36px -8px rgba(30, 20, 48, 0.05);
+    }
+
+    .card-white:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 45px -8px rgba(30, 20, 48, 0.09);
+    }
+
+    /* Device Mockups */
+    .mockup-browser {
+      background: #FFFFFF;
+      border-radius: 14px;
+      box-shadow: 0 25px 60px -15px rgba(10, 5, 20, 0.45);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      overflow: hidden;
+    }
+
+    .mockup-browser-header {
+      background: #F4F4F6;
+      border-bottom: 1px solid var(--grey);
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .browser-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .browser-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+    }
+
+    .browser-address-bar {
+      background: #FFFFFF;
+      border: 1px solid var(--grey);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 11px;
+      color: var(--ink-soft);
+      font-family: var(--font-body);
+      flex: 1;
+      max-width: 280px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .mockup-phone {
+      background: var(--ink);
+      border: 6px solid #2B203E;
+      border-radius: 36px;
+      box-shadow: 0 30px 70px -15px rgba(10, 5, 20, 0.7);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .phone-island {
+      width: 72px;
+      height: 18px;
+      background: #140C22;
+      border-radius: 12px;
+      margin: 8px auto 4px auto;
+    }
+
+    /* Form Inputs */
+    .form-control {
+      width: 100%;
+      background: #FFFFFF;
+      border: 1.5px solid var(--grey);
+      border-radius: 10px;
+      padding: 14px 18px;
+      font-family: var(--font-body);
+      font-size: 16px;
+      color: var(--ink);
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      outline: none;
+    }
+
+    .form-control:focus {
+      border-color: var(--magenta);
+      box-shadow: 0 0 0 4px rgba(216, 27, 143, 0.12);
+    }
+
+    .form-control.input-error {
+      border-color: #E53E3E;
+      background-color: #FFF5F5;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .field-hint {
+      font-size: 12px;
+      color: var(--ink-soft);
+      margin-top: 5px;
+    }
+
+    .field-error-msg {
+      font-size: 12px;
+      color: #E53E3E;
+      margin-top: 4px;
+      display: none;
+      font-weight: 500;
+    }
+
+    .input-error + .field-error-msg {
+      display: block;
+    }
+
+    /* Custom Radio Pill Styles */
+    .radio-option {
+      cursor: pointer;
+      display: block;
+      position: relative;
+    }
+
+    .radio-option input[type="radio"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .radio-box {
+      border: 1.5px solid var(--grey);
+      border-radius: 10px;
+      padding: 12px 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #FAFAFB;
+      transition: all 0.2s ease;
+      font-size: 15px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .radio-circle {
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #CBD5E0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      flex-shrink: 0;
+    }
+
+    .radio-circle::after {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--magenta);
+      opacity: 0;
+      transform: scale(0);
+      transition: all 0.2s ease;
+    }
+
+    .radio-option input[type="radio"]:checked + .radio-box {
+      border-color: var(--magenta);
+      background: rgba(216, 27, 143, 0.04);
+      color: var(--magenta);
+      font-weight: 600;
+    }
+
+    .radio-option input[type="radio"]:checked + .radio-box .radio-circle {
+      border-color: var(--magenta);
+    }
+
+    .radio-option input[type="radio"]:checked + .radio-box .radio-circle::after {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .radio-option input[type="radio"]:focus-visible + .radio-box {
+      outline: 2px solid var(--magenta);
+      outline-offset: 2px;
+    }
+
+    /* Checkbox Consent */
+    .checkbox-container {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+      font-size: 14.5px;
+      line-height: 1.45;
+      color: var(--ink-soft);
+    }
+
+    .checkbox-container input[type="checkbox"] {
+      width: 20px;
+      height: 20px;
+      margin-top: 2px;
+      accent-color: var(--magenta);
+      cursor: pointer;
+      flex-shrink: 0;
+    }
+
+    /* Scroll Motion Animation Classes */
+    .reveal-on-scroll {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+      will-change: opacity, transform;
+    }
+
+    .reveal-on-scroll.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Sticky Mobile Bar */
+    .sticky-mobile-cta {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: var(--ink);
+      border-top: 1px solid rgba(233, 233, 236, 0.15);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 100;
+      transform: translateY(110%);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 -10px 25px rgba(10, 5, 20, 0.4);
+    }
+
+    .sticky-mobile-cta.is-active {
+      transform: translateY(0);
+    }
+
+    /* Modal for Privacy Policy */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(10, 5, 20, 0.85);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+
+    .modal-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal-content {
+      background: #FFFFFF;
+      color: var(--ink);
+      width: 100%;
+      max-width: 680px;
+      max-height: 85vh;
+      overflow-y: auto;
+      border-radius: 20px;
+      padding: 36px 32px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+      position: relative;
+    }
+
+    /* Respect reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      .blob, .reveal-on-scroll, .sticky-mobile-cta {
+        animation: none !important;
+        transition: none !important;
+      }
+      .reveal-on-scroll {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+    }
+
+    /* Responsive Grid Utilities */
+    .container {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+
+    @media (min-width: 768px) {
+      .container {
+        padding-left: 40px;
+        padding-right: 40px;
+      }
+    }
+
+    @media (min-width: 992px) {
+      .hero-grid {
+        grid-template-columns: 1.12fr 0.88fr !important;
+        gap: 64px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .timeline-grid {
+        grid-template-columns: 1fr !important;
+      }
+      .hero-mockup-wrapper {
+        margin-top: 24px;
+      }
+      .mockup-phone {
+        width: 140px !important;
+        right: -8px !important;
+        bottom: -24px !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================
+       TOP BAR (No menu, logo + badge only)
+       ========================================== -->
+  <header style="position: relative; z-index: 10; padding: 28px 0;">
+    <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
+      
+      <!-- Logo: Build a Brand (Light version for dark background) -->
+      <a href="./" aria-label="Build a Brand Homepage" style="display: inline-flex; align-items: center; text-decoration: none; gap: 12px;">
+        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="40" height="40" rx="10" fill="#291B42" />
+          <path d="M12 10H22C25.3137 10 28 12.6863 28 16C28 18.2323 26.7828 20.1795 24.9754 21.217C27.3697 22.1852 29 24.5165 29 27.25C29 30.9779 25.9779 34 22.25 34H12V10Z" fill="url(#logo_grad_hero)" />
+          <path d="M16 14.5V19.5H21.5C22.8807 19.5 24 18.3807 24 17C24 15.6193 22.8807 14.5 21.5 14.5H16Z" fill="#1E1430" />
+          <path d="M16 23.5V29.5H22C23.6569 29.5 25 28.1569 25 26.5C25 24.8431 23.6569 23.5 22 23.5H16Z" fill="#1E1430" />
+          <defs>
+            <linearGradient id="logo_grad_hero" x1="12" y1="10" x2="29" y2="34" gradientUnits="userSpaceOnUse">
+              <stop stop-color="#FFD93B" />
+              <stop offset="0.5" stop-color="#D81B8F" />
+              <stop offset="1" stop-color="#FF7A6B" />
+            </linearGradient>
+          </defs>
+        </svg>
+        <span style="font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.03em; color: var(--ivory);">
+          Build a Brand
+        </span>
+      </a>
+
+      <!-- Badge: Yellow pill with Ink text -->
+      <div class="badge-yellow">
+        BLACK FRIDAY 2026
+      </div>
+
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         1. HERO SECTION (Ink background + glow blobs)
+         ========================================== -->
+    <section id="hero" style="position: relative; padding: 40px 0 90px 0; min-height: 85vh; display: flex; align-items: center;">
+      
+      <!-- Blurred Radial Glow Blobs -->
+      <div class="hero-glow-container" aria-hidden="true">
+        <div class="blob blob-top-left"></div>
+        <div class="blob blob-right"></div>
+        <div class="blob blob-bottom"></div>
+      </div>
+
+      <div class="container" style="position: relative; z-index: 2; width: 100%;">
+        
+        <div style="display: grid; grid-template-columns: 1fr; gap: 48px; align-items: center;" class="hero-grid">
+          
+          <!-- Left Column: Copy, Price & CTA -->
+          <div>
+            
+            <h1 class="heading-display" style="font-size: clamp(42px, 6vw, 84px); color: var(--ivory); margin-bottom: 8px;">
+              Your business needs a website.
+            </h1>
+            
+            <div style="margin-bottom: 24px;">
+              <span class="heading-display" style="font-size: clamp(34px, 4.5vw, 64px); color: rgba(249, 248, 245, 0.88); display: block; margin-bottom: -4px;">
+                We're making it
+              </span>
+              <!-- Giant Price R3,500. in Price Gradient -->
+              <div class="hero-price-gradient" aria-label="R3,500 once-off">
+                R3,500.
+              </div>
+            </div>
+
+            <p style="font-size: clamp(17px, 2vw, 20px); line-height: 1.55; color: rgba(249, 248, 245, 0.75); max-width: 540px; margin-bottom: 34px;">
+              Get a professionally designed website, built around your business, at a limited-time Black Friday price.
+            </p>
+
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 14px; margin-bottom: 28px;">
+              <a href="#claim" class="btn-primary" id="hero-cta-btn">
+                Claim your Black Friday deal &rarr;
+              </a>
+              <!-- Small Blush Caps -->
+              <span class="eyebrow-label" style="color: var(--blush); font-size: 13px; font-weight: 600;">
+                OFFER ENDS 25 NOVEMBER 2026
+              </span>
+            </div>
+
+            <p style="font-size: 14px; color: rgba(249, 248, 245, 0.5); max-width: 480px; line-height: 1.5;">
+              Once-off price for a one-page starter website. See what's included below.
+            </p>
+
+          </div>
+
+          <!-- Right Column: Browser Mockup + Overlapping Phone Mockup -->
+          <div style="position: relative; display: flex; justify-content: center; align-items: center;" class="hero-mockup-wrapper">
+            
+            <!-- Browser Mockup: Ditlhalefi Chauffeurs (Real SA Project) -->
+            <div class="mockup-browser" style="width: 100%; max-width: 580px; position: relative; z-index: 1;">
+              
+              <div class="mockup-browser-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="browser-dot" style="background: #FF5F56;"></span>
+                  <span class="browser-dot" style="background: #FFBD2E;"></span>
+                  <span class="browser-dot" style="background: #27C93F;"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+                  <span>ditlhalefi.co.za</span>
+                </div>
+              </div>
+
+              <!-- High fidelity rendered preview of Ditlhalefi website -->
+              <div style="background: #0D0E12; padding: 28px 24px 34px 24px; color: #FFFFFF; font-family: var(--font-body); position: relative; overflow: hidden; min-height: 320px;">
+                
+                <div style="position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 14px; margin-bottom: 24px;">
+                  <div style="font-weight: 700; font-size: 15px; letter-spacing: -0.02em; color: #FFFFFF;">
+                    DITLHALEFI <span style="color: #47D6FF; font-weight: 400; font-size: 12px;">CHAUFFEURS</span>
+                  </div>
+                  <div style="display: flex; gap: 14px; font-size: 11px; color: #8F9CA3;">
+                    <span>Fleet</span>
+                    <span>Transfers</span>
+                    <span style="color: #47D6FF; font-weight: 600;">Book Now</span>
+                  </div>
+                </div>
+
+                <div style="max-width: 320px;">
+                  <div style="font-size: 9px; font-weight: 700; letter-spacing: 0.15em; color: #47D6FF; text-transform: uppercase; margin-bottom: 6px;">
+                    Executive Transport &bull; Gauteng
+                  </div>
+                  <h3 style="font-size: 22px; font-weight: 700; line-height: 1.15; margin-bottom: 10px; color: #FFFFFF;">
+                    First-Class Chauffeur Service Across South Africa.
+                  </h3>
+                  <p style="font-size: 12px; line-height: 1.45; color: #A0AAB0; margin-bottom: 16px;">
+                    Punctual, discreet airport transfers & corporate luxury travel.
+                  </p>
+                  <div style="display: inline-block; background: #47D6FF; color: #00222B; font-size: 11px; font-weight: 700; padding: 7px 16px; border-radius: 4px;">
+                    Request a Quote &rarr;
+                  </div>
+                </div>
+
+                <!-- Minimal graphic of luxury fleet -->
+                <div style="position: absolute; right: 18px; bottom: 20px; width: 170px; height: 100px; border-radius: 8px; background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
+                  <div style="font-size: 10px; color: #8F9CA3; text-transform: uppercase; letter-spacing: 0.05em;">Confirmed Transfers</div>
+                  <div style="font-size: 20px; font-weight: 700; color: #47D6FF;">4.9 &starf;</div>
+                  <div style="font-size: 9px; color: #A0AAB0;">100% On-time guarantee</div>
+                </div>
+
+              </div>
+
+            </div>
+
+            <!-- Overlapping Phone Mockup -->
+            <div class="mockup-phone" style="width: 170px; position: absolute; right: -15px; bottom: -35px; z-index: 2;" aria-hidden="true">
+              <div class="phone-island"></div>
+              
+              <div style="background: #0D0E12; padding: 14px 10px 20px 10px; color: #FFFFFF; font-size: 10px;">
+                <div style="font-weight: 700; font-size: 11px; color: #FFFFFF; margin-bottom: 10px;">
+                  DITLHALEFI
+                </div>
+                <div style="height: 56px; border-radius: 6px; background: linear-gradient(135deg, rgba(71,214,255,0.2), rgba(216,27,143,0.2)); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; font-size: 9px; text-align: center; padding: 4px; color: #47D6FF; font-weight: 600;">
+                  Bespoke Mobile Experience
+                </div>
+                <div style="font-size: 8px; color: #8F9CA3; line-height: 1.3; margin-bottom: 8px;">
+                  Engineered to capture WhatsApp bookings on any mobile device.
+                </div>
+                <div style="background: #25D366; color: #0D0E12; font-weight: 700; font-size: 8px; padding: 6px 8px; border-radius: 4px; text-align: center;">
+                  WhatsApp Instant Quote
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         2. WHAT YOU GET (Ivory background)
+         ========================================== -->
+    <section id="what-you-get" class="section-light" style="padding: 100px 0;">
+      
+      <!-- Subtle corner blurred blobs -->
+      <div class="light-blob light-blob-tr" aria-hidden="true"></div>
+      <div class="light-blob light-blob-bl" aria-hidden="true"></div>
+
+      <div class="container" style="position: relative; z-index: 2;">
+        
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 64px auto;">
+          <span class="eyebrow-label" style="color: var(--magenta); margin-bottom: 14px;">
+            WHAT'S INCLUDED
+          </span>
+          <h2 class="heading-display" style="font-size: clamp(34px, 4.5vw, 56px); color: var(--ink);">
+            Everything you need to look professional online.
+          </h2>
+        </div>
+
+        <!-- 3x2 Grid of Cards -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
+          
+          <!-- Card 1: Yellow Icon -->
+          <div class="card-white reveal-on-scroll" style="padding: 32px 28px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--yellow); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E1430" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.015em;">
+              Bespoke design
+            </h3>
+            <p style="font-size: 16px; line-height: 1.5; color: var(--ink-soft);">
+              Designed around your brand, not a generic template.
+            </p>
+          </div>
+
+          <!-- Card 2: Peach Icon -->
+          <div class="card-white reveal-on-scroll" style="padding: 32px 28px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--peach); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E1430" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.015em;">
+              One complete landing page
+            </h3>
+            <p style="font-size: 16px; line-height: 1.5; color: var(--ink-soft);">
+              Your business, services and contact details on one clear page.
+            </p>
+          </div>
+
+          <!-- Card 3: Blush Icon -->
+          <div class="card-white reveal-on-scroll" style="padding: 32px 28px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--blush); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#1E1430" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.015em;">
+              Mobile-friendly
+            </h3>
+            <p style="font-size: 16px; line-height: 1.5; color: var(--ink-soft);">
+              Looks and works great on phones, tablets and desktops.
+            </p>
+          </div>
+
+          <!-- Card 4: Coral Icon -->
+          <div class="card-white reveal-on-scroll" style="padding: 32px 28px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--coral); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.015em;">
+              Contact form or WhatsApp button
+            </h3>
+            <p style="font-size: 16px; line-height: 1.5; color: var(--ink-soft);">
+              So customers can reach you instantly.
+            </p>
+          </div>
+
+          <!-- Card 5: Violet Icon -->
+          <div class="card-white reveal-on-scroll" style="padding: 32px 28px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--deep-violet); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.015em;">
+              Basic SEO setup
+            </h3>
+            <p style="font-size: 16px; line-height: 1.5; color: var(--ink-soft);">
+              Page titles, descriptions and structure that help Google understand your site.
+            </p>
+          </div>
+
+          <!-- Card 6: Magenta Icon -->
+          <div class="card-white reveal-on-scroll" style="padding: 32px 28px;">
+            <div style="width: 44px; height: 44px; border-radius: 50%; background-color: var(--magenta); display: flex; align-items: center; justify-content: center; margin-bottom: 20px;">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 21px; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.015em;">
+              SSL security
+            </h3>
+            <p style="font-size: 16px; line-height: 1.5; color: var(--ink-soft);">
+              The padlock that tells visitors your site is safe.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         3. OUR WORK (Ivory with soft blobs)
+         Real Build a Brand Projects Only
+         ========================================== -->
+    <section id="our-work" class="section-light" style="padding: 60px 0 120px 0; border-top: 1px solid rgba(233, 233, 236, 0.6);">
+      
+      <div class="light-blob light-blob-bl" style="top: 20%;" aria-hidden="true"></div>
+
+      <div class="container" style="position: relative; z-index: 2;">
+        
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 64px auto;">
+          <span class="eyebrow-label" style="color: var(--magenta); margin-bottom: 14px;">
+            OUR WORK
+          </span>
+          <h2 class="heading-display" style="font-size: clamp(34px, 4.5vw, 56px); color: var(--ink);">
+            See the quality you're paying for.
+          </h2>
+        </div>
+
+        <!-- 3 Portfolio Items in Browser Mockups -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px;">
+          
+          <!-- Project 1: Ditlhalefi Chauffeurs -->
+          <div class="reveal-on-scroll">
+            <div class="mockup-browser" style="margin-bottom: 20px;">
+              <div class="mockup-browser-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span>ditlhalefi.co.za</span>
+                </div>
+              </div>
+              <div style="background: #0E121A; height: 240px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(71,214,255,0.25) 0%, transparent 70%);"></div>
+                <div>
+                  <div style="font-size: 10px; letter-spacing: 0.15em; color: #47D6FF; font-weight: 700; text-transform: uppercase;">VIP Transfers</div>
+                  <div style="font-size: 20px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-top: 6px; font-family: var(--font-display);">Ditlhalefi Executive Fleet</div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; backdrop-filter: blur(8px);">
+                  <div style="font-size: 11px; color: #8F9CA3;">Live Booking Engine & WhatsApp API Integration</div>
+                  <div style="font-size: 13px; font-weight: 600; color: #47D6FF; margin-top: 4px;">Premium High-Conversion Architecture</div>
+                </div>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 6px;">
+              Ditlhalefi Chauffeurs
+            </h3>
+            <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.45;">
+              Executive private chauffeur &amp; VIP corporate transfer fleet across Gauteng.
+            </p>
+          </div>
+
+          <!-- Project 2: Beau Architectural Studio -->
+          <div class="reveal-on-scroll">
+            <div class="mockup-browser" style="margin-bottom: 20px;">
+              <div class="mockup-browser-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span>beau-architecture.co.za</span>
+                </div>
+              </div>
+              <div style="background: #1B1816; height: 240px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(255,168,107,0.2) 0%, transparent 70%);"></div>
+                <div>
+                  <div style="font-size: 10px; letter-spacing: 0.15em; color: #FFA86B; font-weight: 700; text-transform: uppercase;">Residential & Commercial</div>
+                  <div style="font-size: 20px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-top: 6px; font-family: var(--font-display);">Beau Studio Design</div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; backdrop-filter: blur(8px);">
+                  <div style="font-size: 11px; color: #D6CBC2;">Minimalist Editorial Portfolio</div>
+                  <div style="font-size: 13px; font-weight: 600; color: #FFA86B; margin-top: 4px;">High-Ticket Client Acquisition Funnel</div>
+                </div>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 6px;">
+              Beau Architectural Studio
+            </h3>
+            <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.45;">
+              High-end contemporary residential architecture and bespoke spatial design.
+            </p>
+          </div>
+
+          <!-- Project 3: Krummel Artisanal Bakery -->
+          <div class="reveal-on-scroll">
+            <div class="mockup-browser" style="margin-bottom: 20px;">
+              <div class="mockup-browser-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <span>krummelbakery.co.za</span>
+                </div>
+              </div>
+              <div style="background: #201726; height: 240px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
+                <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(216,27,143,0.25) 0%, transparent 70%);"></div>
+                <div>
+                  <div style="font-size: 10px; letter-spacing: 0.15em; color: #FFB6CC; font-weight: 700; text-transform: uppercase;">Western Cape Sourdough</div>
+                  <div style="font-size: 20px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-top: 6px; font-family: var(--font-display);">Krummel Artisanal Bakery</div>
+                </div>
+                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; backdrop-filter: blur(8px);">
+                  <div style="font-size: 11px; color: #D7CCD8;">Store Locator & Menu Pre-Ordering</div>
+                  <div style="font-size: 13px; font-weight: 600; color: #FFB6CC; margin-top: 4px;">Local SEO & Google Maps Rank #1</div>
+                </div>
+              </div>
+            </div>
+            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 6px;">
+              Krummel Artisanal Bakery
+            </h3>
+            <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.45;">
+              Artisanal sourdough bakery and boutique coffee roastery in the Western Cape.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         4. THE OFFER (Accent Gradient Band)
+         ========================================== -->
+    <section id="the-offer" class="section-accent-band" style="padding: 100px 0;">
+      
+      <div class="container">
+        
+        <div style="text-align: center; margin-bottom: 50px;">
+          <!-- Eyebrow: Ink pill with Yellow text -->
+          <div class="badge-ink-yellow" style="margin-bottom: 24px;">
+            BLACK FRIDAY WEBSITE SPECIAL
+          </div>
+
+          <!-- Large Yellow price: R3,500 with Ivory sub-label "once-off" -->
+          <div>
+            <div class="accent-price-yellow">
+              R3,500
+            </div>
+            <div style="font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--ivory); letter-spacing: 0.04em; margin-top: -8px;">
+              once-off
+            </div>
+          </div>
+        </div>
+
+        <!-- Two Columns on Ivory Cards: Included vs Quoted Separately -->
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto 70px auto;">
+          
+          <!-- Column 1: Included -->
+          <div class="card-ivory reveal-on-scroll" style="padding: 36px 32px; color: var(--ink);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: #27C93F;"></span>
+              <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink);">
+                Included in R3,500 Special
+              </h3>
+            </div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 16.5px; color: var(--ink);">
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--magenta); font-weight: 700;">&check;</span>
+                <span><strong>Bespoke design</strong> tailored to your brand</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--magenta); font-weight: 700;">&check;</span>
+                <span><strong>One complete landing page</strong> with business, services &amp; contacts</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--magenta); font-weight: 700;">&check;</span>
+                <span><strong>Responsive desktop &amp; mobile</strong> optimization</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--magenta); font-weight: 700;">&check;</span>
+                <span><strong>Contact form or WhatsApp</strong> integration</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--magenta); font-weight: 700;">&check;</span>
+                <span><strong>Basic on-page SEO setup</strong> for Google search</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--magenta); font-weight: 700;">&check;</span>
+                <span><strong>SSL security setup</strong> (browser security padlock)</span>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 2: Quoted Separately -->
+          <div class="card-ivory reveal-on-scroll" style="padding: 36px 32px; color: var(--ink);">
+            <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;">
+              <span style="width: 10px; height: 10px; border-radius: 50%; background: var(--peach);"></span>
+              <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 20px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--ink);">
+                Quoted Separately (If Needed)
+              </h3>
+            </div>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: 14px; font-size: 16.5px; color: var(--ink-soft);">
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--ink-soft);">&bull;</span>
+                <span>Extra pages (About, Gallery, Case Studies, etc.)</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--ink-soft);">&bull;</span>
+                <span>Online store / full e-commerce checkout</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--ink-soft);">&bull;</span>
+                <span>Live calendar &amp; booking systems</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--ink-soft);">&bull;</span>
+                <span>Bespoke copywriting &amp; content drafting</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--ink-soft);">&bull;</span>
+                <span>Paid third-party plugins or CRM integrations</span>
+              </li>
+              <li style="display: flex; align-items: flex-start; gap: 12px;">
+                <span style="color: var(--ink-soft);">&bull;</span>
+                <span>Domain registration &amp; hosting fees</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- How It Works: 4-Step Timeline -->
+        <div style="max-width: 1080px; margin: 0 auto; text-align: center;">
+          
+          <h4 style="font-family: var(--font-display); font-weight: 600; font-size: 20px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ivory); margin-bottom: 36px;">
+            How It Works
+          </h4>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 20px; text-align: left;" class="timeline-grid">
+            
+            <div style="background: rgba(30, 20, 48, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 22px 20px;">
+              <div style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; margin-bottom: 6px;">STEP 1</div>
+              <div style="font-weight: 600; font-size: 16px; color: var(--ivory); line-height: 1.35;">
+                Submit your enquiry &rarr;
+              </div>
+            </div>
+
+            <div style="background: rgba(30, 20, 48, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 22px 20px;">
+              <div style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; margin-bottom: 6px;">STEP 2</div>
+              <div style="font-weight: 600; font-size: 16px; color: var(--ivory); line-height: 1.35;">
+                We contact you to confirm scope &rarr;
+              </div>
+            </div>
+
+            <div style="background: rgba(30, 20, 48, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 22px 20px;">
+              <div style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; margin-bottom: 6px;">STEP 3</div>
+              <div style="font-weight: 600; font-size: 16px; color: var(--ivory); line-height: 1.35;">
+                You send text, images &amp; logo &rarr;
+              </div>
+            </div>
+
+            <div style="background: rgba(30, 20, 48, 0.4); backdrop-filter: blur(12px); border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px; padding: 22px 20px;">
+              <div style="font-family: var(--font-display); font-size: 13px; font-weight: 700; color: var(--yellow); letter-spacing: 0.1em; margin-bottom: 6px;">STEP 4</div>
+              <div style="font-weight: 600; font-size: 16px; color: var(--ivory); line-height: 1.35;">
+                We design and launch your site.
+              </div>
+            </div>
+
+          </div>
+
+          <div style="margin-top: 36px; padding: 18px 24px; background: rgba(30, 20, 48, 0.3); border-radius: 9999px; display: inline-block; border: 1px solid rgba(255, 255, 255, 0.12);">
+            <p style="font-size: 15px; color: var(--ivory); font-weight: 500;">
+              <strong>Need something bigger?</strong> Enquire anyway. We'll quote the extra requirements separately.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==========================================
+         5. CLAIM YOUR DEAL (Ink background + glow blobs)
+         Anchor #claim
+         ========================================== -->
+    <section id="claim" style="position: relative; padding: 110px 0 100px 0; background-color: var(--ink);">
+      
+      <!-- Blurred Radial Glow Blobs -->
+      <div class="hero-glow-container" aria-hidden="true">
+        <div class="blob blob-top-left" style="opacity: 0.6;"></div>
+        <div class="blob blob-right" style="opacity: 0.35;"></div>
+        <div class="blob blob-bottom" style="opacity: 0.25;"></div>
+      </div>
+
+      <div class="container" style="position: relative; z-index: 2;">
+        
+        <div style="text-align: center; max-width: 640px; margin: 0 auto 48px auto;">
+          <h2 class="heading-display" style="font-size: clamp(38px, 5vw, 64px); color: var(--ivory); margin-bottom: 12px;">
+            Claim your Black Friday website.
+          </h2>
+          <p style="font-size: 19px; color: rgba(249, 248, 245, 0.78); line-height: 1.5;">
+            Submit your details before 25 November 2026 and we'll be in touch.
+          </p>
+        </div>
+
+        <!-- Form on White Card (16px radius, Grey border, Soft shadow) -->
+        <div class="card-white" style="max-width: 640px; margin: 0 auto; padding: 44px 36px; color: var(--ink);">
+          
+          <form id="blackFridayForm" novalidate>
+            
+            <!-- Hidden tracking inputs (Preserve UTM parameters) -->
+            <input type="hidden" name="utm_source" id="utm_source" value="">
+            <input type="hidden" name="utm_medium" id="utm_medium" value="">
+            <input type="hidden" name="utm_campaign" id="utm_campaign" value="">
+            <input type="hidden" name="utm_content" id="utm_content" value="">
+            <input type="hidden" name="utm_term" id="utm_term" value="">
+            <input type="hidden" name="offer" value="Black Friday R3500 Website Special">
+
+            <!-- Full Name (Required) -->
+            <div style="margin-bottom: 22px;">
+              <label for="fullName" class="form-label">
+                Full name <span style="color: var(--magenta);" aria-hidden="true">*</span>
+              </label>
+              <input type="text" id="fullName" name="fullName" class="form-control" placeholder="e.g. Sipho Ndlovu" required autocomplete="name">
+              <span class="field-error-msg" id="fullNameError">Please enter your full name.</span>
+            </div>
+
+            <!-- Business Name (Required) -->
+            <div style="margin-bottom: 22px;">
+              <label for="businessName" class="form-label">
+                Business name <span style="color: var(--magenta);" aria-hidden="true">*</span>
+              </label>
+              <input type="text" id="businessName" name="businessName" class="form-control" placeholder="e.g. Ndlovu Consulting" required autocomplete="organization">
+              <span class="field-error-msg" id="businessNameError">Please enter your business name.</span>
+            </div>
+
+            <!-- Email Address (Required & Validated) -->
+            <div style="margin-bottom: 22px;">
+              <label for="email" class="form-label">
+                Email address <span style="color: var(--magenta);" aria-hidden="true">*</span>
+              </label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="e.g. sipho@ndlovu.co.za" required autocomplete="email">
+              <span class="field-error-msg" id="emailError">Please enter a valid email address.</span>
+            </div>
+
+            <!-- WhatsApp Number (Required, South African format) -->
+            <div style="margin-bottom: 22px;">
+              <label for="whatsapp" class="form-label">
+                WhatsApp number <span style="color: var(--magenta);" aria-hidden="true">*</span>
+              </label>
+              <input type="tel" id="whatsapp" name="whatsapp" class="form-control" placeholder="e.g. 082 123 4567" required autocomplete="tel">
+              <div class="field-hint">South African format (e.g. 082 123 4567 or +27 82 123 4567).</div>
+              <span class="field-error-msg" id="whatsappError">Please enter a valid South African WhatsApp number.</span>
+            </div>
+
+            <!-- What type of website do you need? (Required) -->
+            <div style="margin-bottom: 26px;">
+              <span class="form-label" style="margin-bottom: 12px;">
+                What type of website do you need? <span style="color: var(--magenta);" aria-hidden="true">*</span>
+              </span>
+              <div style="display: flex; flex-direction: column; gap: 10px;">
+                
+                <label class="radio-option">
+                  <input type="radio" name="websiteType" value="New business website" required checked>
+                  <div class="radio-box">
+                    <span class="radio-circle"></span>
+                    <span>New business website</span>
+                  </div>
+                </label>
+
+                <label class="radio-option">
+                  <input type="radio" name="websiteType" value="Redesign of an existing website">
+                  <div class="radio-box">
+                    <span class="radio-circle"></span>
+                    <span>Redesign of an existing website</span>
+                  </div>
+                </label>
+
+                <label class="radio-option">
+                  <input type="radio" name="websiteType" value="Online store / e-commerce">
+                  <div class="radio-box">
+                    <span class="radio-circle"></span>
+                    <span>Online store / e-commerce</span>
+                  </div>
+                </label>
+
+                <label class="radio-option">
+                  <input type="radio" name="websiteType" value="Other">
+                  <div class="radio-box">
+                    <span class="radio-circle"></span>
+                    <span>Other</span>
+                  </div>
+                </label>
+
+              </div>
+            </div>
+
+            <!-- Current website URL (Optional) -->
+            <div style="margin-bottom: 26px;">
+              <label for="websiteUrl" class="form-label">
+                Current website URL <span style="font-weight: 400; color: var(--ink-soft); font-size: 13px;">(Optional)</span>
+              </label>
+              <input type="url" id="websiteUrl" name="websiteUrl" class="form-control" placeholder="https://www.yourcurrentsite.co.za">
+              <div class="field-hint">Leave blank if this is a brand new website.</div>
+            </div>
+
+            <!-- Consent Checkbox (Required) -->
+            <div style="margin-bottom: 32px;">
+              <label class="checkbox-container">
+                <input type="checkbox" id="consent" name="consent" required>
+                <span>
+                  I agree that Build a Brand may contact me about this enquiry and I accept the 
+                  <button type="button" id="openPrivacyModalBtn" style="background: none; border: none; padding: 0; color: var(--magenta); font-weight: 600; text-decoration: underline; cursor: pointer; font-size: inherit;">Privacy Policy</button> 
+                  and the promotion terms.
+                </span>
+              </label>
+              <span class="field-error-msg" id="consentError" style="margin-top: 6px;">You must accept the terms to proceed.</span>
+            </div>
+
+            <!-- Submit Button (Magenta, Full Width) -->
+            <button type="submit" id="submitBtn" class="btn-primary" style="width: 100%; border-radius: 9999px; padding: 20px 24px; font-size: 19px;">
+              Submit my enquiry &rarr;
+            </button>
+
+            <!-- Small Text Under Button -->
+            <p style="font-size: 13px; color: var(--ink-soft); text-align: center; margin-top: 16px; line-height: 1.45;">
+              Once-off price for a one-page starter website. Domain, hosting and extra pages quoted separately.
+            </p>
+
+          </form>
+
+        </div>
+
+      </div>
+
+    </section>
+  </main>
+
+
+  <!-- ==========================================
+       6. FOOTER (Ink background)
+       ========================================== -->
+  <footer style="background-color: var(--ink); border-top: 1px solid rgba(233, 233, 236, 0.1); padding: 70px 0 40px 0; color: var(--ivory);">
+    <div class="container">
+      
+      <div style="display: flex; flex-direction: column; md-direction: row; justify-content: space-between; align-items: flex-start; gap: 32px; margin-bottom: 48px;">
+        
+        <div>
+          <!-- Logo Light Version -->
+          <a href="./" aria-label="Build a Brand Homepage" style="display: inline-flex; align-items: center; text-decoration: none; gap: 12px; margin-bottom: 12px;">
+            <svg width="34" height="34" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="40" height="40" rx="10" fill="#291B42" />
+              <path d="M12 10H22C25.3137 10 28 12.6863 28 16C28 18.2323 26.7828 20.1795 24.9754 21.217C27.3697 22.1852 29 24.5165 29 27.25C29 30.9779 25.9779 34 22.25 34H12V10Z" fill="url(#logo_grad_foot)" />
+              <path d="M16 14.5V19.5H21.5C22.8807 19.5 24 18.3807 24 17C24 15.6193 22.8807 14.5 21.5 14.5H16Z" fill="#1E1430" />
+              <path d="M16 23.5V29.5H22C23.6569 29.5 25 28.1569 25 26.5C25 24.8431 23.6569 23.5 22 23.5H16Z" fill="#1E1430" />
+              <defs>
+                <linearGradient id="logo_grad_foot" x1="12" y1="10" x2="29" y2="34" gradientUnits="userSpaceOnUse">
+                  <stop stop-color="#FFD93B" />
+                  <stop offset="0.5" stop-color="#D81B8F" />
+                  <stop offset="1" stop-color="#FF7A6B" />
+                </linearGradient>
+              </defs>
+            </svg>
+            <span style="font-family: var(--font-display); font-weight: 700; font-size: 20px; letter-spacing: -0.02em; color: var(--ivory);">
+              Build a Brand
+            </span>
+          </a>
+
+          <!-- Positioning Line -->
+          <p style="font-family: var(--font-display); font-weight: 500; font-size: 17px; color: var(--peach); margin-bottom: 8px;">
+            Websites That Turn Traffic Into Revenue.
+          </p>
+          
+          <!-- Contact Email [EMAIL] -->
+          <p style="font-size: 15px; color: rgba(249, 248, 245, 0.65);">
+            Direct enquiries: <a href="mailto:hello@buildabrand.co.za" style="color: var(--ivory); text-decoration: underline;">hello@buildabrand.co.za</a>
+          </p>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 8px;">
+          <button type="button" id="footerPrivacyBtn" style="background: none; border: none; padding: 0; color: rgba(249, 248, 245, 0.7); text-align: left; font-size: 14px; text-decoration: underline; cursor: pointer;">
+            Privacy Policy &amp; POPIA Notice
+          </button>
+          <div style="font-size: 14px; color: rgba(249, 248, 245, 0.5);">
+            &copy; 2026 Build a Brand. All rights reserved.
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Promotion Terms (Small text) -->
+      <div style="border-top: 1px solid rgba(233, 233, 236, 0.08); padding-top: 24px;">
+        <p style="font-size: 12px; line-height: 1.6; color: rgba(249, 248, 245, 0.45); max-width: 1040px;">
+          Black Friday Website Special: R3,500 once-off for a one-page starter website as described on this page. Enquiries must be submitted by 23:59 on 25 November 2026. Scope is confirmed in writing before work starts. Domain registration, hosting, additional pages, e-commerce, booking systems, copywriting and paid plugins are excluded and quoted separately. Client supplies text and images. Build a Brand is a registered South African digital agency. All rights reserved.
+        </p>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ==========================================
+       STICKY MOBILE CTA
+       (Visible on mobile after hero, hidden when form in view)
+       ========================================== -->
+  <aside id="stickyMobileBar" class="sticky-mobile-cta" aria-label="Quick Enquiry Sticky Bar">
+    <div>
+      <div style="font-family: var(--font-display); font-weight: 700; font-size: 15px; color: var(--yellow);">
+        R3,500 &bull; <span style="color: var(--ivory); font-weight: 500; font-size: 13.5px;">Ends 25 Nov</span>
+      </div>
+      <div style="font-size: 11px; color: rgba(249, 248, 245, 0.6);">
+        Bespoke 1-page website
+      </div>
+    </div>
+    <a href="#claim" class="btn-primary" style="padding: 10px 22px; font-size: 14px; box-shadow: 0 0 0 4px rgba(216, 27, 143, 0.2), 0 4px 12px rgba(216, 27, 143, 0.4);">
+      Claim &rarr;
+    </a>
+  </aside>
+
+
+  <!-- ==========================================
+       PRIVACY POLICY MODAL
+       (POPIA Compliant, doesn't leave the page)
+       ========================================== -->
+  <div id="privacyModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--grey); padding-bottom: 16px; margin-bottom: 20px;">
+        <h3 id="modalTitle" style="font-family: var(--font-display); font-weight: 700; font-size: 22px; color: var(--ink);">
+          Privacy Policy &amp; Terms
+        </h3>
+        <button type="button" id="closePrivacyModalBtn" aria-label="Close Modal" style="background: none; border: none; font-size: 24px; cursor: pointer; color: var(--ink-soft); line-height: 1; padding: 4px;">
+          &times;
+        </button>
+      </div>
+      
+      <div style="font-size: 14.5px; line-height: 1.6; color: var(--ink-soft); display: flex; flex-direction: column; gap: 14px;">
+        <p><strong>Build a Brand Privacy &amp; POPIA Compliance Statement</strong></p>
+        <p>
+          In accordance with the South African Protection of Personal Information Act (POPIA) and standard global privacy practices, Build a Brand commits to safeguarding your business and personal data.
+        </p>
+        <p><strong>1. Information Collection:</strong> When you submit an enquiry through this Black Friday promotional page, we collect your full name, business name, email address, WhatsApp telephone number, and website requirements.</p>
+        <p><strong>2. Use of Information:</strong> The submitted details are used solely to contact you regarding your R3,500 Black Friday website consultation, scope confirmation, and project fulfillment. We do not sell or lease your personal information to third parties.</p>
+        <p><strong>3. Promotional Special Terms:</strong> The R3,500 once-off special is valid strictly for enquiries submitted before 23:59 on 25 November 2026. The rate applies to a single bespoke landing page. Additional pages, e-commerce, custom integrations, domain registration, and hosting are quoted separately.</p>
+        <p><strong>4. Contact & Opt-Out:</strong> If at any point you wish to have your details removed from our CRM or have questions regarding our data handling, please email us directly at <a href="mailto:hello@buildabrand.co.za" style="color: var(--magenta);">hello@buildabrand.co.za</a>.</p>
+      </div>
+
+      <div style="margin-top: 24px; text-align: right;">
+        <button type="button" id="closeModalActionBtn" style="background: var(--ink); color: #FFFFFF; font-family: var(--font-display); font-weight: 600; font-size: 14px; padding: 10px 22px; border-radius: 9999px; border: none; cursor: pointer;">
+          Understood
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       CLIENT-SIDE SCRIPTS:
+       1. UTM Parameter Capture
+       2. South African Phone Validation & Format
+       3. Form Validation & Local Storage Persistence
+       4. Redirect to /black-friday/thank-you
+       5. Sticky Mobile CTA Visibility & IntersectionObserver
+       6. Scroll Animations & Modal Handlers
+       ========================================== -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      /* --- 1. UTM Parameter Capture --- */
+      const urlParams = new URLSearchParams(window.location.search);
+      const utmFields = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+      utmFields.forEach(function (param) {
+        const value = urlParams.get(param);
+        const input = document.getElementById(param);
+        if (value && input) {
+          input.value = value;
+        }
+      });
+
+      /* --- 2. Scroll Animation Observer --- */
+      const revealElements = document.querySelectorAll('.reveal-on-scroll');
+      if ('IntersectionObserver' in window) {
+        const revealObserver = new IntersectionObserver(function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: "0px 0px -40px 0px"
+        });
+
+        revealElements.forEach(function (el) {
+          revealObserver.observe(el);
+        });
+      } else {
+        revealElements.forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+
+      /* --- 3. Sticky Mobile CTA Handling --- */
+      const stickyBar = document.getElementById('stickyMobileBar');
+      const heroSection = document.getElementById('hero');
+      const claimSection = document.getElementById('claim');
+
+      if (stickyBar && heroSection && claimSection && 'IntersectionObserver' in window) {
+        let isPastHero = false;
+        let isFormVisible = false;
+
+        function updateStickyState() {
+          // Only show on smaller viewports (< 860px)
+          if (window.innerWidth <= 860) {
+            if (isPastHero && !isFormVisible) {
+              stickyBar.classList.add('is-active');
+            } else {
+              stickyBar.classList.remove('is-active');
+            }
+          } else {
+            stickyBar.classList.remove('is-active');
+          }
+        }
+
+        // Observer for Hero
+        const heroObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            isPastHero = !entry.isIntersecting && entry.boundingClientRect.top < 0;
+            updateStickyState();
+          });
+        }, { threshold: 0.1 });
+
+        // Observer for Claim Form
+        const claimObserver = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            isFormVisible = entry.isIntersecting;
+            updateStickyState();
+          });
+        }, { threshold: 0.1 });
+
+        heroObserver.observe(heroSection);
+        claimObserver.observe(claimSection);
+
+        window.addEventListener('resize', updateStickyState);
+        window.addEventListener('scroll', function () {
+          const heroRect = heroSection.getBoundingClientRect();
+          isPastHero = heroRect.bottom < 100;
+          updateStickyState();
+        }, { passive: true });
+      }
+
+      /* --- 4. South African Phone Input Helper --- */
+      const phoneInput = document.getElementById('whatsapp');
+      if (phoneInput) {
+        phoneInput.addEventListener('input', function (e) {
+          let val = e.target.value.replace(/[^\d+]/g, '');
+          // If typed as 082 123 4567, format cleanly
+          if (val.startsWith('0') && val.length > 3) {
+            val = val.substring(0, 3) + ' ' + val.substring(3, 6) + (val.length > 6 ? ' ' + val.substring(6, 10) : '');
+          }
+          e.target.value = val;
+        });
+      }
+
+      /* --- 5. Form Validation & Submission --- */
+      const form = document.getElementById('blackFridayForm');
+      const submitBtn = document.getElementById('submitBtn');
+
+      function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      }
+
+      function validateSAPhone(phone) {
+        // Accepts: 082 123 4567, 0821234567, +27 82 123 4567, +27821234567, 27821234567
+        const clean = phone.replace(/[\s\-\(\)]/g, '');
+        return /^((\+27|0)\d{9}|(27\d{9}))$/.test(clean);
+      }
+
+      if (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          let isValid = true;
+
+          // Full Name
+          const fullName = document.getElementById('fullName');
+          if (!fullName.value.trim()) {
+            fullName.classList.add('input-error');
+            isValid = false;
+          } else {
+            fullName.classList.remove('input-error');
+          }
+
+          // Business Name
+          const businessName = document.getElementById('businessName');
+          if (!businessName.value.trim()) {
+            businessName.classList.add('input-error');
+            isValid = false;
+          } else {
+            businessName.classList.remove('input-error');
+          }
+
+          // Email
+          const email = document.getElementById('email');
+          if (!validateEmail(email.value.trim())) {
+            email.classList.add('input-error');
+            isValid = false;
+          } else {
+            email.classList.remove('input-error');
+          }
+
+          // WhatsApp
+          const whatsapp = document.getElementById('whatsapp');
+          if (!validateSAPhone(whatsapp.value.trim())) {
+            whatsapp.classList.add('input-error');
+            isValid = false;
+          } else {
+            whatsapp.classList.remove('input-error');
+          }
+
+          // Website Type
+          const websiteTypeChecked = document.querySelector('input[name="websiteType"]:checked');
+          const websiteTypeValue = websiteTypeChecked ? websiteTypeChecked.value : 'New business website';
+
+          // Consent Checkbox
+          const consent = document.getElementById('consent');
+          const consentError = document.getElementById('consentError');
+          if (!consent.checked) {
+            consentError.style.display = 'block';
+            isValid = false;
+          } else {
+            consentError.style.display = 'none';
+          }
+
+          if (!isValid) {
+            // Scroll smoothly to first error
+            const firstError = form.querySelector('.input-error, #consent:not(:checked)');
+            if (firstError) {
+              firstError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+            return;
+          }
+
+          // Assemble enquiry payload
+          const enquiryData = {
+            fullName: fullName.value.trim(),
+            businessName: businessName.value.trim(),
+            email: email.value.trim(),
+            whatsapp: whatsapp.value.trim(),
+            websiteType: websiteTypeValue,
+            websiteUrl: document.getElementById('websiteUrl').value.trim(),
+            utm_source: document.getElementById('utm_source').value,
+            utm_medium: document.getElementById('utm_medium').value,
+            utm_campaign: document.getElementById('utm_campaign').value,
+            utm_content: document.getElementById('utm_content').value,
+            utm_term: document.getElementById('utm_term').value,
+            timestamp: new Date().toISOString()
+          };
+
+          // Store enquiry in localStorage (Lead backup guarantee)
+          try {
+            const existingLeads = JSON.parse(localStorage.getItem('build_a_brand_black_friday_leads') || '[]');
+            existingLeads.push(enquiryData);
+            localStorage.setItem('build_a_brand_black_friday_leads', JSON.stringify(existingLeads));
+          } catch (err) {
+            console.error('Storage note:', err);
+          }
+
+          // Update button state while processing
+          submitBtn.disabled = true;
+          submitBtn.innerHTML = 'Submitting your enquiry...';
+          submitBtn.style.opacity = '0.8';
+
+          /*
+            =====================================================================
+            OPTIONAL BACKEND / CRM / FORMSPREE DISPATCH:
+            Send submissions to [YOUR EMAIL / CRM].
+            If you connect a webhook or email endpoint (e.g. Formspree / Zapier):
+            fetch("https://formspree.io/f/[YOUR_FORM_ID]", {
+              method: "POST",
+              headers: { "Content-Type": "application/json", "Accept": "application/json" },
+              body: JSON.stringify(enquiryData)
+            });
+            =====================================================================
+          */
+
+          // Redirect to separate thank-you page (/black-friday/thank-you)
+          setTimeout(function () {
+            // Carry UTM parameters and name over to thank-you page if desired
+            const currentParams = window.location.search;
+            window.location.href = 'thank-you.html' + currentParams;
+          }, 450);
+
+        });
+
+        // Clear error states on input
+        ['fullName', 'businessName', 'email', 'whatsapp'].forEach(function (id) {
+          const input = document.getElementById(id);
+          if (input) {
+            input.addEventListener('input', function () {
+              this.classList.remove('input-error');
+            });
+          }
+        });
+
+        const consentCheckbox = document.getElementById('consent');
+        if (consentCheckbox) {
+          consentCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+              document.getElementById('consentError').style.display = 'none';
+            }
+          });
+        }
+      }
+
+      /* --- 6. Privacy Modal Control --- */
+      const modal = document.getElementById('privacyModal');
+      const openBtn1 = document.getElementById('openPrivacyModalBtn');
+      const openBtn2 = document.getElementById('footerPrivacyBtn');
+      const closeBtn1 = document.getElementById('closePrivacyModalBtn');
+      const closeBtn2 = document.getElementById('closeModalActionBtn');
+
+      function openModal() {
+        if (modal) {
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+        }
+      }
+
+      function closeModal() {
+        if (modal) {
+          modal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      }
+
+      if (openBtn1) openBtn1.addEventListener('click', openModal);
+      if (openBtn2) openBtn2.addEventListener('click', openModal);
+      if (closeBtn1) closeBtn1.addEventListener('click', closeModal);
+      if (closeBtn2) closeBtn2.addEventListener('click', closeModal);
+
+      if (modal) {
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) {
+            closeModal();
+          }
+        });
+      }
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+          closeModal();
+        }
+      });
+
+    });
+  </script>
+
+</body>
+</html>
