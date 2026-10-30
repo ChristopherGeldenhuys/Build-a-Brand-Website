@@ -6,15 +6,15 @@
   <title>Black Friday Website Special: R3,500 | Build a Brand</title>
   <meta name="description" content="Get a professionally designed business website for R3,500 once-off. Black Friday special ends 25 November 2026.">
   <meta name="theme-color" content="#1E1430">
-  <link rel="canonical" href="https://buildabrand.co.za/">
+  <link rel="canonical" href="https://buildabrandagency.co.za/">
 
   <!-- Open Graph / Meta Ads -->
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://buildabrand.co.za/">
+  <meta property="og:url" content="https://buildabrandagency.co.za/">
   <meta property="og:title" content="Black Friday Website Special: R3,500 | Build a Brand">
   <meta property="og:description" content="Get a professionally designed business website for R3,500 once-off. Black Friday special ends 25 November 2026.">
   <!-- Open Graph image: [UPLOAD the 1080×1350 price-led ad] -->
-  <meta property="og:image" content="https://buildabrand.co.za/assets/og-black-friday-r3500.jpg">
+  <meta property="og:image" content="https://buildabrandagency.co.za/assets/og-black-friday-r3500.jpg">
   <meta property="og:image:width" content="1080">
   <meta property="og:image:height" content="1350">
   <meta name="twitter:card" content="summary_large_image">
@@ -23,6 +23,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,400..800;1,14..32,400..800&display=swap" rel="stylesheet">
+
+  <!-- Google Tag Manager + GA4 event tracking (set the GTM ID inside assets/js/analytics.js) -->
+  <script src="assets/js/analytics.js"></script>
 
   <!-- Meta Pixel Code -->
   <script>
@@ -1885,6 +1888,11 @@
               Submit my enquiry &rarr;
             </button>
 
+            <!-- Shown only if the enquiry could not be sent -->
+            <p id="formSubmitError" role="alert" style="display: none; font-size: 14px; color: #B3261E; text-align: center; margin-top: 14px; line-height: 1.45;">
+              Sorry, your enquiry didn't go through. Please try again, or email us at hello@buildabrand.co.za.
+            </p>
+
             <!-- Small Text Under Button -->
             <p style="font-size: 13px; color: var(--ink-soft); text-align: center; margin-top: 16px; line-height: 1.45;">
               Once-off price for a one-page starter website. Domain, hosting and extra pages quoted separately.
@@ -2195,6 +2203,19 @@
           }
 
           if (!isValid) {
+            // Analytics: which fields failed (field names only, never values)
+            var errorFields = [];
+            ['fullName', 'businessName', 'email', 'whatsapp'].forEach(function (id) {
+              if (document.getElementById(id).classList.contains('input-error')) errorFields.push(id);
+            });
+            if (!consent.checked) errorFields.push('consent');
+            if (window.babTrack) window.babTrack('form_error', {
+              form_name: 'black_friday_enquiry',
+              error_type: 'validation',
+              error_fields: errorFields.join(','),
+              error_count: errorFields.length
+            });
+
             // Scroll smoothly to first error
             const firstError = form.querySelector('.input-error, #consent:not(:checked)');
             if (firstError) {
@@ -2228,30 +2249,79 @@
             console.error('Storage note:', err);
           }
 
+          // Prevent double submissions (double-click / double-tap)
+          if (submitBtn.disabled) return;
+
           // Update button state while processing
+          const originalBtnHtml = submitBtn.innerHTML;
+          const submitError = document.getElementById('formSubmitError');
+          if (submitError) submitError.style.display = 'none';
           submitBtn.disabled = true;
           submitBtn.innerHTML = 'Submitting your enquiry...';
           submitBtn.style.opacity = '0.8';
 
           /*
             =====================================================================
-            OPTIONAL BACKEND / CRM / FORMSPREE DISPATCH:
-            Send submissions to [YOUR EMAIL / CRM].
-            If you connect a webhook or email endpoint (e.g. Formspree / Zapier):
-            fetch("https://formspree.io/f/[YOUR_FORM_ID]", {
-              method: "POST",
-              headers: { "Content-Type": "application/json", "Accept": "application/json" },
-              body: JSON.stringify(enquiryData)
-            });
+            ENQUIRY DELIVERY: Send submissions to [YOUR EMAIL / CRM].
+            Paste your form endpoint below (e.g. a Formspree form URL like
+            "https://formspree.io/f/abcdwxyz"). It must accept a JSON POST and
+            return a 2xx status on success.
+
+            The GA4 lead conversion (generate_lead) is ONLY recorded after this
+            endpoint confirms success. While ENQUIRY_ENDPOINT is empty, enquiries
+            are NOT delivered anywhere and no conversion is recorded.
             =====================================================================
           */
+          const ENQUIRY_ENDPOINT = '';
 
-          // Redirect to separate thank-you page (/black-friday/thank-you)
-          setTimeout(function () {
-            // Carry UTM parameters and name over to thank-you page if desired
+          function goToThankYou() {
+            window.__babFormSubmitted = true;
             const currentParams = window.location.search;
             window.location.href = 'thank-you.html' + currentParams;
-          }, 450);
+          }
+
+          function confirmSuccess() {
+            // One-time token the thank-you page uses to fire generate_lead once
+            try {
+              sessionStorage.setItem('bab_lead_confirmed', JSON.stringify({
+                lead_id: 'bf-' + Date.now().toString(36) + '-' + Math.random().toString(36).slice(2, 8),
+                website_type: websiteTypeValue
+              }));
+            } catch (err) { /* storage blocked: lead still delivered, conversion not tracked */ }
+            goToThankYou();
+          }
+
+          function failSubmission(errorType) {
+            if (window.babTrack) window.babTrack('form_error', {
+              form_name: 'black_friday_enquiry',
+              error_type: errorType
+            });
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = originalBtnHtml;
+            submitBtn.style.opacity = '';
+            if (submitError) submitError.style.display = 'block';
+          }
+
+          if (!ENQUIRY_ENDPOINT) {
+            // No delivery endpoint configured yet: keep the original behaviour
+            // (redirect) but do NOT record a lead conversion.
+            setTimeout(goToThankYou, 450);
+            return;
+          }
+
+          fetch(ENQUIRY_ENDPOINT, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(enquiryData)
+          }).then(function (res) {
+            if (res.ok) {
+              confirmSuccess();
+            } else {
+              failSubmission('server_' + res.status);
+            }
+          }).catch(function () {
+            failSubmission('network');
+          });
 
         });
 
