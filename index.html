@@ -972,96 +972,255 @@
 
     <!-- ==========================================
          3. OUR WORK (Ivory with soft blobs)
-         Real Build a Brand Projects Only
+         Website design showcase: desktop + mobile concepts
          ========================================== -->
     <section id="our-work" class="section-light" style="padding: 60px 0 120px 0; border-top: 1px solid rgba(233, 233, 236, 0.6);">
 
-      <!-- Section 3 scoped styles (portfolio showcase) -->
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&display=swap">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap">
       <style>
-        .ow-flagship { display: grid; grid-template-columns: 1fr; gap: 36px; padding: 18px; align-items: center; }
-        .ow-flagship:hover { transform: none; }
-        @media (min-width: 992px) {
-          .ow-flagship { grid-template-columns: 1.45fr 0.55fr; gap: 48px; padding: 24px 44px 24px 24px; }
-        }
-        .ow-flagship .mockup-browser { border: 1px solid var(--grey); box-shadow: 0 30px 70px -20px rgba(30, 20, 48, 0.35); }
-        .ow-url { color: var(--ink); font-weight: 500; }
-        .ow-lock { width: 10px; height: 10px; flex-shrink: 0; }
+        /* ---------- Showcase layout ---------- */
+        .sw-project + .sw-project { margin-top: 0; }
+        .sw-stage { position: relative; border-radius: 28px; overflow: hidden; isolation: isolate; }
+        .sw-stage-glow { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: -1; }
+        .sw-devices { position: relative; }
+        .sw-desktop { position: relative; z-index: 1; container-type: inline-size; }
+        .sw-phone { position: absolute; z-index: 2; container-type: inline-size; }
 
-        /* 2nd Chance Cycles hero, rebuilt from the live site and scaled with container units */
-        .cc-hero { container-type: inline-size; position: relative; overflow: hidden; background: #050A30; color: #FFFFFF; font-family: 'Outfit', var(--font-body); aspect-ratio: 16 / 10; }
-        .cc-hero { background-image: url('assets/work/2nd-chance-cycles-hero-live.webp'); background-size: cover; background-position: center top; }
-        .cc-hero .cc-nav, .cc-hero .cc-content { opacity: 0; transition: opacity 0.4s ease; }
-        .cc-hero.has-video .cc-nav, .cc-hero.has-video .cc-content { opacity: 1; }
-        .cc-hero video { opacity: 0; transition: opacity 0.4s ease; }
-        .cc-hero.has-video video { opacity: 1; }
-        .cc-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.6) contrast(1.1); }
-        .cc-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 1.67cqw 2.22cqw; }
-        .cc-logo { height: 4cqw; width: auto; filter: brightness(0) invert(1); display: block; }
-        .cc-links { display: flex; gap: 2.78cqw; font-weight: 600; font-size: 1.11cqw; }
-        .cc-icons { display: flex; gap: 1.67cqw; align-items: center; }
-        .cc-icons svg { width: 1.33cqw; height: 1.33cqw; fill: #FFFFFF; display: block; }
-        .cc-burger { display: none !important; }
-        .cc-content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 2.22cqw; }
-        .cc-content h4 { font-family: 'Outfit', var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 6.11cqw; line-height: 1.1; letter-spacing: -0.14cqw; margin-bottom: 1.67cqw; color: #FFFFFF; }
-        .cc-grad { background: linear-gradient(90deg, #0047AB, #00FFFF); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
-        .cc-content p { font-size: 1.39cqw; line-height: 1.6; color: rgba(255, 255, 255, 0.8); max-width: 41.7cqw; margin: 0 auto 2.78cqw auto; }
-        .cc-btns { display: flex; gap: 1.67cqw; justify-content: center; }
-        .cc-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6cqw; padding: 1.11cqw 2.78cqw; border-radius: 9999px; font-weight: 700; font-size: 1.11cqw; white-space: nowrap; }
-        .cc-btn-primary { background: #0047AB; color: #FFFFFF; box-shadow: 0 0.7cqw 1.7cqw -0.35cqw rgba(0, 71, 171, 0.35); }
-        .cc-btn-glass { background: rgba(255, 255, 255, 0.8); color: #050A30; border: 1px solid rgba(255, 255, 255, 0.3); }
-        .cc-btn svg { width: 1cqw; height: 1cqw; fill: currentColor; }
+        .sw-feature .sw-stage { background: var(--ink); padding: 5.5% 5% 6% 5%; box-shadow: 0 40px 90px -40px rgba(30, 20, 48, 0.55); }
+        .sw-feature .sw-desktop { width: 84%; }
+        .sw-feature .sw-phone { width: 21%; right: 0; bottom: -4%; }
 
-        /* Same hero at phone width, matching the live site's own mobile layout */
+        .sw-pair { display: grid; grid-template-columns: 1fr; gap: 56px; margin-top: 72px; }
+        @media (min-width: 900px) { .sw-pair { grid-template-columns: 1fr 1fr; gap: 32px; } }
+        .sw-pair .sw-stage { padding: 8% 7% 9% 6%; }
+        .sw-pair .sw-desktop { width: 82%; }
+        .sw-pair .sw-phone { width: 25%; right: 0; bottom: -6%; }
+        .sw-stage-beau { background: linear-gradient(150deg, #FFE7EC 0%, #FBEFE8 55%, #F4E4DA 100%); box-shadow: 0 30px 70px -40px rgba(120, 60, 70, 0.45); }
+        .sw-stage-dc { background: #0E1210; box-shadow: 0 30px 70px -40px rgba(10, 12, 10, 0.7); }
+
         @media (max-width: 640px) {
-          .cc-hero { aspect-ratio: 3 / 4; }
-          .cc-nav { padding: 5.1cqw 5.1cqw; }
-          .cc-logo { height: 9cqw; }
-          .cc-links { display: none; }
-          .cc-icons { gap: 6cqw; }
-          .cc-icons svg { width: 5cqw; height: 5cqw; }
-          .cc-burger { display: block !important; }
-          .cc-content { padding: 16cqw 4.1cqw 0 4.1cqw; }
-          .cc-content h4 { font-size: 11.5cqw; letter-spacing: -0.5cqw; margin-bottom: 5cqw; }
-          .cc-content p { font-size: 4.3cqw; max-width: none; margin-bottom: 7cqw; }
-          .cc-btns { flex-direction: column; width: 100%; gap: 4cqw; }
-          .cc-btn { font-size: 4cqw; padding: 4cqw 6cqw; gap: 2cqw; }
-          .cc-btn svg { width: 3.6cqw; height: 3.6cqw; }
+          .sw-feature .sw-stage, .sw-pair .sw-stage { padding: 7% 5% 44% 5%; border-radius: 20px; }
+          .sw-feature .sw-desktop, .sw-pair .sw-desktop { width: 100%; }
+          .sw-feature .sw-phone, .sw-pair .sw-phone { width: 32%; right: 6%; bottom: -66%; }
         }
 
-        .ow-badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 30px 0; }
-        .ow-tag { font-family: var(--font-display); font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); background: var(--ivory); border: 1px solid var(--grey); border-radius: 9999px; padding: 6px 12px; }
-        .ow-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 17px; padding: 16px 30px; border-radius: 9999px; text-decoration: none; transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease; min-height: 52px; }
-        .ow-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
-        .ow-btn:hover { transform: translateY(-2px); }
-        .ow-btn:focus-visible { outline: 2px solid var(--magenta); outline-offset: 3px; }
-        .ow-btn-ink { background: var(--ink); color: var(--ivory); box-shadow: 0 12px 28px -10px rgba(30, 20, 48, 0.55); }
-        .ow-btn-ink:hover { box-shadow: 0 16px 34px -10px rgba(30, 20, 48, 0.65); }
-        .ow-btn-outline { background: transparent; color: var(--ink); border: 1.5px solid rgba(30, 20, 48, 0.22); }
-        .ow-btn-outline:hover { border-color: var(--ink); }
-        .ow-btn-outline-light { background: transparent; color: var(--ivory); border: 1.5px solid rgba(249, 248, 245, 0.35); }
-        .ow-btn-outline-light:hover { border-color: var(--yellow); color: var(--yellow); }
+        /* Meta below each stage */
+        .sw-meta { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; align-items: start; }
+        .sw-feature .sw-meta { margin-top: 34px; }
+        @media (min-width: 992px) { .sw-feature .sw-meta { grid-template-columns: auto 1fr auto; gap: 40px; align-items: center; } }
+        .sw-num { font-family: var(--font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.14em; color: var(--magenta); }
+        .sw-title { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; color: var(--ink); }
+        .sw-desc { font-size: 16.5px; line-height: 1.55; color: var(--ink-soft); max-width: 560px; }
+        .sw-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .sw-tag { font-family: var(--font-display); font-weight: 600; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); background: #FFFFFF; border: 1px solid var(--grey); border-radius: 9999px; padding: 6px 12px; white-space: nowrap; }
 
-        .ow-secondary { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 28px; }
-        @media (min-width: 860px) { .ow-secondary { grid-template-columns: 1fr 1fr; } }
-        .ow-card { border-radius: 16px; padding: 18px 18px 26px 18px; display: flex; flex-direction: column; }
-        .ow-card .mockup-browser { border: 1px solid var(--grey); box-shadow: 0 22px 50px -20px rgba(30, 20, 48, 0.3); }
-        .ow-card-dark { background: var(--ink); border: 1px solid rgba(249, 248, 245, 0.08); box-shadow: 0 24px 60px -24px rgba(30, 20, 48, 0.55); position: relative; overflow: hidden; }
-        .ow-card-dark .mockup-browser { border-color: rgba(249, 248, 245, 0.12); }
-        .ow-card-body { padding: 22px 6px 0 6px; display: flex; flex-direction: column; flex-grow: 1; }
-        .ow-shot { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
-        @media (max-width: 640px) {
-          .ow-btn { width: 100%; }
-          .ow-flagship { padding: 12px 12px 24px 12px; }
-          .ow-info { padding: 0 6px; }
-        }
+        /* ---------- Device frames ---------- */
+        .sw-browser { border-radius: 1.4cqw; overflow: hidden; box-shadow: 0 3cqw 7cqw -2cqw rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06); }
+        .sw-bar { height: 3.6cqw; display: flex; align-items: center; gap: 0.7cqw; padding: 0 1.4cqw; }
+        .sw-bar i { width: 0.95cqw; height: 0.95cqw; border-radius: 50%; display: block; }
+        .sw-url { margin: 0 auto; width: 34%; height: 2.2cqw; border-radius: 0.6cqw; display: flex; align-items: center; justify-content: center; gap: 0.5cqw; font-size: 1.05cqw; font-family: var(--font-body); }
+        .sw-url svg { width: 0.9cqw; height: 0.9cqw; }
+        .sw-bar-dark { background: #1A1D24; color: #8C93A3; }
+        .sw-bar-dark i { background: #3A3F4B; }
+        .sw-bar-dark .sw-url { background: #0F1116; }
+        .sw-bar-light { background: #F1ECE8; color: #8A7A72; border-bottom: 1px solid #E6DED8; }
+        .sw-bar-light i { background: #D8CEC7; }
+        .sw-bar-light .sw-url { background: #FFFFFF; }
+        .sw-screen { container-type: inline-size; position: relative; overflow: hidden; aspect-ratio: 16 / 10; }
+
+        .sw-phone-frame { background: #0B0B0E; border-radius: 15cqw; padding: 3.4cqw; box-shadow: 0 6cqw 14cqw -4cqw rgba(0, 0, 0, 0.6), inset 0 0 0 0.8cqw #23232A; }
+        .sw-phone-screen { container-type: inline-size; position: relative; overflow: hidden; border-radius: 12cqw; aspect-ratio: 375 / 780; }
+        .sw-island { position: absolute; top: 2.2cqw; left: 50%; transform: translateX(-50%); width: 30cqw; height: 8.4cqw; border-radius: 9999px; background: #000; z-index: 10; }
+        .sw-status { position: absolute; top: 0; left: 0; right: 0; height: 12cqw; display: flex; align-items: center; justify-content: space-between; padding: 1.4cqw 8cqw 0 9cqw; font: 600 3.9cqw/1 var(--font-body); z-index: 9; }
+        .sw-status span:last-child { display: flex; gap: 1.4cqw; align-items: center; }
+        .sw-status svg { height: 3.2cqw; width: auto; fill: currentColor; }
+        .sw-home { position: absolute; bottom: 2cqw; left: 50%; transform: translateX(-50%); width: 36cqw; height: 1.3cqw; border-radius: 9999px; z-index: 10; }
+
+        .sw-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+        /* ---------- 01 · 2nd Chance Cycles (desktop) ---------- */
+        .cc { background: #07090D; color: #FFFFFF; font-family: var(--font-body); height: 100%; }
+        .cc-nav { position: absolute; top: 0; left: 0; right: 0; height: 5.6cqw; display: flex; align-items: center; padding: 0 3.2cqw; z-index: 3; background: linear-gradient(180deg, rgba(7, 9, 13, 0.75), rgba(7, 9, 13, 0)); }
+        .cc-logo { display: flex; align-items: center; gap: 0.8cqw; font-weight: 800; font-size: 1.25cqw; letter-spacing: 0.08em; }
+        .cc-logo svg { width: 2.6cqw; height: 2.6cqw; }
+        .cc-logo b { color: #3B82FF; }
+        .cc-links { display: flex; gap: 2.4cqw; margin-left: 5cqw; font-size: 1.05cqw; font-weight: 500; color: rgba(255, 255, 255, 0.78); }
+        .cc-links span:first-child { color: #FFFFFF; }
+        .cc-act { margin-left: auto; display: flex; align-items: center; gap: 1.8cqw; }
+        .cc-act svg { width: 1.5cqw; height: 1.5cqw; stroke: #FFFFFF; fill: none; stroke-width: 2; }
+        .cc-cart { position: relative; }
+        .cc-cart em { position: absolute; top: -0.6cqw; right: -0.8cqw; width: 1.3cqw; height: 1.3cqw; border-radius: 50%; background: #3B82FF; font: 700 0.8cqw/1.3cqw var(--font-body); text-align: center; font-style: normal; }
+        .cc-navbtn { font-size: 1cqw; font-weight: 600; padding: 0.8cqw 1.5cqw; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.3); }
+        .cc-hero { position: absolute; top: 0; left: 0; right: 0; height: 60%; overflow: hidden; }
+        .cc-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7, 9, 13, 0.92) 0%, rgba(7, 9, 13, 0.55) 45%, rgba(7, 9, 13, 0.05) 75%), linear-gradient(0deg, #07090D 0%, rgba(7, 9, 13, 0) 30%); }
+        .cc-copy { position: absolute; left: 3.2cqw; top: 8.4cqw; z-index: 2; width: 46cqw; }
+        .cc-eyebrow { display: inline-flex; align-items: center; gap: 0.7cqw; font-size: 0.9cqw; font-weight: 700; letter-spacing: 0.2em; color: #7FB2FF; text-transform: uppercase; }
+        .cc-eyebrow::before { content: ''; width: 2.4cqw; height: 2px; background: #3B82FF; }
+        .cc-h { font-weight: 800; font-size: 5.4cqw; line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase; margin-top: 1.4cqw; }
+        .cc-h span { background: linear-gradient(90deg, #3B82FF, #22D3EE); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .cc-p { font-size: 1.25cqw; line-height: 1.55; color: rgba(255, 255, 255, 0.72); margin-top: 1.6cqw; width: 34cqw; }
+        .cc-btns { display: flex; gap: 1cqw; margin-top: 2.2cqw; }
+        .cc-btn { font-size: 1.1cqw; font-weight: 700; padding: 1.15cqw 2.2cqw; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.6cqw; }
+        .cc-btn-a { background: #2563EB; box-shadow: 0 1cqw 2.4cqw -0.8cqw rgba(37, 99, 235, 0.9); }
+        .cc-btn-b { border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(255, 255, 255, 0.06); }
+        .cc-float { position: absolute; z-index: 2; right: 27cqw; top: 27cqw; width: 22cqw; padding: 1.2cqw 1.4cqw; border-radius: 1.2cqw; background: rgba(13, 17, 24, 0.72); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(10px); display: flex; gap: 1.1cqw; align-items: center; }
+        .cc-float img { width: 5.2cqw; height: 4.2cqw; border-radius: 0.6cqw; object-fit: cover; }
+        .cc-float small { display: block; font-size: 0.8cqw; letter-spacing: 0.12em; color: #7FB2FF; font-weight: 700; text-transform: uppercase; }
+        .cc-float b { display: block; font-size: 1.15cqw; margin-top: 0.2cqw; }
+        .cc-float span { font-size: 1cqw; color: rgba(255, 255, 255, 0.7); }
+        .cc-trust { position: absolute; top: 60%; left: 3.2cqw; right: 3.2cqw; height: 5cqw; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1cqw; color: rgba(255, 255, 255, 0.78); }
+        .cc-trust span { display: flex; align-items: center; gap: 0.7cqw; }
+        .cc-trust i { width: 1.8cqw; height: 1.8cqw; border-radius: 50%; background: rgba(59, 130, 255, 0.16); display: grid; place-items: center; color: #7FB2FF; font-style: normal; font-weight: 800; font-size: 0.9cqw; }
+        .cc-shop { position: absolute; top: calc(60% + 6.4cqw); left: 3.2cqw; right: 3.2cqw; }
+        .cc-shop-head { display: flex; justify-content: space-between; align-items: baseline; }
+        .cc-shop-head b { font-size: 1.9cqw; font-weight: 800; letter-spacing: -0.02em; }
+        .cc-shop-head span { font-size: 1cqw; color: #7FB2FF; font-weight: 600; }
+        .cc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.3cqw; margin-top: 1.4cqw; }
+        .cc-card { background: #10141B; border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 1cqw; overflow: hidden; }
+        .cc-card .sw-img { height: 7.4cqw; }
+        .cc-card div { padding: 1cqw 1.1cqw 1.2cqw; }
+        .cc-card small { font-size: 0.78cqw; font-weight: 700; letter-spacing: 0.12em; color: #7FB2FF; }
+        .cc-card b { display: block; font-size: 1.1cqw; margin-top: 0.3cqw; }
+        .cc-card p { display: flex; justify-content: space-between; align-items: center; margin-top: 0.6cqw; font-size: 1.15cqw; font-weight: 800; }
+        .cc-card p em { width: 2cqw; height: 2cqw; border-radius: 50%; background: #2563EB; display: grid; place-items: center; font-style: normal; font-size: 1.2cqw; font-weight: 600; }
+
+        /* ---------- 01 · 2nd Chance Cycles (mobile) ---------- */
+        .ccm { background: #07090D; color: #FFFFFF; height: 100%; font-family: var(--font-body); }
+        .ccm .sw-status { color: #FFFFFF; }
+        .ccm-nav { position: absolute; top: 12cqw; left: 0; right: 0; z-index: 4; display: flex; align-items: center; padding: 0 5.5cqw; height: 13cqw; }
+        .ccm-nav .cc-logo { font-size: 3.5cqw; gap: 2cqw; }
+        .ccm-nav .cc-logo svg { width: 7.5cqw; height: 7.5cqw; }
+        .ccm-nav .cc-act { gap: 4.5cqw; }
+        .ccm-nav .cc-act svg { width: 5.4cqw; height: 5.4cqw; }
+        .ccm-hero { position: absolute; top: 0; left: 0; right: 0; height: 128cqw; }
+        .ccm-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 9, 13, 0.6) 0%, rgba(7, 9, 13, 0) 30%, rgba(7, 9, 13, 0.55) 60%, #07090D 100%); }
+        .ccm-copy { position: absolute; z-index: 2; left: 5.5cqw; right: 5.5cqw; top: 70cqw; }
+        .ccm-copy .cc-eyebrow { font-size: 2.7cqw; gap: 2cqw; }
+        .ccm-copy .cc-eyebrow::before { width: 6cqw; }
+        .ccm-copy .cc-h { font-size: 12.6cqw; margin-top: 3cqw; }
+        .ccm-copy .cc-p { font-size: 3.7cqw; width: auto; margin-top: 3.4cqw; }
+        .ccm-btns { position: absolute; z-index: 2; left: 5.5cqw; right: 5.5cqw; top: 130cqw; display: grid; gap: 2.8cqw; }
+        .ccm-btns .cc-btn { justify-content: center; font-size: 3.9cqw; padding: 3.6cqw; }
+        .ccm-chips { position: absolute; top: 158cqw; left: 5.5cqw; display: flex; gap: 2.4cqw; white-space: nowrap; }
+        .ccm-chips span { font-size: 3.3cqw; font-weight: 600; padding: 2.2cqw 4cqw; border-radius: 9999px; background: #121722; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .ccm-chips span:first-child { background: #FFFFFF; color: #07090D; }
+        .ccm-card { position: absolute; top: 172cqw; left: 5.5cqw; right: 5.5cqw; border-radius: 4cqw; background: #10141B; border: 1px solid rgba(255, 255, 255, 0.07); overflow: hidden; display: flex; }
+        .ccm-card img { width: 36cqw; height: 30cqw; object-fit: cover; }
+        .ccm-card div { padding: 3.4cqw; }
+        .ccm-card small { font-size: 2.4cqw; font-weight: 700; letter-spacing: 0.12em; color: #7FB2FF; }
+        .ccm-card b { display: block; font-size: 3.8cqw; margin-top: 1cqw; }
+        .ccm-card p { font-size: 4.2cqw; font-weight: 800; margin-top: 2.4cqw; }
+        .ccm .sw-home { background: rgba(255, 255, 255, 0.85); }
+
+        /* ---------- 02 · Beau Nails (desktop) ---------- */
+        .bn { background: #FBF5F1; color: #3B2D2A; font-family: var(--font-body); height: 100%; }
+        .bn-serif { font-family: 'Playfair Display', Georgia, serif; }
+        .bn-nav { position: absolute; top: 2cqw; left: 3.2cqw; right: 3.2cqw; height: 5cqw; border-radius: 9999px; background: rgba(255, 255, 255, 0.85); box-shadow: 0 0.6cqw 2cqw -0.8cqw rgba(110, 70, 70, 0.25); display: flex; align-items: center; padding: 0 1.2cqw 0 1.8cqw; z-index: 3; }
+        .bn-logo { display: flex; align-items: center; gap: 0.8cqw; font-size: 1.6cqw; font-weight: 600; }
+        .bn-logo i { width: 2.4cqw; height: 2.4cqw; border-radius: 50%; border: 1px solid #C79AA3; display: grid; place-items: center; font: italic 500 1.1cqw 'Playfair Display', serif; color: #B0707D; }
+        .bn-links { display: flex; gap: 2.2cqw; margin: 0 auto; font-size: 1cqw; letter-spacing: 0.12em; text-transform: uppercase; color: #8A7672; font-weight: 600; }
+        .bn-links span:first-child { color: #B0707D; }
+        .bn-book { font-size: 1cqw; font-weight: 600; letter-spacing: 0.06em; color: #FFFFFF; background: #B0707D; padding: 0.9cqw 1.8cqw; border-radius: 9999px; }
+        .bn-copy { position: absolute; left: 4.5cqw; top: 14cqw; width: 44cqw; }
+        .bn-pill { display: inline-flex; align-items: center; gap: 0.6cqw; font-size: 0.9cqw; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B0707D; background: #F6E4E6; padding: 0.6cqw 1.2cqw; border-radius: 9999px; }
+        .bn-h { font-size: 5.3cqw; line-height: 1.02; font-weight: 500; letter-spacing: -0.02em; margin-top: 1.8cqw; }
+        .bn-h em { color: #B0707D; font-style: italic; }
+        .bn-p { font-size: 1.25cqw; line-height: 1.6; color: #7A6763; margin-top: 1.6cqw; width: 34cqw; }
+        .bn-btns { display: flex; gap: 1cqw; margin-top: 2.4cqw; align-items: center; }
+        .bn-btn { font-size: 1.1cqw; font-weight: 600; padding: 1.15cqw 2.2cqw; border-radius: 9999px; }
+        .bn-btn-a { background: #B0707D; color: #FFFFFF; box-shadow: 0 1cqw 2.4cqw -1cqw rgba(176, 112, 125, 0.9); }
+        .bn-btn-b { border: 1px solid #DCC6C2; color: #3B2D2A; }
+        .bn-trust { display: flex; gap: 2cqw; margin-top: 2.6cqw; font-size: 0.95cqw; color: #8A7672; }
+        .bn-trust span::before { content: '✦ '; color: #C79AA3; }
+        .bn-arch { position: absolute; right: 5cqw; top: 9.5cqw; width: 30cqw; height: 37cqw; border-radius: 15cqw 15cqw 1.6cqw 1.6cqw; overflow: hidden; box-shadow: 0 2cqw 4cqw -1.5cqw rgba(110, 70, 70, 0.35); }
+        .bn-arch-line { position: absolute; right: 3.6cqw; top: 8cqw; width: 30cqw; height: 37cqw; border-radius: 15cqw 15cqw 1.6cqw 1.6cqw; border: 1px solid #DDB9BF; }
+        .bn-badge { position: absolute; left: 51cqw; top: 39cqw; background: #FFFFFF; border-radius: 1.2cqw; padding: 1.1cqw 1.4cqw; box-shadow: 0 1.4cqw 3cqw -1.2cqw rgba(110, 70, 70, 0.35); z-index: 2; }
+        .bn-badge small { display: block; font-size: 0.8cqw; letter-spacing: 0.14em; text-transform: uppercase; color: #B0707D; font-weight: 700; }
+        .bn-badge b { display: block; font-size: 1.3cqw; margin-top: 0.3cqw; }
+        .bn-services { position: absolute; left: 4.5cqw; right: 4.5cqw; top: 51.5cqw; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4cqw; }
+        .bn-svc { background: #FFFFFF; border-radius: 1.4cqw; padding: 0.8cqw; box-shadow: 0 1cqw 2.4cqw -1.4cqw rgba(110, 70, 70, 0.3); }
+        .bn-svc img { width: 100%; height: 6.2cqw; object-fit: cover; border-radius: 1cqw; display: block; }
+        .bn-svc div { display: flex; justify-content: space-between; align-items: center; padding: 1cqw 0.4cqw 0.3cqw; }
+        .bn-svc b { font-size: 1.25cqw; font-weight: 500; }
+        .bn-svc span { font-size: 0.9cqw; color: #B0707D; background: #F6E4E6; padding: 0.3cqw 0.8cqw; border-radius: 9999px; font-weight: 600; }
+
+        /* ---------- 02 · Beau Nails (mobile) ---------- */
+        .bnm { background: #FBF5F1; color: #3B2D2A; height: 100%; font-family: var(--font-body); }
+        .bnm .sw-status { color: #3B2D2A; }
+        .bnm-nav { position: absolute; top: 13cqw; left: 5cqw; right: 5cqw; height: 13cqw; border-radius: 9999px; background: #FFFFFF; box-shadow: 0 2cqw 6cqw -3cqw rgba(110, 70, 70, 0.3); display: flex; align-items: center; justify-content: space-between; padding: 0 3cqw 0 4cqw; }
+        .bnm-nav .bn-logo { font-size: 4.4cqw; gap: 2cqw; }
+        .bnm-nav .bn-logo i { width: 7cqw; height: 7cqw; font-size: 3.2cqw; }
+        .bnm-nav .bn-book { font-size: 3cqw; padding: 2.2cqw 4cqw; }
+        .bnm-arch { position: absolute; top: 32cqw; left: 12cqw; right: 12cqw; height: 78cqw; border-radius: 40cqw 40cqw 5cqw 5cqw; overflow: hidden; }
+        .bnm-copy { position: absolute; top: 117cqw; left: 6cqw; right: 6cqw; text-align: center; }
+        .bnm-copy .bn-pill { font-size: 2.5cqw; padding: 1.6cqw 3.2cqw; }
+        .bnm-copy .bn-h { font-size: 10.6cqw; margin-top: 3.4cqw; }
+        .bnm-copy .bn-p { font-size: 3.6cqw; width: auto; margin-top: 3cqw; }
+        .bnm-cta { position: absolute; top: 172cqw; left: 6cqw; right: 6cqw; text-align: center; font-size: 4cqw; font-weight: 600; padding: 4cqw; border-radius: 9999px; background: #B0707D; color: #FFFFFF; box-shadow: 0 3cqw 6cqw -3cqw rgba(176, 112, 125, 0.9); }
+        .bnm-gal { position: absolute; top: 191cqw; left: 6cqw; right: 6cqw; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4cqw; }
+        .bnm-gal img { width: 100%; height: 30cqw; object-fit: cover; border-radius: 3cqw; display: block; }
+        .bnm .sw-home { background: rgba(59, 45, 42, 0.8); }
+
+        /* ---------- 03 · Ditlhalefi Chauffeurs (desktop) ---------- */
+        .dc { background: #0B0D0C; color: #F4F1EA; font-family: var(--font-body); height: 100%; }
+        .dc-gold { color: #E2B33C; }
+        .dc-nav { position: absolute; top: 0; left: 0; right: 0; height: 5.6cqw; display: flex; align-items: center; padding: 0 3.2cqw; z-index: 3; border-bottom: 1px solid rgba(226, 179, 60, 0.15); background: rgba(11, 13, 12, 0.55); backdrop-filter: blur(6px); }
+        .dc-logo { display: flex; align-items: center; gap: 0.8cqw; font-size: 1.35cqw; font-weight: 700; letter-spacing: -0.01em; }
+        .dc-logo svg { width: 1.9cqw; height: 1.9cqw; stroke: #E2B33C; fill: none; stroke-width: 1.8; }
+        .dc-links { display: flex; gap: 2.2cqw; margin: 0 auto; font-size: 1cqw; color: rgba(244, 241, 234, 0.75); }
+        .dc-links span:first-child { color: #E2B33C; }
+        .dc-quote { font-size: 1cqw; font-weight: 700; color: #0B0D0C; background: #E2B33C; padding: 0.9cqw 1.6cqw; border-radius: 0.5cqw; }
+        .dc-hero { position: absolute; inset: 0 0 34% 0; }
+        .dc-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11, 13, 12, 0.95) 0%, rgba(11, 13, 12, 0.6) 50%, rgba(11, 13, 12, 0.15) 100%), linear-gradient(0deg, #0B0D0C 0%, rgba(11, 13, 12, 0) 35%); }
+        .dc-copy { position: absolute; left: 4cqw; top: 10.5cqw; width: 44cqw; z-index: 2; }
+        .dc-eyebrow { font-size: 0.9cqw; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: #E2B33C; }
+        .dc-h { font-weight: 700; font-size: 4.9cqw; line-height: 1.02; letter-spacing: -0.035em; margin-top: 1.4cqw; }
+        .dc-h em { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-style: italic; color: #E2B33C; letter-spacing: -0.01em; }
+        .dc-p { font-size: 1.2cqw; line-height: 1.6; color: rgba(244, 241, 234, 0.7); margin-top: 1.5cqw; width: 36cqw; }
+        .dc-book { position: absolute; left: 4cqw; right: 4cqw; top: 39cqw; z-index: 3; display: grid; grid-template-columns: 1.3fr 1.3fr 1fr auto; gap: 0; align-items: center; background: rgba(20, 23, 21, 0.9); border: 1px solid rgba(226, 179, 60, 0.25); border-radius: 1cqw; padding: 0.8cqw; backdrop-filter: blur(8px); }
+        .dc-field { padding: 0.5cqw 1.4cqw; border-right: 1px solid rgba(244, 241, 234, 0.1); }
+        .dc-field small { display: block; font-size: 0.75cqw; letter-spacing: 0.16em; text-transform: uppercase; color: #E2B33C; font-weight: 600; }
+        .dc-field span { display: block; font-size: 1.1cqw; margin-top: 0.3cqw; color: rgba(244, 241, 234, 0.85); }
+        .dc-field:nth-child(3) { border-right: none; }
+        .dc-go { font-size: 1.05cqw; font-weight: 700; color: #0B0D0C; background: #E2B33C; padding: 1.3cqw 2cqw; border-radius: 0.6cqw; white-space: nowrap; }
+        .dc-tiles { position: absolute; left: 4cqw; right: 4cqw; top: 47.5cqw; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4cqw; }
+        .dc-tile { position: relative; height: 12cqw; border-radius: 1cqw; overflow: hidden; border: 1px solid rgba(244, 241, 234, 0.08); }
+        .dc-tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11, 13, 12, 0.92), rgba(11, 13, 12, 0.1) 70%); }
+        .dc-tile div { position: absolute; left: 1.3cqw; bottom: 1.1cqw; z-index: 1; }
+        .dc-tile small { font-size: 0.75cqw; letter-spacing: 0.16em; color: #E2B33C; font-weight: 600; text-transform: uppercase; }
+        .dc-tile b { display: block; font-size: 1.35cqw; margin-top: 0.3cqw; }
+        .dc-rating { position: absolute; right: 4cqw; top: 11cqw; z-index: 2; text-align: right; }
+        .dc-rating b { font-size: 2.4cqw; font-weight: 700; }
+        .dc-rating span { display: block; font-size: 0.9cqw; color: rgba(244, 241, 234, 0.6); margin-top: 0.2cqw; }
+        .dc-stars { color: #E2B33C; font-size: 1.1cqw; letter-spacing: 0.15em; }
+
+        /* ---------- 03 · Ditlhalefi Chauffeurs (mobile) ---------- */
+        .dcm { background: #0B0D0C; color: #F4F1EA; height: 100%; font-family: var(--font-body); }
+        .dcm .sw-status { color: #F4F1EA; }
+        .dcm-nav { position: absolute; top: 12cqw; left: 0; right: 0; height: 13cqw; display: flex; align-items: center; justify-content: space-between; padding: 0 5.5cqw; z-index: 3; }
+        .dcm-nav .dc-logo { font-size: 4.2cqw; gap: 2cqw; }
+        .dcm-nav .dc-logo svg { width: 6cqw; height: 6cqw; }
+        .dcm-menu { width: 9cqw; height: 9cqw; border-radius: 2cqw; border: 1px solid rgba(226, 179, 60, 0.4); display: grid; place-items: center; }
+        .dcm-menu svg { width: 4.6cqw; height: 4.6cqw; stroke: #E2B33C; stroke-width: 2; }
+        .dcm-hero { position: absolute; top: 0; left: 0; right: 0; height: 118cqw; }
+        .dcm-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 13, 12, 0.7) 0%, rgba(11, 13, 12, 0.1) 30%, rgba(11, 13, 12, 0.6) 65%, #0B0D0C 100%); }
+        .dcm-copy { position: absolute; top: 74cqw; left: 6cqw; right: 6cqw; z-index: 2; }
+        .dcm-copy .dc-eyebrow { font-size: 2.6cqw; }
+        .dcm-copy .dc-h { font-size: 11.4cqw; margin-top: 3cqw; }
+        .dcm-copy .dc-p { font-size: 3.6cqw; width: auto; margin-top: 3cqw; }
+        .dcm-form { position: absolute; top: 140cqw; left: 6cqw; right: 6cqw; border-radius: 4cqw; background: #141715; border: 1px solid rgba(226, 179, 60, 0.25); padding: 4cqw; display: grid; gap: 2.6cqw; }
+        .dcm-form .dc-field { border: 1px solid rgba(244, 241, 234, 0.1); border-radius: 2.4cqw; padding: 2.6cqw 3.4cqw; }
+        .dcm-form .dc-field small { font-size: 2.3cqw; }
+        .dcm-form .dc-field span { font-size: 3.5cqw; margin-top: 1cqw; }
+        .dcm-form .dc-go { text-align: center; font-size: 3.8cqw; padding: 3.8cqw; border-radius: 2.4cqw; }
+        .dcm .sw-home { background: rgba(244, 241, 234, 0.85); }
       </style>
 
       <div class="light-blob light-blob-bl" style="top: 20%;" aria-hidden="true"></div>
 
       <div class="container" style="position: relative; z-index: 2;">
 
-        <div style="text-align: center; max-width: 760px; margin: 0 auto 56px auto;">
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 64px auto;">
           <span class="eyebrow-label" style="color: var(--magenta); margin-bottom: 14px;">
             OUR WORK
           </span>
@@ -1069,188 +1228,248 @@
             See the quality you're paying for.
           </h2>
           <p style="font-size: 18px; color: var(--ink-soft); line-height: 1.5; margin-top: 18px;">
-            Live websites we've designed and built for South African businesses.
+            Every website we build is designed twice: once for desktop, and again for the phone in your customer's hand.
           </p>
         </div>
 
-        <!-- Featured project: 2nd Chance Cycles -->
-        <article class="card-white ow-flagship reveal-on-scroll">
-          <div class="mockup-browser">
-            <div class="mockup-browser-header">
-              <div class="browser-dots" aria-hidden="true">
-                <span class="browser-dot" style="background: #FF7A6B;"></span>
-                <span class="browser-dot" style="background: #FFD93B;"></span>
-                <span class="browser-dot" style="background: #E9E9EC;"></span>
-              </div>
-              <div class="browser-address-bar">
-                <svg class="ow-lock" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5A4F6B" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>
-                <span class="ow-url">2ndchancecycles.co.za</span>
-              </div>
-            </div>
-            <!-- Hero of the live 2nd Chance Cycles site, playing its actual background video -->
-            <div class="cc-hero" aria-label="Preview of the 2nd Chance Cycles homepage hero" role="img">
-              <video id="ccHeroVideo" muted loop playsinline preload="none" aria-hidden="true"
-                data-src-small="https://cdn.pixabay.com/video/2025/03/08/263385_small.mp4"
-                data-src-medium="https://cdn.pixabay.com/video/2025/03/08/263385_medium.mp4"
-                data-src-large="https://cdn.pixabay.com/video/2025/03/08/263385_large.mp4"></video>
-              <div class="cc-nav" aria-hidden="true">
-                <img class="cc-logo" src="assets/work/2nd-chance-cycles-logo.webp" alt="" width="400" height="201" loading="lazy" decoding="async">
-                <div class="cc-links"><span>Home</span><span>Shop Bikes</span><span>Services</span><span>Contact</span></div>
-                <div class="cc-icons">
-                  <svg viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7a32 32 0 0 1-45.3 45.3L330.7 376A208 208 0 1 1 416 208Zm-208 144a144 144 0 1 0 0-288 144 144 0 1 0 0 288Z"/></svg>
-                  <svg viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0h45.5c22 0 41.5 12.8 50.6 32h411a32 32 0 0 1 30.8 40.7l-41 144A32 32 0 0 1 490 240H170.4l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488a24 24 0 1 1 0 48H199.4a72 72 0 0 1-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24A24 24 0 0 1 0 24Zm128 440a48 48 0 1 1 96 0 48 48 0 1 1-96 0Zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96Z"/></svg>
-                  <svg class="cc-burger" viewBox="0 0 448 512"><path d="M0 96a32 32 0 0 1 32-32h384a32 32 0 1 1 0 64H32A32 32 0 0 1 0 96Zm0 160a32 32 0 0 1 32-32h384a32 32 0 1 1 0 64H32a32 32 0 0 1-32-32Zm448 160a32 32 0 0 1-32 32H32a32 32 0 1 1 0-64h384a32 32 0 0 1 32 32Z"/></svg>
+        <!-- ============ 01 · 2nd Chance Cycles (featured) ============ -->
+        <article class="sw-project sw-feature reveal-on-scroll">
+          <div class="sw-stage" role="img" aria-label="2nd Chance Cycles website design shown on a desktop browser and a smartphone">
+            <div class="sw-stage-glow" style="width: 55%; height: 70%; left: -10%; top: -20%; background: rgba(107, 63, 160, 0.75);"></div>
+            <div class="sw-stage-glow" style="width: 50%; height: 60%; right: -12%; bottom: -25%; background: rgba(216, 27, 143, 0.4);"></div>
+            <div class="sw-stage-glow" style="width: 40%; height: 50%; left: 35%; top: 30%; background: rgba(59, 130, 255, 0.22);"></div>
+
+            <div class="sw-devices" aria-hidden="true">
+              <!-- Desktop -->
+              <div class="sw-desktop">
+                <div class="sw-browser">
+                  <div class="sw-bar sw-bar-dark"><i></i><i></i><i></i>
+                    <div class="sw-url"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>2ndchancecycles.co.za</div>
+                  </div>
+                  <div class="sw-screen">
+                    <div class="cc">
+                      <div class="cc-hero"><img class="sw-img" src="assets/work/mock/cc-hero.webp" alt="" width="1200" height="651" loading="lazy" decoding="async"></div>
+                      <div class="cc-nav">
+                        <div class="cc-logo"><svg viewBox="0 0 48 48" fill="none" stroke="#FFFFFF" stroke-width="3"><circle cx="11" cy="31" r="8"/><circle cx="37" cy="31" r="8"/><path d="M11 31l8-14h12l6 14M19 17l6 14h-14M27 13h6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>2ND <b>CHANCE</b> CYCLES</span></div>
+                        <div class="cc-links"><span>Shop</span><span>Mountain</span><span>Road</span><span>E-Bikes</span><span>Workshop</span></div>
+                        <div class="cc-act">
+                          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+                          <span class="cc-cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.8L20 8H6.2" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg><em>2</em></span>
+                          <span class="cc-navbtn">Book a Service</span>
+                        </div>
+                      </div>
+                      <div class="cc-copy">
+                        <div class="cc-eyebrow">Certified pre-owned bikes</div>
+                        <div class="cc-h">Ride more.<br><span>Pay less.</span></div>
+                        <div class="cc-p">Premium mountain and road bikes, inspected on 50 points and tuned by real mechanics.</div>
+                        <div class="cc-btns"><span class="cc-btn cc-btn-a">Shop Bikes →</span><span class="cc-btn cc-btn-b">Book a Service</span></div>
+                      </div>
+                      <div class="cc-float"><img src="assets/work/mock/cc-p2.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>Just in</small><b>Trail Pro 29 Carbon</b><span>Size L · R 48 500</span></div></div>
+                      <div class="cc-trust">
+                        <span><i>✓</i>50-point inspection</span><span><i>✓</i>Nationwide delivery</span><span><i>✓</i>Workshop warranty</span><span><i>✓</i>Secure checkout</span>
+                      </div>
+                      <div class="cc-shop">
+                        <div class="cc-shop-head"><b>Featured machines</b><span>View all bikes →</span></div>
+                        <div class="cc-grid">
+                          <div class="cc-card"><img class="sw-img" src="assets/work/mock/cc-p1.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>ADVANCED</small><b>Enduro X 29</b><p>R 62 000 <em>+</em></p></div></div>
+                          <div class="cc-card"><img class="sw-img" src="assets/work/mock/cc-p3.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>INTERMEDIATE</small><b>Ridge 140</b><p>R 34 500 <em>+</em></p></div></div>
+                          <div class="cc-card"><img class="sw-img" src="assets/work/mock/cc-p4.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>INTERMEDIATE</small><b>Summit Trail</b><p>R 27 900 <em>+</em></p></div></div>
+                          <div class="cc-card"><img class="sw-img" src="assets/work/mock/cc-p2.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>ADVANCED</small><b>Trail Pro 29</b><p>R 48 500 <em>+</em></p></div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div class="cc-content" aria-hidden="true">
-                <h4>Your Next Ride <br><span class="cc-grad">Starts Here</span></h4>
-                <p>Premium Bikes. Trusted Service. Real Cyclists. Giving high-end pre-owned machines a second life with professional precision.</p>
-                <div class="cc-btns">
-                  <span class="cc-btn cc-btn-primary">Shop Bikes <svg viewBox="0 0 448 512"><path d="M438.6 278.6a32 32 0 0 0 0-45.3l-160-160a32 32 0 0 0-45.3 45.3L338.8 224H32a32 32 0 0 0 0 64h306.7L233.4 393.4a32 32 0 0 0 45.3 45.3l160-160Z"/></svg></span>
-                  <span class="cc-btn cc-btn-glass">Book a Service</span>
+
+              <!-- Mobile -->
+              <div class="sw-phone">
+                <div class="sw-phone-frame">
+                  <div class="sw-phone-screen">
+                    <div class="ccm">
+                      <div class="sw-island"></div>
+                      <div class="sw-status"><span>9:41</span><span><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor"/><rect x="2" y="2" width="17" height="8" rx="1.5"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
+                      <div class="ccm-hero"><img class="sw-img" src="assets/work/mock/cc-hero-m.webp" alt="" width="600" height="860" loading="lazy" decoding="async"></div>
+                      <div class="ccm-nav">
+                        <div class="cc-logo"><svg viewBox="0 0 48 48" fill="none" stroke="#FFFFFF" stroke-width="3"><circle cx="11" cy="31" r="8"/><circle cx="37" cy="31" r="8"/><path d="M11 31l8-14h12l6 14M19 17l6 14h-14M27 13h6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>2ND <b>CHANCE</b></span></div>
+                        <div class="cc-act">
+                          <span class="cc-cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.8L20 8H6.2" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg></span>
+                          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+                        </div>
+                      </div>
+                      <div class="ccm-copy">
+                        <div class="cc-eyebrow">Certified pre-owned</div>
+                        <div class="cc-h">Ride more.<br><span>Pay less.</span></div>
+                        <div class="cc-p">Premium bikes, inspected on 50 points and tuned by real mechanics.</div>
+                      </div>
+                      <div class="ccm-btns"><span class="cc-btn cc-btn-a">Shop Bikes →</span><span class="cc-btn cc-btn-b">Book a Service</span></div>
+                      <div class="ccm-chips"><span>Mountain</span><span>Road</span><span>E-Bike</span><span>Kids</span></div>
+                      <div class="ccm-card"><img src="assets/work/mock/cc-p1.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>ADVANCED</small><b>Enduro X 29</b><p>R 62 000</p></div></div>
+                      <div class="sw-home"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="ow-info">
-            <span class="badge-ink-yellow">Featured project</span>
-            <h3 class="heading-display" style="font-size: clamp(32px, 3.4vw, 44px); color: var(--ink); margin-top: 20px;">
-              2nd Chance Cycles
-            </h3>
-            <p style="font-size: 17px; color: var(--ink-soft); line-height: 1.55; margin-top: 14px;">
-              A premium online store for pre-owned mountain bikes. Riders can shop by level, browse product pages and book a bike service online.
-            </p>
-            <div class="ow-badge-row">
-              <span class="ow-tag">Online shop</span>
-              <span class="ow-tag">Service bookings</span>
-              <span class="ow-tag">Mobile-first</span>
-            </div>
-            <a class="ow-btn ow-btn-ink" href="https://www.2ndchancecycles.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the 2nd Chance Cycles website (opens in a new tab)">
-              View Website
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
+          <div class="sw-meta">
+            <div><span class="sw-num">01 · FEATURED</span><h3 class="sw-title" style="font-size: clamp(28px, 3.2vw, 40px); margin-top: 6px;">2nd Chance Cycles</h3></div>
+            <p class="sw-desc">A premium online bike store with a bold, energetic look. Riders can shop by level, compare machines and book a workshop service on any device.</p>
+            <div class="sw-tags"><span class="sw-tag">E-commerce</span><span class="sw-tag">Service bookings</span><span class="sw-tag">Mobile-first</span></div>
           </div>
         </article>
 
-        <!-- Secondary projects -->
-        <div class="ow-secondary">
+        <div class="sw-pair">
 
-          <!-- Beau Nails -->
-          <article class="card-white ow-card reveal-on-scroll">
-            <div class="mockup-browser">
-              <div class="mockup-browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+          <!-- ============ 02 · Beau Nails ============ -->
+          <article class="sw-project reveal-on-scroll">
+            <div class="sw-stage sw-stage-beau" role="img" aria-label="Beau Nails website design shown on a desktop browser and a smartphone">
+              <div class="sw-stage-glow" style="width: 60%; height: 60%; right: -15%; top: -20%; background: rgba(255, 182, 204, 0.8);"></div>
+              <div class="sw-devices" aria-hidden="true">
+                <div class="sw-desktop">
+                  <div class="sw-browser">
+                    <div class="sw-bar sw-bar-light"><i></i><i></i><i></i>
+                      <div class="sw-url"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>beaunails.co.za</div>
+                    </div>
+                    <div class="sw-screen">
+                      <div class="bn">
+                        <div class="bn-nav">
+                          <div class="bn-logo bn-serif"><i>B</i>Beau Nails</div>
+                          <div class="bn-links"><span>Home</span><span>Services</span><span>Gallery</span><span>About</span></div>
+                          <span class="bn-book">Book Now</span>
+                        </div>
+                        <div class="bn-copy">
+                          <span class="bn-pill">✦ Pretoria's mobile nail studio</span>
+                          <div class="bn-h bn-serif">Luxury nails,<br><em>wherever you are.</em></div>
+                          <div class="bn-p">Bespoke gel, acrylic and nail art, brought to your home or office by a certified technician.</div>
+                          <div class="bn-btns"><span class="bn-btn bn-btn-a">Book an Appointment</span><span class="bn-btn bn-btn-b">View Services</span></div>
+                          <div class="bn-trust"><span>Certified technicians</span><span>We come to you</span></div>
+                        </div>
+                        <div class="bn-arch-line"></div>
+                        <div class="bn-arch"><img class="sw-img" src="assets/work/mock/bn-hero.webp" alt="" width="560" height="700" loading="lazy" decoding="async"></div>
+                        <div class="bn-badge"><small>Next available</small><b class="bn-serif">Saturday, 10:00</b></div>
+                        <div class="bn-services">
+                          <div class="bn-svc"><img src="assets/work/mock/bn-s1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><div><b class="bn-serif">Gel Overlay</b><span>R350</span></div></div>
+                          <div class="bn-svc"><img src="assets/work/mock/bn-s2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><div><b class="bn-serif">Soft Gel Tips</b><span>R380</span></div></div>
+                          <div class="bn-svc"><img src="assets/work/mock/bn-s3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><div><b class="bn-serif">Acrylic Dip</b><span>R380</span></div></div>
+                          <div class="bn-svc"><img src="assets/work/mock/bn-s4.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><div><b class="bn-serif">Dura Gel</b><span>R380</span></div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="browser-address-bar">
-                  <svg class="ow-lock" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5A4F6B" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>
-                  <span class="ow-url">beaunails.co.za</span>
+                <div class="sw-phone">
+                  <div class="sw-phone-frame">
+                    <div class="sw-phone-screen">
+                      <div class="bnm">
+                        <div class="sw-island"></div>
+                        <div class="sw-status"><span>9:41</span><span><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor"/><rect x="2" y="2" width="17" height="8" rx="1.5"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
+                        <div class="bnm-nav"><div class="bn-logo bn-serif"><i>B</i>Beau Nails</div><span class="bn-book">Book</span></div>
+                        <div class="bnm-arch"><img class="sw-img" src="assets/work/mock/bn-hero.webp" alt="" width="560" height="700" loading="lazy" decoding="async"></div>
+                        <div class="bnm-copy">
+                          <span class="bn-pill">✦ Mobile nail studio</span>
+                          <div class="bn-h bn-serif">Luxury nails,<br><em>wherever you are.</em></div>
+                          <div class="bn-p">Bespoke nail artistry, brought to your door.</div>
+                        </div>
+                        <div class="bnm-cta">Book an Appointment</div>
+                        <div class="bnm-gal">
+                          <img src="assets/work/mock/bn-g1.webp" alt="" width="260" height="320" loading="lazy" decoding="async">
+                          <img src="assets/work/mock/bn-g2.webp" alt="" width="260" height="320" loading="lazy" decoding="async">
+                          <img src="assets/work/mock/bn-g3.webp" alt="" width="260" height="320" loading="lazy" decoding="async">
+                        </div>
+                        <div class="sw-home"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <img class="ow-shot" src="assets/work/beau-nails-desktop.webp" alt="Beau Nails homepage: Luxury Nails, Wherever You Are" width="1200" height="750" loading="lazy" decoding="async">
             </div>
-            <div class="ow-card-body">
-              <span class="eyebrow-label" style="color: var(--magenta); font-size: 12px;">Mobile nail salon · Pretoria</span>
-              <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.015em; color: var(--ink); margin: 8px 0 8px 0;">
-                Beau Nails
-              </h3>
-              <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 22px; flex-grow: 1;">
-                A boutique, luxury-feel website for a mobile nail service, with online booking and WhatsApp enquiries.
-              </p>
-              <a class="ow-btn ow-btn-outline" style="align-self: flex-start;" href="https://www.beaunails.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the Beau Nails website (opens in a new tab)">
-                View Website
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
+            <div class="sw-meta">
+              <div><span class="sw-num">02</span><h3 class="sw-title" style="font-size: clamp(24px, 2.4vw, 30px); margin-top: 6px;">Beau Nails</h3></div>
+              <p class="sw-desc">A soft, elegant website for a luxury mobile nail studio, built around online bookings.</p>
+              <div class="sw-tags"><span class="sw-tag">Online booking</span><span class="sw-tag">Service menu</span></div>
             </div>
           </article>
 
-          <!-- Ditlhalefi Chauffeurs -->
-          <article class="ow-card ow-card-dark reveal-on-scroll">
-            <div class="mockup-browser">
-              <div class="mockup-browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+          <!-- ============ 03 · Ditlhalefi Chauffeurs ============ -->
+          <article class="sw-project reveal-on-scroll">
+            <div class="sw-stage sw-stage-dc" role="img" aria-label="Ditlhalefi Chauffeurs website design shown on a desktop browser and a smartphone">
+              <div class="sw-stage-glow" style="width: 60%; height: 60%; left: -15%; top: -25%; background: rgba(226, 179, 60, 0.28);"></div>
+              <div class="sw-stage-glow" style="width: 50%; height: 50%; right: -15%; bottom: -25%; background: rgba(107, 63, 160, 0.45);"></div>
+              <div class="sw-devices" aria-hidden="true">
+                <div class="sw-desktop">
+                  <div class="sw-browser">
+                    <div class="sw-bar sw-bar-dark"><i></i><i></i><i></i>
+                      <div class="sw-url"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>ditlhalefichauffeurs.co.za</div>
+                    </div>
+                    <div class="sw-screen">
+                      <div class="dc">
+                        <div class="dc-hero"><img class="sw-img" src="assets/work/mock/dc-hero.webp" alt="" width="1200" height="700" loading="lazy" decoding="async"></div>
+                        <div class="dc-nav">
+                          <div class="dc-logo"><svg viewBox="0 0 24 24"><path d="M5 17h14M6 17l1.2-6.2A2 2 0 0 1 9.2 9h5.6a2 2 0 0 1 2 1.8L18 17M5 17v2M19 17v2M8 13h8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ditlhalefi <span class="dc-gold">Chauffeurs</span></span></div>
+                          <div class="dc-links"><span>Home</span><span>Airport Transfers</span><span>Corporate</span><span>Fleet</span><span>Contact</span></div>
+                          <span class="dc-quote">Instant Quote</span>
+                        </div>
+                        <div class="dc-copy">
+                          <div class="dc-eyebrow">Executive chauffeur service · Gauteng</div>
+                          <div class="dc-h">Arrive with<br><em>distinction.</em></div>
+                          <div class="dc-p">Private airport transfers and corporate travel across Johannesburg, Sandton, Pretoria and OR Tambo.</div>
+                        </div>
+                        <div class="dc-rating"><div class="dc-stars">★★★★★</div><b>5.0</b><span>Google rating</span></div>
+                        <div class="dc-book">
+                          <div class="dc-field"><small>Pickup</small><span>OR Tambo International</span></div>
+                          <div class="dc-field"><small>Destination</small><span>Sandton City</span></div>
+                          <div class="dc-field"><small>Date</small><span>Fri, 27 Nov · 08:30</span></div>
+                          <span class="dc-go">Get Instant Quote →</span>
+                        </div>
+                        <div class="dc-tiles">
+                          <div class="dc-tile"><img class="sw-img" src="assets/work/mock/dc-s1.webp" alt="" width="360" height="280" loading="lazy" decoding="async"><div><small>Arrivals</small><b>Meet &amp; Greet</b></div></div>
+                          <div class="dc-tile"><img class="sw-img" src="assets/work/mock/dc-s2.webp" alt="" width="360" height="280" loading="lazy" decoding="async"><div><small>Business</small><b>Corporate Travel</b></div></div>
+                          <div class="dc-tile"><img class="sw-img" src="assets/work/mock/dc-s3.webp" alt="" width="360" height="280" loading="lazy" decoding="async"><div><small>Flights</small><b>Airport Transfers</b></div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="browser-address-bar">
-                  <svg class="ow-lock" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5A4F6B" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>
-                  <span class="ow-url">ditlhalefichauffeurs.co.za</span>
+                <div class="sw-phone">
+                  <div class="sw-phone-frame">
+                    <div class="sw-phone-screen">
+                      <div class="dcm">
+                        <div class="sw-island"></div>
+                        <div class="sw-status"><span>9:41</span><span><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor"/><rect x="2" y="2" width="17" height="8" rx="1.5"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
+                        <div class="dcm-hero"><img class="sw-img" src="assets/work/mock/dc-hero-m.webp" alt="" width="600" height="760" loading="lazy" decoding="async"></div>
+                        <div class="dcm-nav">
+                          <div class="dc-logo"><svg viewBox="0 0 24 24"><path d="M5 17h14M6 17l1.2-6.2A2 2 0 0 1 9.2 9h5.6a2 2 0 0 1 2 1.8L18 17M5 17v2M19 17v2M8 13h8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ditlhalefi</span></div>
+                          <span class="dcm-menu"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></span>
+                        </div>
+                        <div class="dcm-copy">
+                          <div class="dc-eyebrow">Executive chauffeurs</div>
+                          <div class="dc-h">Arrive with<br><em>distinction.</em></div>
+                          <div class="dc-p">Private airport and corporate transfers across Gauteng.</div>
+                        </div>
+                        <div class="dcm-form">
+                          <div class="dc-field"><small>Pickup</small><span>OR Tambo International</span></div>
+                          <div class="dc-field"><small>Destination</small><span>Sandton City</span></div>
+                          <span class="dc-go">Get Instant Quote</span>
+                        </div>
+                        <div class="sw-home"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <img class="ow-shot" src="assets/work/ditlhalefi-chauffeurs-desktop.webp" alt="Ditlhalefi Chauffeurs homepage: Executive Chauffeur Services in Johannesburg and Pretoria" width="1200" height="750" loading="lazy" decoding="async">
             </div>
-            <div class="ow-card-body">
-              <span class="eyebrow-label" style="color: var(--yellow); font-size: 12px;">Executive chauffeurs · Johannesburg &amp; Pretoria</span>
-              <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.015em; color: var(--ivory); margin: 8px 0 8px 0;">
-                Ditlhalefi Chauffeurs
-              </h3>
-              <p style="font-size: 16px; color: rgba(249, 248, 245, 0.72); line-height: 1.5; margin-bottom: 22px; flex-grow: 1;">
-                A premium chauffeur website with instant quotes, airport-transfer service pages and online booking.
-              </p>
-              <a class="ow-btn ow-btn-outline-light" style="align-self: flex-start;" href="https://www.ditlhalefichauffeurs.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the Ditlhalefi Chauffeurs website (opens in a new tab)">
-                View Website
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-              </a>
+            <div class="sw-meta">
+              <div><span class="sw-num">03</span><h3 class="sw-title" style="font-size: clamp(24px, 2.4vw, 30px); margin-top: 6px;">Ditlhalefi Chauffeurs</h3></div>
+              <p class="sw-desc">A dark, executive website for a premium chauffeur service, with instant quotes up front.</p>
+              <div class="sw-tags"><span class="sw-tag">Instant quotes</span><span class="sw-tag">Airport transfers</span></div>
             </div>
           </article>
 
         </div>
 
       </div>
-
-      <!-- Loads the 2nd Chance Cycles video only when this section is near the screen, and pauses it when off-screen -->
-      <script>
-        (function () {
-          var video = document.getElementById('ccHeroVideo');
-          if (!video) return;
-          // Until the real video has a frame ready, the preview shows a screenshot of the live hero.
-          video.addEventListener('loadeddata', function () { video.parentNode.classList.add('has-video'); });
-          var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-          var saveData = navigator.connection && navigator.connection.saveData;
-          var loaded = false;
-
-          function pickSources() {
-            var px = video.parentNode.clientWidth * (window.devicePixelRatio || 1);
-            if (px <= 900) return [video.dataset.srcSmall, video.dataset.srcMedium, video.dataset.srcLarge];
-            return [video.dataset.srcMedium, video.dataset.srcLarge];
-          }
-
-          function load() {
-            if (loaded) return;
-            loaded = true;
-            var still = reduceMotion || saveData;
-            pickSources().forEach(function (src) {
-              var s = document.createElement('source');
-              s.src = still ? src + '#t=2' : src;
-              s.type = 'video/mp4';
-              video.appendChild(s);
-            });
-            video.preload = still ? 'metadata' : 'auto';
-            video.load();
-            if (!still) {
-              video.autoplay = true;
-              var p = video.play();
-              if (p && p.catch) p.catch(function () {});
-            }
-          }
-
-          if (!('IntersectionObserver' in window)) { load(); return; }
-          new IntersectionObserver(function (entries) {
-            entries.forEach(function (entry) {
-              if (entry.isIntersecting) {
-                load();
-                if (!(reduceMotion || saveData) && video.paused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
-              } else if (loaded && !video.paused) {
-                video.pause();
-              }
-            });
-          }, { rootMargin: '300px 0px' }).observe(video);
-        })();
-      </script>
 
     </section>
 
