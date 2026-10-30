@@ -990,6 +990,11 @@
 
         /* 2nd Chance Cycles hero, rebuilt from the live site and scaled with container units */
         .cc-hero { container-type: inline-size; position: relative; overflow: hidden; background: #050A30; color: #FFFFFF; font-family: 'Outfit', var(--font-body); aspect-ratio: 16 / 10; }
+        .cc-hero { background-image: url('assets/work/2nd-chance-cycles-hero-live.webp'); background-size: cover; background-position: center top; }
+        .cc-hero .cc-nav, .cc-hero .cc-content { opacity: 0; transition: opacity 0.4s ease; }
+        .cc-hero.has-video .cc-nav, .cc-hero.has-video .cc-content { opacity: 1; }
+        .cc-hero video { opacity: 0; transition: opacity 0.4s ease; }
+        .cc-hero.has-video video { opacity: 1; }
         .cc-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.6) contrast(1.1); }
         .cc-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 1.67cqw 2.22cqw; }
         .cc-logo { height: 4cqw; width: auto; filter: brightness(0) invert(1); display: block; }
@@ -1202,6 +1207,8 @@
         (function () {
           var video = document.getElementById('ccHeroVideo');
           if (!video) return;
+          // Until the real video has a frame ready, the preview shows a screenshot of the live hero.
+          video.addEventListener('loadeddata', function () { video.parentNode.classList.add('has-video'); });
           var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
           var saveData = navigator.connection && navigator.connection.saveData;
           var loaded = false;
