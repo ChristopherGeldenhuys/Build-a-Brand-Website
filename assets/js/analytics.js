@@ -14,7 +14,7 @@
 (function (w, d) {
   'use strict';
 
-  var GTM_ID = ''; // <-- PASTE YOUR GTM CONTAINER ID HERE, e.g. 'GTM-ABC1234'
+  var GTM_ID = 'GTM-KJFSHXQD'; // Build a Brand GTM container
 
   w.dataLayer = w.dataLayer || [];
 
