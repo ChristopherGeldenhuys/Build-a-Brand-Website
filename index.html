@@ -673,14 +673,35 @@
 <body>
 
   <!-- ==========================================
+       ANNOUNCEMENT BAR
+       ========================================== -->
+  <style>
+    .bf-announce { background: linear-gradient(90deg, #6B3FA0 0%, #D81B8F 50%, #FF7A6B 100%); color: #FFFFFF; text-align: center; padding: 9px 16px; font-family: var(--font-display); font-weight: 600; font-size: 12.5px; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; overflow: hidden; position: relative; z-index: 11; }
+    .bf-announce .dot { color: var(--yellow); padding: 0 0.6em; }
+    .bf-announce strong { color: var(--yellow); font-weight: 700; }
+    @media (max-width: 899px) { .bf-announce .wide-only { display: none; } .bf-announce { letter-spacing: 0.09em; font-size: 12px; } }
+    @media (max-width: 479px) { .bf-announce .sm-hide { display: none; } .bf-announce { font-size: 11px; letter-spacing: 0.06em; padding: 8px 12px; } .bf-announce .dot { padding: 0 0.45em; } }
+    @media (max-width: 359px) { .bf-announce { font-size: 10px; letter-spacing: 0.04em; } }
+    .bab-logo-mark { width: 48px; height: 48px; display: block; }
+    @media (max-width: 479px) {
+      .bab-logo-mark { width: 42px; height: 42px; }
+      .bf-header-badge { font-size: 11px; letter-spacing: 0.06em; padding: 6px 12px; }
+    }
+    @media (max-width: 359px) { .bf-header-badge { font-size: 10px; letter-spacing: 0.04em; padding: 5px 10px; } }
+  </style>
+  <div class="bf-announce" role="note" aria-label="Black Friday special: professional websites from R3,500, limited time only">
+    <span aria-hidden="true">Black Friday Special<span class="dot">·</span><span class="sm-hide">Professional </span>websites from <strong>R3,500</strong><span class="wide-only"><span class="dot">·</span>Limited time only</span></span>
+  </div>
+
+  <!-- ==========================================
        TOP BAR (No menu, logo + badge only)
        ========================================== -->
   <header style="position: relative; z-index: 10; padding: 28px 0;">
     <div class="container" style="display: flex; align-items: center; justify-content: space-between;">
       
       <!-- Logo: Build a Brand (Light version for dark background) -->
-      <a href="./" aria-label="Build a Brand Homepage" style="display: inline-flex; align-items: center; text-decoration: none; gap: 12px;">
-        <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <a href="./" aria-label="Build a Brand Homepage" class="bab-logo" style="display: inline-flex; align-items: center; text-decoration: none; flex-shrink: 0;">
+        <svg class="bab-logo-mark" width="48" height="48" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
           <rect width="40" height="40" rx="10" fill="#291B42" />
           <path d="M12 10H22C25.3137 10 28 12.6863 28 16C28 18.2323 26.7828 20.1795 24.9754 21.217C27.3697 22.1852 29 24.5165 29 27.25C29 30.9779 25.9779 34 22.25 34H12V10Z" fill="url(#logo_grad_hero)" />
           <path d="M16 14.5V19.5H21.5C22.8807 19.5 24 18.3807 24 17C24 15.6193 22.8807 14.5 21.5 14.5H16Z" fill="#1E1430" />
@@ -693,13 +714,10 @@
             </linearGradient>
           </defs>
         </svg>
-        <span style="font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.03em; color: var(--ivory);">
-          Build a Brand
-        </span>
       </a>
 
       <!-- Badge: Yellow pill with Ink text -->
-      <div class="badge-yellow">
+      <div class="badge-yellow bf-header-badge" style="white-space: nowrap;">
         BLACK FRIDAY 2026
       </div>
 
