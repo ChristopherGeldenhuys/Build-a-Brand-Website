@@ -760,82 +760,134 @@
 
           </div>
 
-          <!-- Right Column: Browser Mockup + Overlapping Phone Mockup -->
-          <div style="position: relative; display: flex; justify-content: center; align-items: center;" class="hero-mockup-wrapper">
-            
-            <!-- Browser Mockup: Ditlhalefi Chauffeurs (Real SA Project) -->
-            <div class="mockup-browser" style="width: 100%; max-width: 580px; position: relative; z-index: 1;">
-              
-              <div class="mockup-browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot" style="background: #FF5F56;"></span>
-                  <span class="browser-dot" style="background: #FFBD2E;"></span>
-                  <span class="browser-dot" style="background: #27C93F;"></span>
-                </div>
-                <div class="browser-address-bar">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                  <span>ditlhalefi.co.za</span>
+          <!-- Right Column: Website design mockup (fictional architecture studio, desktop + mobile) -->
+          <div style="position: relative; width: 100%; min-width: min(100%, 520px);" class="hero-mockup-wrapper">
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+            <style>
+              .av-devices { position: relative; padding-bottom: 22%; }
+              .av-desktop { width: 90%; position: relative; z-index: 1; container-type: inline-size; }
+              .av-phone { position: absolute; right: 0; bottom: 0; width: 27%; z-index: 2; container-type: inline-size; }
+              /* Desktop: let the mockup use the spare space up to the window edge */
+              @media (min-width: 992px) {
+                .av-devices { width: calc(100% + (100vw - min(100vw, 1280px)) / 2 + 8px); padding-bottom: 20%; }
+                .av-desktop { width: 91%; }
+                .av-phone { width: 26%; }
+              }
+              @media (max-width: 640px) {
+                .av-devices { padding-bottom: 30%; }
+                .av-desktop { width: 100%; }
+                .av-phone { width: 32%; right: 3%; }
+              }
+
+              .av-browser { border-radius: 1.6cqw; overflow: hidden; background: #1A1A1D; box-shadow: 0 4cqw 9cqw -2cqw rgba(5, 2, 12, 0.7), 0 0 0 1px rgba(249, 248, 245, 0.08); }
+              .av-bar { height: 4.4cqw; display: flex; align-items: center; gap: 0.9cqw; padding: 0 1.8cqw; background: #1A1A1D; }
+              .av-bar i { width: 1.15cqw; height: 1.15cqw; border-radius: 50%; display: block; background: #3B3B42; }
+              .av-url { margin: 0 auto; width: 38%; height: 2.7cqw; border-radius: 0.8cqw; background: #0E0E10; color: #8E8C94; font: 500 1.25cqw/1 var(--font-body); display: flex; align-items: center; justify-content: center; gap: 0.6cqw; }
+              .av-url svg { width: 1.1cqw; height: 1.1cqw; }
+              .av-screen { container-type: inline-size; position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: #1C1A17; }
+
+              .av-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+              .av-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+              /* Desktop site */
+              .av-d-hero { position: absolute; inset: 0; }
+              .av-d-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20, 17, 14, 0.88) 0%, rgba(20, 17, 14, 0.35) 42%, rgba(20, 17, 14, 0) 62%), linear-gradient(180deg, rgba(20, 17, 14, 0.55) 0%, rgba(20, 17, 14, 0) 22%); }
+              .av-d-nav { position: absolute; top: 0; left: 0; right: 0; height: 7cqw; display: flex; align-items: center; padding: 0 4cqw; z-index: 2; color: #F3EFE8; }
+              .av-mark { display: flex; flex-direction: column; line-height: 1; }
+              .av-mark b { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 2cqw; letter-spacing: 0.16em; }
+              .av-mark span { font: 500 0.8cqw/1 var(--font-body); letter-spacing: 0.42em; margin-top: 0.55cqw; opacity: 0.75; }
+              .av-d-links { display: flex; gap: 3cqw; margin: 0 auto; font: 500 1.05cqw/1 var(--font-body); letter-spacing: 0.06em; color: rgba(243, 239, 232, 0.8); }
+              .av-d-links span:first-child { color: #F3EFE8; border-bottom: 1px solid rgba(243, 239, 232, 0.7); padding-bottom: 0.45cqw; }
+              .av-enquire { font: 500 1.05cqw/1 var(--font-body); letter-spacing: 0.06em; border: 1px solid rgba(243, 239, 232, 0.55); padding: 1cqw 2cqw; border-radius: 9999px; }
+              .av-d-copy { position: absolute; left: 4cqw; bottom: 5.2cqw; width: 52cqw; z-index: 2; color: #F3EFE8; }
+              .av-kicker { font: 500 1cqw/1 var(--font-body); letter-spacing: 0.24em; text-transform: uppercase; color: #D9C4A8; display: flex; align-items: center; gap: 1.2cqw; }
+              .av-kicker::before { content: ''; width: 3.2cqw; height: 1px; background: #D9C4A8; }
+              .av-d-h { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 5.6cqw; line-height: 0.98; letter-spacing: -0.015em; margin-top: 1.8cqw; }
+              .av-d-h em { font-style: italic; color: #E7D6BE; }
+              .av-d-p { font: 400 1.3cqw/1.6 var(--font-body); color: rgba(243, 239, 232, 0.75); margin-top: 1.8cqw; width: 38cqw; }
+              .av-d-btns { display: flex; align-items: center; gap: 2.4cqw; margin-top: 2.6cqw; }
+              .av-btn-solid { font: 600 1.1cqw/1 var(--font-body); letter-spacing: 0.04em; color: #1C1A17; background: #F3EFE8; padding: 1.35cqw 2.4cqw; border-radius: 9999px; }
+              .av-btn-line { font: 500 1.1cqw/1 var(--font-body); letter-spacing: 0.04em; color: #F3EFE8; border-bottom: 1px solid rgba(243, 239, 232, 0.6); padding-bottom: 0.45cqw; }
+              .av-d-card { position: absolute; right: 4cqw; top: 9.5cqw; width: 23cqw; z-index: 2; background: rgba(28, 26, 23, 0.55); border: 1px solid rgba(243, 239, 232, 0.18); backdrop-filter: blur(12px); border-radius: 1.2cqw; padding: 1.2cqw; color: #F3EFE8; display: flex; gap: 1.3cqw; align-items: center; }
+              .av-d-card img { width: 7cqw; height: 8.6cqw; object-fit: cover; border-radius: 0.6cqw; flex-shrink: 0; }
+              .av-d-card small { display: block; font: 500 0.8cqw/1 var(--font-body); letter-spacing: 0.2em; text-transform: uppercase; color: #D9C4A8; }
+              .av-d-card b { display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 1.9cqw; line-height: 1.05; margin-top: 0.7cqw; }
+              .av-d-card span { display: block; font: 400 0.95cqw/1.4 var(--font-body); color: rgba(243, 239, 232, 0.7); margin-top: 0.6cqw; }
+              .av-d-index { position: absolute; right: 4cqw; top: 9.5cqw; z-index: 2; font: 500 0.95cqw/1 var(--font-body); letter-spacing: 0.18em; color: rgba(243, 239, 232, 0.8); display: flex; align-items: center; gap: 1.2cqw; }
+              .av-d-index i { width: 5cqw; height: 1px; background: rgba(243, 239, 232, 0.3); position: relative; }
+              .av-d-index i::after { content: ''; position: absolute; left: 0; top: 0; height: 1px; width: 35%; background: #F3EFE8; }
+
+              /* Phone */
+              .av-phone-frame { background: #0B0B0E; border-radius: 15cqw; padding: 3.4cqw; box-shadow: 0 7cqw 16cqw -4cqw rgba(5, 2, 12, 0.85), inset 0 0 0 0.8cqw #26262C; }
+              .av-phone-screen { container-type: inline-size; position: relative; overflow: hidden; border-radius: 12cqw; aspect-ratio: 375 / 780; background: #F3EFE8; color: #1C1A17; }
+              .av-island { position: absolute; top: 2.2cqw; left: 50%; transform: translateX(-50%); width: 30cqw; height: 8.4cqw; border-radius: 9999px; background: #000; z-index: 10; }
+              .av-status { position: absolute; top: 0; left: 0; right: 0; height: 12cqw; display: flex; align-items: center; justify-content: space-between; padding: 1.4cqw 8cqw 0 9cqw; font: 600 3.9cqw/1 var(--font-body); z-index: 9; color: #FFFFFF; }
+              .av-status span:last-child { display: flex; gap: 1.4cqw; align-items: center; }
+              .av-status svg { height: 3.2cqw; width: auto; fill: currentColor; }
+              .av-m-hero { position: absolute; top: 0; left: 0; right: 0; height: 104cqw; }
+              .av-m-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20, 17, 14, 0.55) 0%, rgba(20, 17, 14, 0) 28%); }
+              .av-m-nav { position: absolute; top: 13cqw; left: 6cqw; right: 6cqw; display: flex; justify-content: space-between; align-items: center; z-index: 3; color: #F3EFE8; }
+              .av-m-nav .av-mark b { font-size: 5.4cqw; }
+              .av-m-nav .av-mark span { font-size: 2.2cqw; margin-top: 1.4cqw; }
+              .av-m-menu { display: grid; gap: 1.6cqw; width: 7cqw; }
+              .av-m-menu i { display: block; height: 0.55cqw; background: #F3EFE8; border-radius: 1cqw; }
+              .av-m-menu i:last-child { width: 60%; margin-left: auto; }
+              .av-m-copy { position: absolute; top: 112cqw; left: 6cqw; right: 6cqw; }
+              .av-m-copy .av-kicker { font-size: 2.6cqw; color: #8C6A4C; gap: 3cqw; }
+              .av-m-copy .av-kicker::before { width: 8cqw; background: #8C6A4C; }
+              .av-m-h { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 11.4cqw; line-height: 1; letter-spacing: -0.015em; margin-top: 3.6cqw; }
+              .av-m-h em { font-style: italic; color: #8C6A4C; }
+              .av-m-p { font: 400 3.6cqw/1.55 var(--font-body); color: #5E5850; margin-top: 3.4cqw; }
+              .av-m-btns { position: absolute; top: 172cqw; left: 6cqw; right: 6cqw; display: grid; grid-template-columns: 1fr 1fr; gap: 2.8cqw; }
+              .av-m-btns span { text-align: center; font: 600 3.4cqw/1 var(--font-body); padding: 4.2cqw 0; border-radius: 9999px; }
+              .av-m-btns span:first-child { background: #1C1A17; color: #F3EFE8; }
+              .av-m-btns span:last-child { border: 1px solid rgba(28, 26, 23, 0.35); }
+              .av-m-home { position: absolute; bottom: 2cqw; left: 50%; transform: translateX(-50%); width: 36cqw; height: 1.3cqw; border-radius: 9999px; background: rgba(28, 26, 23, 0.8); z-index: 10; }
+            </style>
+
+            <div class="av-devices" role="img" aria-label="Example website design by Build a Brand: a fictional architecture studio shown on desktop and mobile">
+
+              <!-- Desktop -->
+              <div class="av-desktop" aria-hidden="true">
+                <div class="av-browser">
+                  <div class="av-bar"><i></i><i></i><i></i>
+                    <div class="av-url"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>aurelianvale.studio</div>
+                  </div>
+                  <div class="av-screen">
+                    <div class="av-d-hero"><img class="av-img" src="assets/hero/av-hero.webp" alt="" width="1680" height="944" decoding="async" fetchpriority="high"></div>
+                    <div class="av-d-nav">
+                      <div class="av-mark"><b>AURELIAN &amp; VALE</b><span>ARCHITECTS</span></div>
+                      <div class="av-d-links"><span>Studio</span><span>Projects</span><span>Interiors</span><span>Journal</span></div>
+                      <span class="av-enquire">Enquire</span>
+                    </div>
+                    <div class="av-d-copy">
+                      <div class="av-kicker">Residential · Overberg, 2026</div>
+                      <div class="av-d-h">Architecture shaped by <em>light, land</em> &amp; quiet.</div>
+                      <div class="av-d-p">Considered homes and interiors for the Western Cape, designed from the site up.</div>
+                      <div class="av-d-btns"><span class="av-btn-solid">View Projects</span><span class="av-btn-line">Start a project →</span></div>
+                    </div>
+                    <div class="av-d-card"><img src="assets/hero/av-stair.webp" alt="" width="644" height="800" decoding="async"><div><small>Featured</small><b>Fynbos House</b><span>Concrete, oak &amp; light</span></div></div>
+                  </div>
                 </div>
               </div>
 
-              <!-- High fidelity rendered preview of Ditlhalefi website -->
-              <div style="background: #0D0E12; padding: 28px 24px 34px 24px; color: #FFFFFF; font-family: var(--font-body); position: relative; overflow: hidden; min-height: 320px;">
-                
-                <div style="position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 14px; margin-bottom: 24px;">
-                  <div style="font-weight: 700; font-size: 15px; letter-spacing: -0.02em; color: #FFFFFF;">
-                    DITLHALEFI <span style="color: #47D6FF; font-weight: 400; font-size: 12px;">CHAUFFEURS</span>
+              <!-- Mobile -->
+              <div class="av-phone" aria-hidden="true">
+                <div class="av-phone-frame">
+                  <div class="av-phone-screen">
+                    <div class="av-island"></div>
+                    <div class="av-status"><span>9:41</span><span><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor"/><rect x="2" y="2" width="17" height="8" rx="1.5"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
+                    <div class="av-m-hero"><img class="av-img" src="assets/hero/av-interior.webp" alt="" width="448" height="796" decoding="async"></div>
+                    <div class="av-m-nav"><div class="av-mark"><b>AURELIAN &amp; VALE</b><span>ARCHITECTS</span></div><div class="av-m-menu"><i></i><i></i></div></div>
+                    <div class="av-m-copy">
+                      <div class="av-kicker">Residential · Overberg</div>
+                      <div class="av-m-h">Shaped by <em>light, land</em> &amp; quiet.</div>
+                      <div class="av-m-p">Considered homes and interiors for the Western Cape.</div>
+                    </div>
+                    <div class="av-m-btns"><span>View Projects</span><span>Enquire</span></div>
+                    <div class="av-m-home"></div>
                   </div>
-                  <div style="display: flex; gap: 14px; font-size: 11px; color: #8F9CA3;">
-                    <span>Fleet</span>
-                    <span>Transfers</span>
-                    <span style="color: #47D6FF; font-weight: 600;">Book Now</span>
-                  </div>
-                </div>
-
-                <div style="max-width: 320px;">
-                  <div style="font-size: 9px; font-weight: 700; letter-spacing: 0.15em; color: #47D6FF; text-transform: uppercase; margin-bottom: 6px;">
-                    Executive Transport &bull; Gauteng
-                  </div>
-                  <h3 style="font-size: 22px; font-weight: 700; line-height: 1.15; margin-bottom: 10px; color: #FFFFFF;">
-                    First-Class Chauffeur Service Across South Africa.
-                  </h3>
-                  <p style="font-size: 12px; line-height: 1.45; color: #A0AAB0; margin-bottom: 16px;">
-                    Punctual, discreet airport transfers & corporate luxury travel.
-                  </p>
-                  <div style="display: inline-block; background: #47D6FF; color: #00222B; font-size: 11px; font-weight: 700; padding: 7px 16px; border-radius: 4px;">
-                    Request a Quote &rarr;
-                  </div>
-                </div>
-
-                <!-- Minimal graphic of luxury fleet -->
-                <div style="position: absolute; right: 18px; bottom: 20px; width: 170px; height: 100px; border-radius: 8px; background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
-                  <div style="font-size: 10px; color: #8F9CA3; text-transform: uppercase; letter-spacing: 0.05em;">Confirmed Transfers</div>
-                  <div style="font-size: 20px; font-weight: 700; color: #47D6FF;">4.9 &starf;</div>
-                  <div style="font-size: 9px; color: #A0AAB0;">100% On-time guarantee</div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- Overlapping Phone Mockup -->
-            <div class="mockup-phone" style="width: 170px; position: absolute; right: -15px; bottom: -35px; z-index: 2;" aria-hidden="true">
-              <div class="phone-island"></div>
-              
-              <div style="background: #0D0E12; padding: 14px 10px 20px 10px; color: #FFFFFF; font-size: 10px;">
-                <div style="font-weight: 700; font-size: 11px; color: #FFFFFF; margin-bottom: 10px;">
-                  DITLHALEFI
-                </div>
-                <div style="height: 56px; border-radius: 6px; background: linear-gradient(135deg, rgba(71,214,255,0.2), rgba(216,27,143,0.2)); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; font-size: 9px; text-align: center; padding: 4px; color: #47D6FF; font-weight: 600;">
-                  Bespoke Mobile Experience
-                </div>
-                <div style="font-size: 8px; color: #8F9CA3; line-height: 1.3; margin-bottom: 8px;">
-                  Engineered to capture WhatsApp bookings on any mobile device.
-                </div>
-                <div style="background: #25D366; color: #0D0E12; font-weight: 700; font-size: 8px; padding: 6px 8px; border-radius: 4px; text-align: center;">
-                  WhatsApp Instant Quote
                 </div>
               </div>
 
@@ -972,14 +1024,260 @@
 
     <!-- ==========================================
          3. OUR WORK (Ivory with soft blobs)
-         Real Build a Brand Projects Only
+         Website design showcase: desktop + mobile concepts
          ========================================== -->
     <section id="our-work" class="section-light" style="padding: 60px 0 120px 0; border-top: 1px solid rgba(233, 233, 236, 0.6);">
-      
+
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap">
+      <style>
+        /* ---------- Showcase layout ---------- */
+        .sw-project + .sw-project { margin-top: 0; }
+        .sw-stage { position: relative; border-radius: 28px; overflow: hidden; isolation: isolate; }
+        .sw-stage-glow { position: absolute; border-radius: 50%; filter: blur(80px); pointer-events: none; z-index: -1; }
+        .sw-devices { position: relative; }
+        .sw-desktop { position: relative; z-index: 1; container-type: inline-size; }
+        .sw-phone { position: absolute; z-index: 2; container-type: inline-size; }
+
+        .sw-feature .sw-stage { background: var(--ink); padding: 5.5% 5% 6% 5%; box-shadow: 0 40px 90px -40px rgba(30, 20, 48, 0.55); }
+        .sw-feature .sw-desktop { width: 84%; }
+        .sw-feature .sw-phone { width: 21%; right: 0; bottom: -4%; }
+
+        .sw-pair { display: grid; grid-template-columns: 1fr; gap: 56px; margin-top: 72px; }
+        @media (min-width: 900px) { .sw-pair { grid-template-columns: 1fr 1fr; gap: 32px; } }
+        .sw-pair .sw-stage { padding: 8% 7% 9% 6%; }
+        .sw-pair .sw-desktop { width: 82%; }
+        .sw-pair .sw-phone { width: 25%; right: 0; bottom: -6%; }
+        .sw-stage-beau { background: linear-gradient(150deg, #FFE7EC 0%, #FBEFE8 55%, #F4E4DA 100%); box-shadow: 0 30px 70px -40px rgba(120, 60, 70, 0.45); }
+        .sw-stage-dc { background: #0E1210; box-shadow: 0 30px 70px -40px rgba(10, 12, 10, 0.7); }
+
+        @media (max-width: 640px) {
+          .sw-feature .sw-stage, .sw-pair .sw-stage { padding: 7% 5% 44% 5%; border-radius: 20px; }
+          .sw-feature .sw-desktop, .sw-pair .sw-desktop { width: 100%; }
+          .sw-feature .sw-phone, .sw-pair .sw-phone { width: 32%; right: 6%; bottom: -66%; }
+        }
+
+        /* Meta below each stage */
+        .sw-meta { display: grid; grid-template-columns: 1fr; gap: 14px; margin-top: 28px; align-items: start; }
+        .sw-feature .sw-meta { margin-top: 34px; }
+        @media (min-width: 992px) { .sw-feature .sw-meta { grid-template-columns: auto 1fr auto; gap: 40px; align-items: center; } }
+        .sw-num { font-family: var(--font-display); font-weight: 700; font-size: 14px; letter-spacing: 0.14em; color: var(--magenta); }
+        .sw-title { font-family: var(--font-display); font-weight: 600; letter-spacing: -0.025em; line-height: 1.05; color: var(--ink); }
+        .sw-desc { font-size: 16.5px; line-height: 1.55; color: var(--ink-soft); max-width: 560px; }
+        .sw-tags { display: flex; flex-wrap: wrap; gap: 8px; }
+        .sw-tag { font-family: var(--font-display); font-weight: 600; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); background: #FFFFFF; border: 1px solid var(--grey); border-radius: 9999px; padding: 6px 12px; white-space: nowrap; }
+
+        .sw-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; align-self: start; justify-self: start; font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--ivory); background: var(--ink); padding: 14px 26px; border-radius: 9999px; text-decoration: none; box-shadow: 0 12px 28px -12px rgba(30, 20, 48, 0.6); transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+        .sw-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+        a.sw-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -12px rgba(30, 20, 48, 0.7); }
+        a.sw-btn:focus-visible { outline: 2px solid var(--magenta); outline-offset: 3px; }
+        span.sw-btn { cursor: default; user-select: none; }
+
+        /* ---------- Device frames ---------- */
+        .sw-browser { border-radius: 1.4cqw; overflow: hidden; box-shadow: 0 3cqw 7cqw -2cqw rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06); }
+        .sw-bar { height: 3.6cqw; display: flex; align-items: center; gap: 0.7cqw; padding: 0 1.4cqw; }
+        .sw-bar i { width: 0.95cqw; height: 0.95cqw; border-radius: 50%; display: block; }
+        .sw-url { margin: 0 auto; width: 34%; height: 2.2cqw; border-radius: 0.6cqw; display: flex; align-items: center; justify-content: center; gap: 0.5cqw; font-size: 1.05cqw; font-family: var(--font-body); }
+        .sw-url svg { width: 0.9cqw; height: 0.9cqw; }
+        .sw-bar-dark { background: #1A1D24; color: #8C93A3; }
+        .sw-bar-dark i { background: #3A3F4B; }
+        .sw-bar-dark .sw-url { background: #0F1116; }
+        .sw-bar-light { background: #F1ECE8; color: #8A7A72; border-bottom: 1px solid #E6DED8; }
+        .sw-bar-light i { background: #D8CEC7; }
+        .sw-bar-light .sw-url { background: #FFFFFF; }
+        .sw-screen { container-type: inline-size; position: relative; overflow: hidden; aspect-ratio: 16 / 10; }
+
+        .sw-phone-frame { background: #0B0B0E; border-radius: 15cqw; padding: 3.4cqw; box-shadow: 0 6cqw 14cqw -4cqw rgba(0, 0, 0, 0.6), inset 0 0 0 0.8cqw #23232A; }
+        .sw-phone-screen { container-type: inline-size; position: relative; overflow: hidden; border-radius: 12cqw; aspect-ratio: 375 / 780; }
+        .sw-island { position: absolute; top: 2.2cqw; left: 50%; transform: translateX(-50%); width: 30cqw; height: 8.4cqw; border-radius: 9999px; background: #000; z-index: 10; }
+        .sw-status { position: absolute; top: 0; left: 0; right: 0; height: 12cqw; display: flex; align-items: center; justify-content: space-between; padding: 1.4cqw 8cqw 0 9cqw; font: 600 3.9cqw/1 var(--font-body); z-index: 9; }
+        .sw-status span:last-child { display: flex; gap: 1.4cqw; align-items: center; }
+        .sw-status svg { height: 3.2cqw; width: auto; fill: currentColor; }
+        .sw-home { position: absolute; bottom: 2cqw; left: 50%; transform: translateX(-50%); width: 36cqw; height: 1.3cqw; border-radius: 9999px; z-index: 10; }
+
+        .sw-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+        /* ---------- 01 · 2nd Chance Cycles (desktop) ---------- */
+        .cc { background: #07090D; color: #FFFFFF; font-family: var(--font-body); height: 100%; }
+        .cc-nav { position: absolute; top: 0; left: 0; right: 0; height: 5.6cqw; display: flex; align-items: center; padding: 0 3.2cqw; z-index: 3; background: linear-gradient(180deg, rgba(7, 9, 13, 0.75), rgba(7, 9, 13, 0)); }
+        .cc-logo { display: flex; align-items: center; gap: 0.8cqw; font-weight: 800; font-size: 1.25cqw; letter-spacing: 0.08em; }
+        .cc-logo svg { width: 2.6cqw; height: 2.6cqw; }
+        .cc-logo b { color: #3B82FF; }
+        .cc-links { display: flex; gap: 2.4cqw; margin-left: 5cqw; font-size: 1.05cqw; font-weight: 500; color: rgba(255, 255, 255, 0.78); }
+        .cc-links span:first-child { color: #FFFFFF; }
+        .cc-act { margin-left: auto; display: flex; align-items: center; gap: 1.8cqw; }
+        .cc-act svg { width: 1.5cqw; height: 1.5cqw; stroke: #FFFFFF; fill: none; stroke-width: 2; }
+        .cc-cart { position: relative; }
+        .cc-cart em { position: absolute; top: -0.6cqw; right: -0.8cqw; width: 1.3cqw; height: 1.3cqw; border-radius: 50%; background: #3B82FF; font: 700 0.8cqw/1.3cqw var(--font-body); text-align: center; font-style: normal; }
+        .cc-navbtn { font-size: 1cqw; font-weight: 600; padding: 0.8cqw 1.5cqw; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.3); }
+        .cc-hero { position: absolute; top: 0; left: 0; right: 0; height: 100%; overflow: hidden; }
+        .cc-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7, 9, 13, 0.92) 0%, rgba(7, 9, 13, 0.55) 45%, rgba(7, 9, 13, 0.05) 75%), linear-gradient(0deg, #07090D 0%, rgba(7, 9, 13, 0) 30%); }
+        .cc-copy { position: absolute; left: 3.2cqw; top: 8.4cqw; z-index: 2; width: 46cqw; }
+        .cc-eyebrow { display: inline-flex; align-items: center; gap: 0.7cqw; font-size: 0.9cqw; font-weight: 700; letter-spacing: 0.2em; color: #7FB2FF; text-transform: uppercase; }
+        .cc-eyebrow::before { content: ''; width: 2.4cqw; height: 2px; background: #3B82FF; }
+        .cc-h { font-weight: 800; font-size: 5.4cqw; line-height: 0.92; letter-spacing: -0.04em; text-transform: uppercase; margin-top: 1.4cqw; }
+        .cc-h span { background: linear-gradient(90deg, #3B82FF, #22D3EE); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .cc-p { font-size: 1.25cqw; line-height: 1.55; color: rgba(255, 255, 255, 0.72); margin-top: 1.6cqw; width: 34cqw; }
+        .cc-btns { display: flex; gap: 1cqw; margin-top: 2.2cqw; }
+        .cc-btn { font-size: 1.1cqw; font-weight: 700; padding: 1.15cqw 2.2cqw; border-radius: 9999px; display: inline-flex; align-items: center; gap: 0.6cqw; }
+        .cc-btn-a { background: #2563EB; box-shadow: 0 1cqw 2.4cqw -0.8cqw rgba(37, 99, 235, 0.9); }
+        .cc-btn-b { border: 1px solid rgba(255, 255, 255, 0.35); background: rgba(255, 255, 255, 0.06); }
+        .cc-float { position: absolute; z-index: 2; right: 27cqw; top: 27cqw; width: 22cqw; padding: 1.2cqw 1.4cqw; border-radius: 1.2cqw; background: rgba(13, 17, 24, 0.72); border: 1px solid rgba(255, 255, 255, 0.12); backdrop-filter: blur(10px); display: flex; gap: 1.1cqw; align-items: center; }
+        .cc-float img { width: 5.2cqw; height: 4.2cqw; border-radius: 0.6cqw; object-fit: cover; }
+        .cc-float small { display: block; font-size: 0.8cqw; letter-spacing: 0.12em; color: #7FB2FF; font-weight: 700; text-transform: uppercase; }
+        .cc-float b { display: block; font-size: 1.15cqw; margin-top: 0.2cqw; }
+        .cc-float span { font-size: 1cqw; color: rgba(255, 255, 255, 0.7); }
+        .cc-trust { position: absolute; top: 60%; left: 3.2cqw; right: 3.2cqw; height: 5cqw; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid rgba(255, 255, 255, 0.08); font-size: 1cqw; color: rgba(255, 255, 255, 0.78); }
+        .cc-trust span { display: flex; align-items: center; gap: 0.7cqw; }
+        .cc-trust i { width: 1.8cqw; height: 1.8cqw; border-radius: 50%; background: rgba(59, 130, 255, 0.16); display: grid; place-items: center; color: #7FB2FF; font-style: normal; font-weight: 800; font-size: 0.9cqw; }
+        .cc-shop { position: absolute; top: calc(60% + 6.4cqw); left: 3.2cqw; right: 3.2cqw; }
+        .cc-shop-head { display: flex; justify-content: space-between; align-items: baseline; }
+        .cc-shop-head b { font-size: 1.9cqw; font-weight: 800; letter-spacing: -0.02em; }
+        .cc-shop-head span { font-size: 1cqw; color: #7FB2FF; font-weight: 600; }
+        .cc-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.3cqw; margin-top: 1.4cqw; }
+        .cc-card { background: #10141B; border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 1cqw; overflow: hidden; }
+        .cc-card .sw-img { height: 7.4cqw; }
+        .cc-card div { padding: 1cqw 1.1cqw 1.2cqw; }
+        .cc-card small { font-size: 0.78cqw; font-weight: 700; letter-spacing: 0.12em; color: #7FB2FF; }
+        .cc-card b { display: block; font-size: 1.1cqw; margin-top: 0.3cqw; }
+        .cc-card p { display: flex; justify-content: space-between; align-items: center; margin-top: 0.6cqw; font-size: 1.15cqw; font-weight: 800; }
+        .cc-card p em { width: 2cqw; height: 2cqw; border-radius: 50%; background: #2563EB; display: grid; place-items: center; font-style: normal; font-size: 1.2cqw; font-weight: 600; }
+
+        /* ---------- 01 · 2nd Chance Cycles (mobile) ---------- */
+        .ccm { background: #07090D; color: #FFFFFF; height: 100%; font-family: var(--font-body); }
+        .ccm .sw-status { color: #FFFFFF; }
+        .ccm-nav { position: absolute; top: 12cqw; left: 0; right: 0; z-index: 4; display: flex; align-items: center; padding: 0 5.5cqw; height: 13cqw; }
+        .ccm-nav .cc-logo { font-size: 3.5cqw; gap: 2cqw; }
+        .ccm-nav .cc-logo svg { width: 7.5cqw; height: 7.5cqw; }
+        .ccm-nav .cc-act { gap: 4.5cqw; }
+        .ccm-nav .cc-act svg { width: 5.4cqw; height: 5.4cqw; }
+        .ccm-hero { position: absolute; top: 0; left: 0; right: 0; height: 128cqw; }
+        .ccm-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 9, 13, 0.6) 0%, rgba(7, 9, 13, 0) 30%, rgba(7, 9, 13, 0.55) 60%, #07090D 100%); }
+        .ccm-copy { position: absolute; z-index: 2; left: 5.5cqw; right: 5.5cqw; top: 64cqw; }
+        .ccm-copy .cc-eyebrow { font-size: 2.7cqw; gap: 2cqw; }
+        .ccm-copy .cc-eyebrow::before { width: 6cqw; }
+        .ccm-copy .cc-h { font-size: 12.6cqw; margin-top: 3cqw; }
+        .ccm-copy .cc-p { font-size: 3.7cqw; width: auto; margin-top: 3.4cqw; }
+        .ccm-btns { position: absolute; z-index: 2; left: 5.5cqw; right: 5.5cqw; top: 122cqw; display: grid; gap: 2.8cqw; }
+        .ccm-btns .cc-btn { justify-content: center; font-size: 3.9cqw; padding: 3.6cqw; }
+        .ccm-chips { position: absolute; top: 155cqw; left: 5.5cqw; display: flex; gap: 2.4cqw; white-space: nowrap; }
+        .ccm-chips span { font-size: 3.3cqw; font-weight: 600; padding: 2.2cqw 4cqw; border-radius: 9999px; background: #121722; border: 1px solid rgba(255, 255, 255, 0.08); }
+        .ccm-chips span:first-child { background: #FFFFFF; color: #07090D; }
+        .ccm-card { position: absolute; top: 171cqw; left: 5.5cqw; right: 5.5cqw; border-radius: 4cqw; background: #10141B; border: 1px solid rgba(255, 255, 255, 0.07); overflow: hidden; display: flex; }
+        .ccm-card img { width: 36cqw; height: 26cqw; object-fit: cover; }
+        .ccm-card div { padding: 2.6cqw 3.4cqw; }
+        .ccm-card small { font-size: 2.4cqw; font-weight: 700; letter-spacing: 0.12em; color: #7FB2FF; }
+        .ccm-card b { display: block; font-size: 3.8cqw; margin-top: 1cqw; }
+        .ccm-card p { font-size: 4.2cqw; font-weight: 800; margin-top: 1.6cqw; }
+        .ccm .sw-home { background: rgba(255, 255, 255, 0.85); }
+
+        /* ---------- 02 · Beau Nails (desktop) ---------- */
+        .bn { background: #FBF5F1; color: #3B2D2A; font-family: var(--font-body); height: 100%; }
+        .bn-serif { font-family: 'Playfair Display', Georgia, serif; }
+        .bn-nav { position: absolute; top: 2cqw; left: 3.2cqw; right: 3.2cqw; height: 5cqw; border-radius: 9999px; background: rgba(255, 255, 255, 0.85); box-shadow: 0 0.6cqw 2cqw -0.8cqw rgba(110, 70, 70, 0.25); display: flex; align-items: center; padding: 0 1.2cqw 0 1.8cqw; z-index: 3; }
+        .bn-logo { display: flex; align-items: center; gap: 0.8cqw; font-size: 1.6cqw; font-weight: 600; }
+        .bn-logo i { width: 2.4cqw; height: 2.4cqw; border-radius: 50%; border: 1px solid #C79AA3; display: grid; place-items: center; font: italic 500 1.1cqw 'Playfair Display', serif; color: #B0707D; }
+        .bn-links { display: flex; gap: 2.2cqw; margin: 0 auto; font-size: 1cqw; letter-spacing: 0.12em; text-transform: uppercase; color: #8A7672; font-weight: 600; }
+        .bn-links span:first-child { color: #B0707D; }
+        .bn-book { font-size: 1cqw; font-weight: 600; letter-spacing: 0.06em; color: #FFFFFF; background: #B0707D; padding: 0.9cqw 1.8cqw; border-radius: 9999px; }
+        .bn-copy { position: absolute; left: 4.5cqw; top: 14cqw; width: 44cqw; }
+        .bn-pill { display: inline-flex; align-items: center; gap: 0.6cqw; font-size: 0.9cqw; letter-spacing: 0.16em; text-transform: uppercase; font-weight: 600; color: #B0707D; background: #F6E4E6; padding: 0.6cqw 1.2cqw; border-radius: 9999px; }
+        .bn-h { font-size: 5.3cqw; line-height: 1.02; font-weight: 500; letter-spacing: -0.02em; margin-top: 1.8cqw; }
+        .bn-h em { color: #B0707D; font-style: italic; }
+        .bn-p { font-size: 1.25cqw; line-height: 1.6; color: #7A6763; margin-top: 1.6cqw; width: 34cqw; }
+        .bn-btns { display: flex; gap: 1cqw; margin-top: 2.4cqw; align-items: center; }
+        .bn-btn { font-size: 1.1cqw; font-weight: 600; padding: 1.15cqw 2.2cqw; border-radius: 9999px; }
+        .bn-btn-a { background: #B0707D; color: #FFFFFF; box-shadow: 0 1cqw 2.4cqw -1cqw rgba(176, 112, 125, 0.9); }
+        .bn-btn-b { border: 1px solid #DCC6C2; color: #3B2D2A; }
+        .bn-trust { display: flex; gap: 2cqw; margin-top: 2.6cqw; font-size: 0.95cqw; color: #8A7672; }
+        .bn-trust span::before { content: '✦ '; color: #C79AA3; }
+        .bn-arch { position: absolute; right: 5cqw; top: 9.5cqw; width: 30cqw; height: 37cqw; border-radius: 15cqw 15cqw 1.6cqw 1.6cqw; overflow: hidden; box-shadow: 0 2cqw 4cqw -1.5cqw rgba(110, 70, 70, 0.35); }
+        .bn-arch-line { position: absolute; right: 3.6cqw; top: 8cqw; width: 30cqw; height: 37cqw; border-radius: 15cqw 15cqw 1.6cqw 1.6cqw; border: 1px solid #DDB9BF; }
+        .bn-badge { position: absolute; left: 51cqw; top: 39cqw; background: #FFFFFF; border-radius: 1.2cqw; padding: 1.1cqw 1.4cqw; box-shadow: 0 1.4cqw 3cqw -1.2cqw rgba(110, 70, 70, 0.35); z-index: 2; }
+        .bn-badge small { display: block; font-size: 0.8cqw; letter-spacing: 0.14em; text-transform: uppercase; color: #B0707D; font-weight: 700; }
+        .bn-badge b { display: block; font-size: 1.3cqw; margin-top: 0.3cqw; }
+        .bn-services { position: absolute; left: 4.5cqw; right: 4.5cqw; top: 51.5cqw; display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.4cqw; }
+        .bn-svc { background: #FFFFFF; border-radius: 1.4cqw; padding: 0.8cqw; box-shadow: 0 1cqw 2.4cqw -1.4cqw rgba(110, 70, 70, 0.3); }
+        .bn-svc img { width: 100%; height: 6.2cqw; object-fit: cover; border-radius: 1cqw; display: block; }
+        .bn-svc div { display: flex; justify-content: space-between; align-items: center; padding: 1cqw 0.4cqw 0.3cqw; }
+        .bn-svc b { font-size: 1.25cqw; font-weight: 500; }
+        .bn-svc span { font-size: 0.9cqw; color: #B0707D; background: #F6E4E6; padding: 0.3cqw 0.8cqw; border-radius: 9999px; font-weight: 600; }
+
+        /* ---------- 02 · Beau Nails (mobile) ---------- */
+        .bnm { background: #FBF5F1; color: #3B2D2A; height: 100%; font-family: var(--font-body); }
+        .bnm .sw-status { color: #3B2D2A; }
+        .bnm-nav { position: absolute; top: 13cqw; left: 5cqw; right: 5cqw; height: 13cqw; border-radius: 9999px; background: #FFFFFF; box-shadow: 0 2cqw 6cqw -3cqw rgba(110, 70, 70, 0.3); display: flex; align-items: center; justify-content: space-between; padding: 0 3cqw 0 4cqw; }
+        .bnm-nav .bn-logo { font-size: 4.4cqw; gap: 2cqw; }
+        .bnm-nav .bn-logo i { width: 7cqw; height: 7cqw; font-size: 3.2cqw; }
+        .bnm-nav .bn-book { font-size: 3cqw; padding: 2.2cqw 4cqw; }
+        .bnm-arch { position: absolute; top: 32cqw; left: 12cqw; right: 12cqw; height: 78cqw; border-radius: 40cqw 40cqw 5cqw 5cqw; overflow: hidden; }
+        .bnm-copy { position: absolute; top: 117cqw; left: 6cqw; right: 6cqw; text-align: center; }
+        .bnm-copy .bn-pill { font-size: 2.5cqw; padding: 1.6cqw 3.2cqw; }
+        .bnm-copy .bn-h { font-size: 10.6cqw; margin-top: 3.4cqw; }
+        .bnm-copy .bn-p { font-size: 3.6cqw; width: auto; margin-top: 3cqw; }
+        .bnm-cta { position: absolute; top: 172cqw; left: 6cqw; right: 6cqw; text-align: center; font-size: 4cqw; font-weight: 600; padding: 4cqw; border-radius: 9999px; background: #B0707D; color: #FFFFFF; box-shadow: 0 3cqw 6cqw -3cqw rgba(176, 112, 125, 0.9); }
+        .bnm-gal { position: absolute; top: 191cqw; left: 6cqw; right: 6cqw; display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.4cqw; }
+        .bnm-gal img { width: 100%; height: 30cqw; object-fit: cover; border-radius: 3cqw; display: block; }
+        .bnm .sw-home { background: rgba(59, 45, 42, 0.8); }
+
+        /* ---------- 03 · Ditlhalefi Chauffeurs (desktop) ---------- */
+        .dc { background: #0B0D0C; color: #F4F1EA; font-family: var(--font-body); height: 100%; }
+        .dc-gold { color: #E2B33C; }
+        .dc-nav { position: absolute; top: 0; left: 0; right: 0; height: 5.6cqw; display: flex; align-items: center; padding: 0 3.2cqw; z-index: 3; border-bottom: 1px solid rgba(226, 179, 60, 0.15); background: rgba(11, 13, 12, 0.55); backdrop-filter: blur(6px); }
+        .dc-logo { display: flex; align-items: center; gap: 0.8cqw; font-size: 1.35cqw; font-weight: 700; letter-spacing: -0.01em; }
+        .dc-logo svg { width: 1.9cqw; height: 1.9cqw; stroke: #E2B33C; fill: none; stroke-width: 1.8; }
+        .dc-links { display: flex; gap: 2.2cqw; margin: 0 auto; font-size: 1cqw; color: rgba(244, 241, 234, 0.75); }
+        .dc-links span:first-child { color: #E2B33C; }
+        .dc-quote { font-size: 1cqw; font-weight: 700; color: #0B0D0C; background: #E2B33C; padding: 0.9cqw 1.6cqw; border-radius: 0.5cqw; }
+        .dc-hero { position: absolute; inset: 0 0 34% 0; }
+        .dc-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(11, 13, 12, 0.95) 0%, rgba(11, 13, 12, 0.6) 50%, rgba(11, 13, 12, 0.15) 100%), linear-gradient(0deg, #0B0D0C 0%, rgba(11, 13, 12, 0) 35%); }
+        .dc-copy { position: absolute; left: 4cqw; top: 10.5cqw; width: 44cqw; z-index: 2; }
+        .dc-eyebrow { font-size: 0.9cqw; letter-spacing: 0.22em; text-transform: uppercase; font-weight: 600; color: #E2B33C; }
+        .dc-h { font-weight: 700; font-size: 4.9cqw; line-height: 1.02; letter-spacing: -0.035em; margin-top: 1.4cqw; }
+        .dc-h em { font-family: 'Playfair Display', Georgia, serif; font-weight: 500; font-style: italic; color: #E2B33C; letter-spacing: -0.01em; }
+        .dc-p { font-size: 1.2cqw; line-height: 1.6; color: rgba(244, 241, 234, 0.7); margin-top: 1.5cqw; width: 36cqw; }
+        .dc-book { position: absolute; left: 4cqw; right: 4cqw; top: 39cqw; z-index: 3; display: grid; grid-template-columns: 1.3fr 1.3fr 1fr auto; gap: 0; align-items: center; background: rgba(20, 23, 21, 0.9); border: 1px solid rgba(226, 179, 60, 0.25); border-radius: 1cqw; padding: 0.8cqw; backdrop-filter: blur(8px); }
+        .dc-field { padding: 0.5cqw 1.4cqw; border-right: 1px solid rgba(244, 241, 234, 0.1); }
+        .dc-field small { display: block; font-size: 0.75cqw; letter-spacing: 0.16em; text-transform: uppercase; color: #E2B33C; font-weight: 600; }
+        .dc-field span { display: block; font-size: 1.1cqw; margin-top: 0.3cqw; color: rgba(244, 241, 234, 0.85); }
+        .dc-field:nth-child(3) { border-right: none; }
+        .dc-go { font-size: 1.05cqw; font-weight: 700; color: #0B0D0C; background: #E2B33C; padding: 1.3cqw 2cqw; border-radius: 0.6cqw; white-space: nowrap; }
+        .dc-tiles { position: absolute; left: 4cqw; right: 4cqw; top: 47.5cqw; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.4cqw; }
+        .dc-tile { position: relative; height: 12cqw; border-radius: 1cqw; overflow: hidden; border: 1px solid rgba(244, 241, 234, 0.08); }
+        .dc-tile::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(11, 13, 12, 0.92), rgba(11, 13, 12, 0.1) 70%); }
+        .dc-tile div { position: absolute; left: 1.3cqw; bottom: 1.1cqw; z-index: 1; }
+        .dc-tile small { font-size: 0.75cqw; letter-spacing: 0.16em; color: #E2B33C; font-weight: 600; text-transform: uppercase; }
+        .dc-tile b { display: block; font-size: 1.35cqw; margin-top: 0.3cqw; }
+        .dc-rating { position: absolute; right: 4cqw; top: 11cqw; z-index: 2; text-align: right; }
+        .dc-rating b { font-size: 2.4cqw; font-weight: 700; }
+        .dc-rating span { display: block; font-size: 0.9cqw; color: rgba(244, 241, 234, 0.6); margin-top: 0.2cqw; }
+        .dc-stars { color: #E2B33C; font-size: 1.1cqw; letter-spacing: 0.15em; }
+
+        /* ---------- 03 · Ditlhalefi Chauffeurs (mobile) ---------- */
+        .dcm { background: #0B0D0C; color: #F4F1EA; height: 100%; font-family: var(--font-body); }
+        .dcm .sw-status { color: #F4F1EA; }
+        .dcm-nav { position: absolute; top: 12cqw; left: 0; right: 0; height: 13cqw; display: flex; align-items: center; justify-content: space-between; padding: 0 5.5cqw; z-index: 3; }
+        .dcm-nav .dc-logo { font-size: 4.2cqw; gap: 2cqw; }
+        .dcm-nav .dc-logo svg { width: 6cqw; height: 6cqw; }
+        .dcm-menu { width: 9cqw; height: 9cqw; border-radius: 2cqw; border: 1px solid rgba(226, 179, 60, 0.4); display: grid; place-items: center; }
+        .dcm-menu svg { width: 4.6cqw; height: 4.6cqw; stroke: #E2B33C; stroke-width: 2; }
+        .dcm-hero { position: absolute; top: 0; left: 0; right: 0; height: 118cqw; }
+        .dcm-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 13, 12, 0.7) 0%, rgba(11, 13, 12, 0.1) 30%, rgba(11, 13, 12, 0.6) 65%, #0B0D0C 100%); }
+        .dcm-copy { position: absolute; top: 74cqw; left: 6cqw; right: 6cqw; z-index: 2; }
+        .dcm-copy .dc-eyebrow { font-size: 2.6cqw; }
+        .dcm-copy .dc-h { font-size: 11.4cqw; margin-top: 3cqw; }
+        .dcm-copy .dc-p { font-size: 3.6cqw; width: auto; margin-top: 3cqw; }
+        .dcm-form { position: absolute; top: 140cqw; left: 6cqw; right: 6cqw; border-radius: 4cqw; background: #141715; border: 1px solid rgba(226, 179, 60, 0.25); padding: 4cqw; display: grid; gap: 2.6cqw; }
+        .dcm-form .dc-field { border: 1px solid rgba(244, 241, 234, 0.1); border-radius: 2.4cqw; padding: 2.6cqw 3.4cqw; }
+        .dcm-form .dc-field small { font-size: 2.3cqw; }
+        .dcm-form .dc-field span { font-size: 3.5cqw; margin-top: 1cqw; }
+        .dcm-form .dc-go { text-align: center; font-size: 3.8cqw; padding: 3.8cqw; border-radius: 2.4cqw; }
+        .dcm .sw-home { background: rgba(244, 241, 234, 0.85); }
+      </style>
+
       <div class="light-blob light-blob-bl" style="top: 20%;" aria-hidden="true"></div>
 
       <div class="container" style="position: relative; z-index: 2;">
-        
+
         <div style="text-align: center; max-width: 760px; margin: 0 auto 64px auto;">
           <span class="eyebrow-label" style="color: var(--magenta); margin-bottom: 14px;">
             OUR WORK
@@ -987,109 +1285,236 @@
           <h2 class="heading-display" style="font-size: clamp(34px, 4.5vw, 56px); color: var(--ink);">
             See the quality you're paying for.
           </h2>
+          <p style="font-size: 18px; color: var(--ink-soft); line-height: 1.5; margin-top: 18px;">
+            Every website we build is designed twice: once for desktop, and again for the phone in your customer's hand.
+          </p>
         </div>
 
-        <!-- 3 Portfolio Items in Browser Mockups -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px;">
-          
-          <!-- Project 1: Ditlhalefi Chauffeurs -->
-          <div class="reveal-on-scroll">
-            <div class="mockup-browser" style="margin-bottom: 20px;">
-              <div class="mockup-browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                </div>
-                <div class="browser-address-bar">
-                  <span>ditlhalefi.co.za</span>
+        <!-- ============ 01 · 2nd Chance Cycles (featured) ============ -->
+        <article class="sw-project sw-feature reveal-on-scroll">
+          <div class="sw-stage" role="img" aria-label="2nd Chance Cycles website design shown on a desktop browser and a smartphone">
+            <div class="sw-stage-glow" style="width: 55%; height: 70%; left: -10%; top: -20%; background: rgba(107, 63, 160, 0.75);"></div>
+            <div class="sw-stage-glow" style="width: 50%; height: 60%; right: -12%; bottom: -25%; background: rgba(216, 27, 143, 0.4);"></div>
+            <div class="sw-stage-glow" style="width: 40%; height: 50%; left: 35%; top: 30%; background: rgba(59, 130, 255, 0.22);"></div>
+
+            <div class="sw-devices" aria-hidden="true">
+              <!-- Desktop -->
+              <div class="sw-desktop">
+                <div class="sw-browser">
+                  <div class="sw-bar sw-bar-dark"><i></i><i></i><i></i>
+                    <div class="sw-url"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>2ndchancecycles.co.za</div>
+                  </div>
+                  <div class="sw-screen">
+                    <div class="cc">
+                      <div class="cc-hero"><img class="sw-img" src="assets/work/mock/cc-hero.webp" alt="" width="1200" height="651" loading="lazy" decoding="async"></div>
+                      <div class="cc-nav">
+                        <div class="cc-logo"><svg viewBox="0 0 48 48" fill="none" stroke="#FFFFFF" stroke-width="3"><circle cx="11" cy="31" r="8"/><circle cx="37" cy="31" r="8"/><path d="M11 31l8-14h12l6 14M19 17l6 14h-14M27 13h6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>2ND <b>CHANCE</b> CYCLES</span></div>
+                        <div class="cc-links"><span>Shop</span><span>Mountain</span><span>Road</span><span>E-Bikes</span><span>Workshop</span></div>
+                        <div class="cc-act">
+                          <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4" stroke-linecap="round"/></svg>
+                          <span class="cc-cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.8L20 8H6.2" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg><em>2</em></span>
+                          <span class="cc-navbtn">Book a Service</span>
+                        </div>
+                      </div>
+                      <div class="cc-copy">
+                        <div class="cc-eyebrow">Certified pre-owned bikes</div>
+                        <div class="cc-h">Ride more.<br><span>Pay less.</span></div>
+                        <div class="cc-p">Premium mountain and road bikes, inspected on 50 points and tuned by real mechanics.</div>
+                        <div class="cc-btns"><span class="cc-btn cc-btn-a">Shop Bikes →</span><span class="cc-btn cc-btn-b">Book a Service</span></div>
+                      </div>
+                      <div class="cc-float"><img src="assets/work/mock/cc-p2.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>Just in</small><b>Trail Pro 29 Carbon</b><span>Size L · R 48 500</span></div></div>
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div style="background: #0E121A; height: 240px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(71,214,255,0.25) 0%, transparent 70%);"></div>
-                <div>
-                  <div style="font-size: 10px; letter-spacing: 0.15em; color: #47D6FF; font-weight: 700; text-transform: uppercase;">VIP Transfers</div>
-                  <div style="font-size: 20px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-top: 6px; font-family: var(--font-display);">Ditlhalefi Executive Fleet</div>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; backdrop-filter: blur(8px);">
-                  <div style="font-size: 11px; color: #8F9CA3;">Live Booking Engine & WhatsApp API Integration</div>
-                  <div style="font-size: 13px; font-weight: 600; color: #47D6FF; margin-top: 4px;">Premium High-Conversion Architecture</div>
+
+              <!-- Mobile -->
+              <div class="sw-phone">
+                <div class="sw-phone-frame">
+                  <div class="sw-phone-screen">
+                    <div class="ccm">
+                      <div class="sw-island"></div>
+                      <div class="sw-status"><span>9:41</span><span><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor"/><rect x="2" y="2" width="17" height="8" rx="1.5"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
+                      <div class="ccm-hero"><img class="sw-img" src="assets/work/mock/cc-hero-m.webp" alt="" width="600" height="860" loading="lazy" decoding="async"></div>
+                      <div class="ccm-nav">
+                        <div class="cc-logo"><svg viewBox="0 0 48 48" fill="none" stroke="#FFFFFF" stroke-width="3"><circle cx="11" cy="31" r="8"/><circle cx="37" cy="31" r="8"/><path d="M11 31l8-14h12l6 14M19 17l6 14h-14M27 13h6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>2ND <b>CHANCE</b></span></div>
+                        <div class="cc-act">
+                          <span class="cc-cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.4 11h10.8L20 8H6.2" stroke-linejoin="round"/><circle cx="9" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg></span>
+                          <svg viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg>
+                        </div>
+                      </div>
+                      <div class="ccm-copy">
+                        <div class="cc-eyebrow">Certified pre-owned</div>
+                        <div class="cc-h">Ride more.<br><span>Pay less.</span></div>
+                        <div class="cc-p">Premium bikes, inspected on 50 points and tuned by real mechanics.</div>
+                      </div>
+                      <div class="ccm-btns"><span class="cc-btn cc-btn-a">Shop Bikes →</span><span class="cc-btn cc-btn-b">Book a Service</span></div>
+                      <div class="ccm-chips"><span>Mountain</span><span>Road</span><span>E-Bike</span><span>Kids</span></div>
+                      <div class="ccm-card"><img src="assets/work/mock/cc-p1.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>ADVANCED</small><b>Enduro X 29</b><p>R 62 000</p></div></div>
+                      <div class="sw-home"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 6px;">
-              Ditlhalefi Chauffeurs
-            </h3>
-            <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.45;">
-              Executive private chauffeur &amp; VIP corporate transfer fleet across Gauteng.
-            </p>
           </div>
 
-          <!-- Project 2: Beau Architectural Studio -->
-          <div class="reveal-on-scroll">
-            <div class="mockup-browser" style="margin-bottom: 20px;">
-              <div class="mockup-browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                </div>
-                <div class="browser-address-bar">
-                  <span>beau-architecture.co.za</span>
-                </div>
-              </div>
-              <div style="background: #1B1816; height: 240px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(255,168,107,0.2) 0%, transparent 70%);"></div>
-                <div>
-                  <div style="font-size: 10px; letter-spacing: 0.15em; color: #FFA86B; font-weight: 700; text-transform: uppercase;">Residential & Commercial</div>
-                  <div style="font-size: 20px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-top: 6px; font-family: var(--font-display);">Beau Studio Design</div>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; backdrop-filter: blur(8px);">
-                  <div style="font-size: 11px; color: #D6CBC2;">Minimalist Editorial Portfolio</div>
-                  <div style="font-size: 13px; font-weight: 600; color: #FFA86B; margin-top: 4px;">High-Ticket Client Acquisition Funnel</div>
-                </div>
-              </div>
-            </div>
-            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 6px;">
-              Beau Architectural Studio
-            </h3>
-            <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.45;">
-              High-end contemporary residential architecture and bespoke spatial design.
-            </p>
+          <div class="sw-meta">
+            <div><span class="sw-num">01 · FEATURED</span><h3 class="sw-title" style="font-size: clamp(28px, 3.2vw, 40px); margin-top: 6px;">2nd Chance Cycles</h3></div>
+            <p class="sw-desc">A premium online bike store with a bold, energetic look. Riders can shop by level, compare machines and book a workshop service on any device.</p>
+            <div class="sw-tags"><span class="sw-tag">E-commerce</span><span class="sw-tag">Service bookings</span><span class="sw-tag">Mobile-first</span></div>
+            <a class="sw-btn" href="https://www.2ndchancecycles.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the 2nd Chance Cycles website (opens in a new tab)">View Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </div>
+        </article>
 
-          <!-- Project 3: Krummel Artisanal Bakery -->
-          <div class="reveal-on-scroll">
-            <div class="mockup-browser" style="margin-bottom: 20px;">
-              <div class="mockup-browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+        <div class="sw-pair">
+
+          <!-- ============ 02 · Beau Nails ============ -->
+          <article class="sw-project reveal-on-scroll">
+            <div class="sw-stage sw-stage-beau" role="img" aria-label="Beau Nails website design shown on a desktop browser and a smartphone">
+              <div class="sw-stage-glow" style="width: 60%; height: 60%; right: -15%; top: -20%; background: rgba(255, 182, 204, 0.8);"></div>
+              <div class="sw-devices" aria-hidden="true">
+                <div class="sw-desktop">
+                  <div class="sw-browser">
+                    <div class="sw-bar sw-bar-light"><i></i><i></i><i></i>
+                      <div class="sw-url"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>beaunails.co.za</div>
+                    </div>
+                    <div class="sw-screen">
+                      <div class="bn">
+                        <div class="bn-nav">
+                          <div class="bn-logo bn-serif"><i>B</i>Beau Nails</div>
+                          <div class="bn-links"><span>Home</span><span>Services</span><span>Gallery</span><span>About</span></div>
+                          <span class="bn-book">Book Now</span>
+                        </div>
+                        <div class="bn-copy">
+                          <span class="bn-pill">✦ Pretoria's mobile nail studio</span>
+                          <div class="bn-h bn-serif">Luxury nails,<br><em>wherever you are.</em></div>
+                          <div class="bn-p">Bespoke gel, acrylic and nail art, brought to your home or office by a certified technician.</div>
+                          <div class="bn-btns"><span class="bn-btn bn-btn-a">Book an Appointment</span><span class="bn-btn bn-btn-b">View Services</span></div>
+                          <div class="bn-trust"><span>Certified technicians</span><span>We come to you</span></div>
+                        </div>
+                        <div class="bn-arch-line"></div>
+                        <div class="bn-arch"><img class="sw-img" src="assets/work/mock/bn-hero.webp" alt="" width="560" height="700" loading="lazy" decoding="async"></div>
+                        <div class="bn-badge"><small>Next available</small><b class="bn-serif">Saturday, 10:00</b></div>
+                        <div class="bn-services">
+                          <div class="bn-svc"><img src="assets/work/mock/bn-s1.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><div><b class="bn-serif">Gel Overlay</b><span>R350</span></div></div>
+                          <div class="bn-svc"><img src="assets/work/mock/bn-s2.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><div><b class="bn-serif">Soft Gel Tips</b><span>R380</span></div></div>
+                          <div class="bn-svc"><img src="assets/work/mock/bn-s3.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><div><b class="bn-serif">Acrylic Dip</b><span>R380</span></div></div>
+                          <div class="bn-svc"><img src="assets/work/mock/bn-s4.webp" alt="" width="300" height="300" loading="lazy" decoding="async"><div><b class="bn-serif">Dura Gel</b><span>R380</span></div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="browser-address-bar">
-                  <span>krummelbakery.co.za</span>
-                </div>
-              </div>
-              <div style="background: #201726; height: 240px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(216,27,143,0.25) 0%, transparent 70%);"></div>
-                <div>
-                  <div style="font-size: 10px; letter-spacing: 0.15em; color: #FFB6CC; font-weight: 700; text-transform: uppercase;">Western Cape Sourdough</div>
-                  <div style="font-size: 20px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-top: 6px; font-family: var(--font-display);">Krummel Artisanal Bakery</div>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; backdrop-filter: blur(8px);">
-                  <div style="font-size: 11px; color: #D7CCD8;">Store Locator & Menu Pre-Ordering</div>
-                  <div style="font-size: 13px; font-weight: 600; color: #FFB6CC; margin-top: 4px;">Local SEO & Google Maps Rank #1</div>
+                <div class="sw-phone">
+                  <div class="sw-phone-frame">
+                    <div class="sw-phone-screen">
+                      <div class="bnm">
+                        <div class="sw-island"></div>
+                        <div class="sw-status"><span>9:41</span><span><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor"/><rect x="2" y="2" width="17" height="8" rx="1.5"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
+                        <div class="bnm-nav"><div class="bn-logo bn-serif"><i>B</i>Beau Nails</div><span class="bn-book">Book</span></div>
+                        <div class="bnm-arch"><img class="sw-img" src="assets/work/mock/bn-hero.webp" alt="" width="560" height="700" loading="lazy" decoding="async"></div>
+                        <div class="bnm-copy">
+                          <span class="bn-pill">✦ Mobile nail studio</span>
+                          <div class="bn-h bn-serif">Luxury nails,<br><em>wherever you are.</em></div>
+                          <div class="bn-p">Bespoke nail artistry, brought to your door.</div>
+                        </div>
+                        <div class="bnm-cta">Book an Appointment</div>
+                        <div class="bnm-gal">
+                          <img src="assets/work/mock/bn-g1.webp" alt="" width="260" height="320" loading="lazy" decoding="async">
+                          <img src="assets/work/mock/bn-g2.webp" alt="" width="260" height="320" loading="lazy" decoding="async">
+                          <img src="assets/work/mock/bn-g3.webp" alt="" width="260" height="320" loading="lazy" decoding="async">
+                        </div>
+                        <div class="sw-home"></div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
-            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 6px;">
-              Krummel Artisanal Bakery
-            </h3>
-            <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.45;">
-              Artisanal sourdough bakery and boutique coffee roastery in the Western Cape.
-            </p>
-          </div>
+            <div class="sw-meta">
+              <div><span class="sw-num">02</span><h3 class="sw-title" style="font-size: clamp(24px, 2.4vw, 30px); margin-top: 6px;">Beau Nails</h3></div>
+              <p class="sw-desc">A soft, elegant website for a luxury mobile nail studio, built around online bookings.</p>
+              <div class="sw-tags"><span class="sw-tag">Online booking</span><span class="sw-tag">Service menu</span></div>
+              <a class="sw-btn" href="https://www.beaunails.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the Beau Nails website (opens in a new tab)">View Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
+            </div>
+          </article>
+
+          <!-- ============ 03 · Ditlhalefi Chauffeurs ============ -->
+          <article class="sw-project reveal-on-scroll">
+            <div class="sw-stage sw-stage-dc" role="img" aria-label="Ditlhalefi Chauffeurs website design shown on a desktop browser and a smartphone">
+              <div class="sw-stage-glow" style="width: 60%; height: 60%; left: -15%; top: -25%; background: rgba(226, 179, 60, 0.28);"></div>
+              <div class="sw-stage-glow" style="width: 50%; height: 50%; right: -15%; bottom: -25%; background: rgba(107, 63, 160, 0.45);"></div>
+              <div class="sw-devices" aria-hidden="true">
+                <div class="sw-desktop">
+                  <div class="sw-browser">
+                    <div class="sw-bar sw-bar-dark"><i></i><i></i><i></i>
+                      <div class="sw-url"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>ditlhalefichauffeurs.co.za</div>
+                    </div>
+                    <div class="sw-screen">
+                      <div class="dc">
+                        <div class="dc-hero"><img class="sw-img" src="assets/work/mock/dc-hero.webp" alt="" width="1200" height="700" loading="lazy" decoding="async"></div>
+                        <div class="dc-nav">
+                          <div class="dc-logo"><svg viewBox="0 0 24 24"><path d="M5 17h14M6 17l1.2-6.2A2 2 0 0 1 9.2 9h5.6a2 2 0 0 1 2 1.8L18 17M5 17v2M19 17v2M8 13h8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ditlhalefi <span class="dc-gold">Chauffeurs</span></span></div>
+                          <div class="dc-links"><span>Home</span><span>Airport Transfers</span><span>Corporate</span><span>Fleet</span><span>Contact</span></div>
+                          <span class="dc-quote">Instant Quote</span>
+                        </div>
+                        <div class="dc-copy">
+                          <div class="dc-eyebrow">Executive chauffeur service · Gauteng</div>
+                          <div class="dc-h">Arrive with<br><em>distinction.</em></div>
+                          <div class="dc-p">Private airport transfers and corporate travel across Johannesburg, Sandton, Pretoria and OR Tambo.</div>
+                        </div>
+                        <div class="dc-rating"><div class="dc-stars">★★★★★</div><b>5.0</b><span>Google rating</span></div>
+                        <div class="dc-book">
+                          <div class="dc-field"><small>Pickup</small><span>OR Tambo International</span></div>
+                          <div class="dc-field"><small>Destination</small><span>Sandton City</span></div>
+                          <div class="dc-field"><small>Date</small><span>Fri, 27 Nov · 08:30</span></div>
+                          <span class="dc-go">Get Instant Quote →</span>
+                        </div>
+                        <div class="dc-tiles">
+                          <div class="dc-tile"><img class="sw-img" src="assets/work/mock/dc-s1.webp" alt="" width="360" height="280" loading="lazy" decoding="async"><div><small>Arrivals</small><b>Meet &amp; Greet</b></div></div>
+                          <div class="dc-tile"><img class="sw-img" src="assets/work/mock/dc-s2.webp" alt="" width="360" height="280" loading="lazy" decoding="async"><div><small>Business</small><b>Corporate Travel</b></div></div>
+                          <div class="dc-tile"><img class="sw-img" src="assets/work/mock/dc-s3.webp" alt="" width="360" height="280" loading="lazy" decoding="async"><div><small>Flights</small><b>Airport Transfers</b></div></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="sw-phone">
+                  <div class="sw-phone-frame">
+                    <div class="sw-phone-screen">
+                      <div class="dcm">
+                        <div class="sw-island"></div>
+                        <div class="sw-status"><span>9:41</span><span><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor"/><rect x="2" y="2" width="17" height="8" rx="1.5"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
+                        <div class="dcm-hero"><img class="sw-img" src="assets/work/mock/dc-hero-m.webp" alt="" width="600" height="760" loading="lazy" decoding="async"></div>
+                        <div class="dcm-nav">
+                          <div class="dc-logo"><svg viewBox="0 0 24 24"><path d="M5 17h14M6 17l1.2-6.2A2 2 0 0 1 9.2 9h5.6a2 2 0 0 1 2 1.8L18 17M5 17v2M19 17v2M8 13h8" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Ditlhalefi</span></div>
+                          <span class="dcm-menu"><svg viewBox="0 0 24 24" fill="none"><path d="M4 7h16M4 12h16M4 17h16" stroke-linecap="round"/></svg></span>
+                        </div>
+                        <div class="dcm-copy">
+                          <div class="dc-eyebrow">Executive chauffeurs</div>
+                          <div class="dc-h">Arrive with<br><em>distinction.</em></div>
+                          <div class="dc-p">Private airport and corporate transfers across Gauteng.</div>
+                        </div>
+                        <div class="dcm-form">
+                          <div class="dc-field"><small>Pickup</small><span>OR Tambo International</span></div>
+                          <div class="dc-field"><small>Destination</small><span>Sandton City</span></div>
+                          <span class="dc-go">Get Instant Quote</span>
+                        </div>
+                        <div class="sw-home"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sw-meta">
+              <div><span class="sw-num">03</span><h3 class="sw-title" style="font-size: clamp(24px, 2.4vw, 30px); margin-top: 6px;">Ditlhalefi Chauffeurs</h3></div>
+              <p class="sw-desc">A dark, executive website for a premium chauffeur service, with instant quotes up front.</p>
+              <div class="sw-tags"><span class="sw-tag">Instant quotes</span><span class="sw-tag">Airport transfers</span></div>
+              <span class="sw-btn" aria-disabled="true">View Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+            </div>
+          </article>
 
         </div>
 
@@ -1101,9 +1526,11 @@
     <!-- ==========================================
          4. THE OFFER (Accent Gradient Band)
          ========================================== -->
-    <section id="the-offer" class="section-accent-band" style="padding: 100px 0;">
+    <!-- Outer spacing: the offer sits as a rounded card on the ivory background -->
+    <div class="offer-shell" style="padding: clamp(14px, 2.5vw, 40px) clamp(12px, 3.5vw, 56px); background: var(--ivory);">
+    <section id="the-offer" class="section-accent-band" style="padding: clamp(80px, 10vw, 140px) 0; border-radius: clamp(22px, 3vw, 40px); overflow: hidden; isolation: isolate;">
       
-      <div class="container">
+      <div class="container" style="padding-left: clamp(20px, 6vw, 80px); padding-right: clamp(20px, 6vw, 80px);">
         
         <div style="text-align: center; margin-bottom: 50px;">
           <!-- Eyebrow: Ink pill with Yellow text -->
@@ -1116,14 +1543,14 @@
             <div class="accent-price-yellow">
               R3,500
             </div>
-            <div style="font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--ivory); letter-spacing: 0.04em; margin-top: -8px;">
+            <div style="font-family: var(--font-display); font-size: 24px; font-weight: 600; color: var(--ivory); letter-spacing: 0.04em; margin-top: clamp(14px, 2.2vw, 30px);">
               once-off
             </div>
           </div>
         </div>
 
         <!-- Two Columns on Ivory Cards: Included vs Quoted Separately -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto 70px auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto 70px auto;">
           
           <!-- Column 1: Included -->
           <div class="card-ivory reveal-on-scroll" style="padding: 36px 32px; color: var(--ink);">
@@ -1249,6 +1676,7 @@
       </div>
 
     </section>
+    </div>
 
 
     <!-- ==========================================
