@@ -1526,9 +1526,11 @@
     <!-- ==========================================
          4. THE OFFER (Accent Gradient Band)
          ========================================== -->
-    <section id="the-offer" class="section-accent-band" style="padding: clamp(80px, 10vw, 140px) 0;">
+    <!-- Outer spacing: the offer sits as a rounded card; the gap continues the ivory section above and the ink section below -->
+    <div class="offer-shell" style="padding: clamp(14px, 2.5vw, 40px) clamp(12px, 3.5vw, 56px); background: linear-gradient(180deg, var(--ivory) 0%, var(--ivory) 50%, var(--ink) 50%, var(--ink) 100%);">
+    <section id="the-offer" class="section-accent-band" style="padding: clamp(80px, 10vw, 140px) 0; border-radius: clamp(22px, 3vw, 40px); overflow: hidden; isolation: isolate;">
       
-      <div class="container" style="padding-left: clamp(32px, 6vw, 80px); padding-right: clamp(32px, 6vw, 80px);">
+      <div class="container" style="padding-left: clamp(20px, 6vw, 80px); padding-right: clamp(20px, 6vw, 80px);">
         
         <div style="text-align: center; margin-bottom: 50px;">
           <!-- Eyebrow: Ink pill with Yellow text -->
@@ -1548,7 +1550,7 @@
         </div>
 
         <!-- Two Columns on Ivory Cards: Included vs Quoted Separately -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto 70px auto;">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(320px, 100%), 1fr)); gap: 28px; max-width: 1000px; margin: 0 auto 70px auto;">
           
           <!-- Column 1: Included -->
           <div class="card-ivory reveal-on-scroll" style="padding: 36px 32px; color: var(--ink);">
@@ -1674,6 +1676,7 @@
       </div>
 
     </section>
+    </div>
 
 
     <!-- ==========================================
