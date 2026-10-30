@@ -760,82 +760,134 @@
 
           </div>
 
-          <!-- Right Column: Browser Mockup + Overlapping Phone Mockup -->
-          <div style="position: relative; display: flex; justify-content: center; align-items: center;" class="hero-mockup-wrapper">
-            
-            <!-- Browser Mockup: Ditlhalefi Chauffeurs (Real SA Project) -->
-            <div class="mockup-browser" style="width: 100%; max-width: 580px; position: relative; z-index: 1;">
-              
-              <div class="mockup-browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot" style="background: #FF5F56;"></span>
-                  <span class="browser-dot" style="background: #FFBD2E;"></span>
-                  <span class="browser-dot" style="background: #27C93F;"></span>
-                </div>
-                <div class="browser-address-bar">
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
-                  <span>ditlhalefi.co.za</span>
+          <!-- Right Column: Website design mockup (fictional architecture studio, desktop + mobile) -->
+          <div style="position: relative; width: 100%; min-width: min(100%, 520px);" class="hero-mockup-wrapper">
+
+            <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap">
+            <style>
+              .av-devices { position: relative; padding-bottom: 22%; }
+              .av-desktop { width: 90%; position: relative; z-index: 1; container-type: inline-size; }
+              .av-phone { position: absolute; right: 0; bottom: 0; width: 27%; z-index: 2; container-type: inline-size; }
+              /* Desktop: let the mockup use the spare space up to the window edge */
+              @media (min-width: 992px) {
+                .av-devices { width: calc(100% + (100vw - min(100vw, 1280px)) / 2 + 8px); padding-bottom: 20%; }
+                .av-desktop { width: 91%; }
+                .av-phone { width: 26%; }
+              }
+              @media (max-width: 640px) {
+                .av-devices { padding-bottom: 30%; }
+                .av-desktop { width: 100%; }
+                .av-phone { width: 32%; right: 3%; }
+              }
+
+              .av-browser { border-radius: 1.6cqw; overflow: hidden; background: #1A1A1D; box-shadow: 0 4cqw 9cqw -2cqw rgba(5, 2, 12, 0.7), 0 0 0 1px rgba(249, 248, 245, 0.08); }
+              .av-bar { height: 4.4cqw; display: flex; align-items: center; gap: 0.9cqw; padding: 0 1.8cqw; background: #1A1A1D; }
+              .av-bar i { width: 1.15cqw; height: 1.15cqw; border-radius: 50%; display: block; background: #3B3B42; }
+              .av-url { margin: 0 auto; width: 38%; height: 2.7cqw; border-radius: 0.8cqw; background: #0E0E10; color: #8E8C94; font: 500 1.25cqw/1 var(--font-body); display: flex; align-items: center; justify-content: center; gap: 0.6cqw; }
+              .av-url svg { width: 1.1cqw; height: 1.1cqw; }
+              .av-screen { container-type: inline-size; position: relative; overflow: hidden; aspect-ratio: 16 / 10; background: #1C1A17; }
+
+              .av-serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+              .av-img { display: block; width: 100%; height: 100%; object-fit: cover; }
+
+              /* Desktop site */
+              .av-d-hero { position: absolute; inset: 0; }
+              .av-d-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(20, 17, 14, 0.88) 0%, rgba(20, 17, 14, 0.35) 42%, rgba(20, 17, 14, 0) 62%), linear-gradient(180deg, rgba(20, 17, 14, 0.55) 0%, rgba(20, 17, 14, 0) 22%); }
+              .av-d-nav { position: absolute; top: 0; left: 0; right: 0; height: 7cqw; display: flex; align-items: center; padding: 0 4cqw; z-index: 2; color: #F3EFE8; }
+              .av-mark { display: flex; flex-direction: column; line-height: 1; }
+              .av-mark b { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 2cqw; letter-spacing: 0.16em; }
+              .av-mark span { font: 500 0.8cqw/1 var(--font-body); letter-spacing: 0.42em; margin-top: 0.55cqw; opacity: 0.75; }
+              .av-d-links { display: flex; gap: 3cqw; margin: 0 auto; font: 500 1.05cqw/1 var(--font-body); letter-spacing: 0.06em; color: rgba(243, 239, 232, 0.8); }
+              .av-d-links span:first-child { color: #F3EFE8; border-bottom: 1px solid rgba(243, 239, 232, 0.7); padding-bottom: 0.45cqw; }
+              .av-enquire { font: 500 1.05cqw/1 var(--font-body); letter-spacing: 0.06em; border: 1px solid rgba(243, 239, 232, 0.55); padding: 1cqw 2cqw; border-radius: 9999px; }
+              .av-d-copy { position: absolute; left: 4cqw; bottom: 5.2cqw; width: 52cqw; z-index: 2; color: #F3EFE8; }
+              .av-kicker { font: 500 1cqw/1 var(--font-body); letter-spacing: 0.24em; text-transform: uppercase; color: #D9C4A8; display: flex; align-items: center; gap: 1.2cqw; }
+              .av-kicker::before { content: ''; width: 3.2cqw; height: 1px; background: #D9C4A8; }
+              .av-d-h { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 5.6cqw; line-height: 0.98; letter-spacing: -0.015em; margin-top: 1.8cqw; }
+              .av-d-h em { font-style: italic; color: #E7D6BE; }
+              .av-d-p { font: 400 1.3cqw/1.6 var(--font-body); color: rgba(243, 239, 232, 0.75); margin-top: 1.8cqw; width: 38cqw; }
+              .av-d-btns { display: flex; align-items: center; gap: 2.4cqw; margin-top: 2.6cqw; }
+              .av-btn-solid { font: 600 1.1cqw/1 var(--font-body); letter-spacing: 0.04em; color: #1C1A17; background: #F3EFE8; padding: 1.35cqw 2.4cqw; border-radius: 9999px; }
+              .av-btn-line { font: 500 1.1cqw/1 var(--font-body); letter-spacing: 0.04em; color: #F3EFE8; border-bottom: 1px solid rgba(243, 239, 232, 0.6); padding-bottom: 0.45cqw; }
+              .av-d-card { position: absolute; right: 4cqw; top: 9.5cqw; width: 23cqw; z-index: 2; background: rgba(28, 26, 23, 0.55); border: 1px solid rgba(243, 239, 232, 0.18); backdrop-filter: blur(12px); border-radius: 1.2cqw; padding: 1.2cqw; color: #F3EFE8; display: flex; gap: 1.3cqw; align-items: center; }
+              .av-d-card img { width: 7cqw; height: 8.6cqw; object-fit: cover; border-radius: 0.6cqw; flex-shrink: 0; }
+              .av-d-card small { display: block; font: 500 0.8cqw/1 var(--font-body); letter-spacing: 0.2em; text-transform: uppercase; color: #D9C4A8; }
+              .av-d-card b { display: block; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 600; font-size: 1.9cqw; line-height: 1.05; margin-top: 0.7cqw; }
+              .av-d-card span { display: block; font: 400 0.95cqw/1.4 var(--font-body); color: rgba(243, 239, 232, 0.7); margin-top: 0.6cqw; }
+              .av-d-index { position: absolute; right: 4cqw; top: 9.5cqw; z-index: 2; font: 500 0.95cqw/1 var(--font-body); letter-spacing: 0.18em; color: rgba(243, 239, 232, 0.8); display: flex; align-items: center; gap: 1.2cqw; }
+              .av-d-index i { width: 5cqw; height: 1px; background: rgba(243, 239, 232, 0.3); position: relative; }
+              .av-d-index i::after { content: ''; position: absolute; left: 0; top: 0; height: 1px; width: 35%; background: #F3EFE8; }
+
+              /* Phone */
+              .av-phone-frame { background: #0B0B0E; border-radius: 15cqw; padding: 3.4cqw; box-shadow: 0 7cqw 16cqw -4cqw rgba(5, 2, 12, 0.85), inset 0 0 0 0.8cqw #26262C; }
+              .av-phone-screen { container-type: inline-size; position: relative; overflow: hidden; border-radius: 12cqw; aspect-ratio: 375 / 780; background: #F3EFE8; color: #1C1A17; }
+              .av-island { position: absolute; top: 2.2cqw; left: 50%; transform: translateX(-50%); width: 30cqw; height: 8.4cqw; border-radius: 9999px; background: #000; z-index: 10; }
+              .av-status { position: absolute; top: 0; left: 0; right: 0; height: 12cqw; display: flex; align-items: center; justify-content: space-between; padding: 1.4cqw 8cqw 0 9cqw; font: 600 3.9cqw/1 var(--font-body); z-index: 9; color: #FFFFFF; }
+              .av-status span:last-child { display: flex; gap: 1.4cqw; align-items: center; }
+              .av-status svg { height: 3.2cqw; width: auto; fill: currentColor; }
+              .av-m-hero { position: absolute; top: 0; left: 0; right: 0; height: 104cqw; }
+              .av-m-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(20, 17, 14, 0.55) 0%, rgba(20, 17, 14, 0) 28%); }
+              .av-m-nav { position: absolute; top: 13cqw; left: 6cqw; right: 6cqw; display: flex; justify-content: space-between; align-items: center; z-index: 3; color: #F3EFE8; }
+              .av-m-nav .av-mark b { font-size: 5.4cqw; }
+              .av-m-nav .av-mark span { font-size: 2.2cqw; margin-top: 1.4cqw; }
+              .av-m-menu { display: grid; gap: 1.6cqw; width: 7cqw; }
+              .av-m-menu i { display: block; height: 0.55cqw; background: #F3EFE8; border-radius: 1cqw; }
+              .av-m-menu i:last-child { width: 60%; margin-left: auto; }
+              .av-m-copy { position: absolute; top: 112cqw; left: 6cqw; right: 6cqw; }
+              .av-m-copy .av-kicker { font-size: 2.6cqw; color: #8C6A4C; gap: 3cqw; }
+              .av-m-copy .av-kicker::before { width: 8cqw; background: #8C6A4C; }
+              .av-m-h { font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 500; font-size: 11.4cqw; line-height: 1; letter-spacing: -0.015em; margin-top: 3.6cqw; }
+              .av-m-h em { font-style: italic; color: #8C6A4C; }
+              .av-m-p { font: 400 3.6cqw/1.55 var(--font-body); color: #5E5850; margin-top: 3.4cqw; }
+              .av-m-btns { position: absolute; top: 172cqw; left: 6cqw; right: 6cqw; display: grid; grid-template-columns: 1fr 1fr; gap: 2.8cqw; }
+              .av-m-btns span { text-align: center; font: 600 3.4cqw/1 var(--font-body); padding: 4.2cqw 0; border-radius: 9999px; }
+              .av-m-btns span:first-child { background: #1C1A17; color: #F3EFE8; }
+              .av-m-btns span:last-child { border: 1px solid rgba(28, 26, 23, 0.35); }
+              .av-m-home { position: absolute; bottom: 2cqw; left: 50%; transform: translateX(-50%); width: 36cqw; height: 1.3cqw; border-radius: 9999px; background: rgba(28, 26, 23, 0.8); z-index: 10; }
+            </style>
+
+            <div class="av-devices" role="img" aria-label="Example website design by Build a Brand: a fictional architecture studio shown on desktop and mobile">
+
+              <!-- Desktop -->
+              <div class="av-desktop" aria-hidden="true">
+                <div class="av-browser">
+                  <div class="av-bar"><i></i><i></i><i></i>
+                    <div class="av-url"><svg viewBox="0 0 24 24"><path fill="currentColor" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>aurelianvale.studio</div>
+                  </div>
+                  <div class="av-screen">
+                    <div class="av-d-hero"><img class="av-img" src="assets/hero/av-hero.webp" alt="" width="1680" height="944" decoding="async" fetchpriority="high"></div>
+                    <div class="av-d-nav">
+                      <div class="av-mark"><b>AURELIAN &amp; VALE</b><span>ARCHITECTS</span></div>
+                      <div class="av-d-links"><span>Studio</span><span>Projects</span><span>Interiors</span><span>Journal</span></div>
+                      <span class="av-enquire">Enquire</span>
+                    </div>
+                    <div class="av-d-copy">
+                      <div class="av-kicker">Residential · Overberg, 2026</div>
+                      <div class="av-d-h">Architecture shaped by <em>light, land</em> &amp; quiet.</div>
+                      <div class="av-d-p">Considered homes and interiors for the Western Cape, designed from the site up.</div>
+                      <div class="av-d-btns"><span class="av-btn-solid">View Projects</span><span class="av-btn-line">Start a project →</span></div>
+                    </div>
+                    <div class="av-d-card"><img src="assets/hero/av-stair.webp" alt="" width="644" height="800" decoding="async"><div><small>Featured</small><b>Fynbos House</b><span>Concrete, oak &amp; light</span></div></div>
+                  </div>
                 </div>
               </div>
 
-              <!-- High fidelity rendered preview of Ditlhalefi website -->
-              <div style="background: #0D0E12; padding: 28px 24px 34px 24px; color: #FFFFFF; font-family: var(--font-body); position: relative; overflow: hidden; min-height: 320px;">
-                
-                <div style="position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; background: radial-gradient(circle, rgba(0, 210, 255, 0.15) 0%, transparent 70%); border-radius: 50%; pointer-events: none;"></div>
-
-                <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255, 255, 255, 0.08); padding-bottom: 14px; margin-bottom: 24px;">
-                  <div style="font-weight: 700; font-size: 15px; letter-spacing: -0.02em; color: #FFFFFF;">
-                    DITLHALEFI <span style="color: #47D6FF; font-weight: 400; font-size: 12px;">CHAUFFEURS</span>
+              <!-- Mobile -->
+              <div class="av-phone" aria-hidden="true">
+                <div class="av-phone-frame">
+                  <div class="av-phone-screen">
+                    <div class="av-island"></div>
+                    <div class="av-status"><span>9:41</span><span><svg viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1"/><rect x="5" y="5" width="3" height="7" rx="1"/><rect x="10" y="2" width="3" height="10" rx="1"/><rect x="15" y="0" width="3" height="12" rx="1"/></svg><svg viewBox="0 0 26 12"><rect x="0.5" y="0.5" width="22" height="11" rx="3" fill="none" stroke="currentColor"/><rect x="2" y="2" width="17" height="8" rx="1.5"/><rect x="24" y="4" width="2" height="4" rx="1"/></svg></span></div>
+                    <div class="av-m-hero"><img class="av-img" src="assets/hero/av-interior.webp" alt="" width="448" height="796" decoding="async"></div>
+                    <div class="av-m-nav"><div class="av-mark"><b>AURELIAN &amp; VALE</b><span>ARCHITECTS</span></div><div class="av-m-menu"><i></i><i></i></div></div>
+                    <div class="av-m-copy">
+                      <div class="av-kicker">Residential · Overberg</div>
+                      <div class="av-m-h">Shaped by <em>light, land</em> &amp; quiet.</div>
+                      <div class="av-m-p">Considered homes and interiors for the Western Cape.</div>
+                    </div>
+                    <div class="av-m-btns"><span>View Projects</span><span>Enquire</span></div>
+                    <div class="av-m-home"></div>
                   </div>
-                  <div style="display: flex; gap: 14px; font-size: 11px; color: #8F9CA3;">
-                    <span>Fleet</span>
-                    <span>Transfers</span>
-                    <span style="color: #47D6FF; font-weight: 600;">Book Now</span>
-                  </div>
-                </div>
-
-                <div style="max-width: 320px;">
-                  <div style="font-size: 9px; font-weight: 700; letter-spacing: 0.15em; color: #47D6FF; text-transform: uppercase; margin-bottom: 6px;">
-                    Executive Transport &bull; Gauteng
-                  </div>
-                  <h3 style="font-size: 22px; font-weight: 700; line-height: 1.15; margin-bottom: 10px; color: #FFFFFF;">
-                    First-Class Chauffeur Service Across South Africa.
-                  </h3>
-                  <p style="font-size: 12px; line-height: 1.45; color: #A0AAB0; margin-bottom: 16px;">
-                    Punctual, discreet airport transfers & corporate luxury travel.
-                  </p>
-                  <div style="display: inline-block; background: #47D6FF; color: #00222B; font-size: 11px; font-weight: 700; padding: 7px 16px; border-radius: 4px;">
-                    Request a Quote &rarr;
-                  </div>
-                </div>
-
-                <!-- Minimal graphic of luxury fleet -->
-                <div style="position: absolute; right: 18px; bottom: 20px; width: 170px; height: 100px; border-radius: 8px; background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)); border: 1px solid rgba(255,255,255,0.08); padding: 12px; display: flex; flex-direction: column; justify-content: space-between;">
-                  <div style="font-size: 10px; color: #8F9CA3; text-transform: uppercase; letter-spacing: 0.05em;">Confirmed Transfers</div>
-                  <div style="font-size: 20px; font-weight: 700; color: #47D6FF;">4.9 &starf;</div>
-                  <div style="font-size: 9px; color: #A0AAB0;">100% On-time guarantee</div>
-                </div>
-
-              </div>
-
-            </div>
-
-            <!-- Overlapping Phone Mockup -->
-            <div class="mockup-phone" style="width: 170px; position: absolute; right: -15px; bottom: -35px; z-index: 2;" aria-hidden="true">
-              <div class="phone-island"></div>
-              
-              <div style="background: #0D0E12; padding: 14px 10px 20px 10px; color: #FFFFFF; font-size: 10px;">
-                <div style="font-weight: 700; font-size: 11px; color: #FFFFFF; margin-bottom: 10px;">
-                  DITLHALEFI
-                </div>
-                <div style="height: 56px; border-radius: 6px; background: linear-gradient(135deg, rgba(71,214,255,0.2), rgba(216,27,143,0.2)); margin-bottom: 10px; display: flex; align-items: center; justify-content: center; font-size: 9px; text-align: center; padding: 4px; color: #47D6FF; font-weight: 600;">
-                  Bespoke Mobile Experience
-                </div>
-                <div style="font-size: 8px; color: #8F9CA3; line-height: 1.3; margin-bottom: 8px;">
-                  Engineered to capture WhatsApp bookings on any mobile device.
-                </div>
-                <div style="background: #25D366; color: #0D0E12; font-weight: 700; font-size: 8px; padding: 6px 8px; border-radius: 4px; text-align: center;">
-                  WhatsApp Instant Quote
                 </div>
               </div>
 
