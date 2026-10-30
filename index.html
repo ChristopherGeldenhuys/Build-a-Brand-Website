@@ -975,92 +975,165 @@
          Real Build a Brand Projects Only
          ========================================== -->
     <section id="our-work" class="section-light" style="padding: 60px 0 120px 0; border-top: 1px solid rgba(233, 233, 236, 0.6);">
-      
+
+      <!-- Section 3 scoped styles (portfolio showcase) -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;800&display=swap">
+      <style>
+        .ow-flagship { display: grid; grid-template-columns: 1fr; gap: 36px; padding: 18px; align-items: center; }
+        .ow-flagship:hover { transform: none; }
+        @media (min-width: 992px) {
+          .ow-flagship { grid-template-columns: 1.45fr 0.55fr; gap: 48px; padding: 24px 44px 24px 24px; }
+        }
+        .ow-flagship .mockup-browser { border: 1px solid var(--grey); box-shadow: 0 30px 70px -20px rgba(30, 20, 48, 0.35); }
+        .ow-url { color: var(--ink); font-weight: 500; }
+        .ow-lock { width: 10px; height: 10px; flex-shrink: 0; }
+
+        /* 2nd Chance Cycles hero, rebuilt from the live site and scaled with container units */
+        .cc-hero { container-type: inline-size; position: relative; overflow: hidden; background: #050A30; color: #FFFFFF; font-family: 'Outfit', var(--font-body); aspect-ratio: 16 / 10; }
+        .cc-hero video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center; filter: brightness(0.6) contrast(1.1); }
+        .cc-nav { position: absolute; top: 0; left: 0; right: 0; z-index: 3; display: flex; align-items: center; justify-content: space-between; padding: 1.67cqw 2.22cqw; }
+        .cc-logo { height: 4cqw; width: auto; filter: brightness(0) invert(1); display: block; }
+        .cc-links { display: flex; gap: 2.78cqw; font-weight: 600; font-size: 1.11cqw; }
+        .cc-icons { display: flex; gap: 1.67cqw; align-items: center; }
+        .cc-icons svg { width: 1.33cqw; height: 1.33cqw; fill: #FFFFFF; display: block; }
+        .cc-burger { display: none !important; }
+        .cc-content { position: absolute; inset: 0; z-index: 2; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 0 2.22cqw; }
+        .cc-content h4 { font-family: 'Outfit', var(--font-display); font-weight: 800; text-transform: uppercase; font-size: 6.11cqw; line-height: 1.1; letter-spacing: -0.14cqw; margin-bottom: 1.67cqw; color: #FFFFFF; }
+        .cc-grad { background: linear-gradient(90deg, #0047AB, #00FFFF); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .cc-content p { font-size: 1.39cqw; line-height: 1.6; color: rgba(255, 255, 255, 0.8); max-width: 41.7cqw; margin: 0 auto 2.78cqw auto; }
+        .cc-btns { display: flex; gap: 1.67cqw; justify-content: center; }
+        .cc-btn { display: inline-flex; align-items: center; justify-content: center; gap: 0.6cqw; padding: 1.11cqw 2.78cqw; border-radius: 9999px; font-weight: 700; font-size: 1.11cqw; white-space: nowrap; }
+        .cc-btn-primary { background: #0047AB; color: #FFFFFF; box-shadow: 0 0.7cqw 1.7cqw -0.35cqw rgba(0, 71, 171, 0.35); }
+        .cc-btn-glass { background: rgba(255, 255, 255, 0.8); color: #050A30; border: 1px solid rgba(255, 255, 255, 0.3); }
+        .cc-btn svg { width: 1cqw; height: 1cqw; fill: currentColor; }
+
+        /* Same hero at phone width, matching the live site's own mobile layout */
+        @media (max-width: 640px) {
+          .cc-hero { aspect-ratio: 3 / 4; }
+          .cc-nav { padding: 5.1cqw 5.1cqw; }
+          .cc-logo { height: 9cqw; }
+          .cc-links { display: none; }
+          .cc-icons { gap: 6cqw; }
+          .cc-icons svg { width: 5cqw; height: 5cqw; }
+          .cc-burger { display: block !important; }
+          .cc-content { padding: 16cqw 4.1cqw 0 4.1cqw; }
+          .cc-content h4 { font-size: 11.5cqw; letter-spacing: -0.5cqw; margin-bottom: 5cqw; }
+          .cc-content p { font-size: 4.3cqw; max-width: none; margin-bottom: 7cqw; }
+          .cc-btns { flex-direction: column; width: 100%; gap: 4cqw; }
+          .cc-btn { font-size: 4cqw; padding: 4cqw 6cqw; gap: 2cqw; }
+          .cc-btn svg { width: 3.6cqw; height: 3.6cqw; }
+        }
+
+        .ow-badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 22px 0 30px 0; }
+        .ow-tag { font-family: var(--font-display); font-weight: 600; font-size: 12px; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-soft); background: var(--ivory); border: 1px solid var(--grey); border-radius: 9999px; padding: 6px 12px; }
+        .ow-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: var(--font-display); font-weight: 600; font-size: 17px; padding: 16px 30px; border-radius: 9999px; text-decoration: none; transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), background-color 0.2s ease, color 0.2s ease; min-height: 52px; }
+        .ow-btn svg { width: 16px; height: 16px; flex-shrink: 0; }
+        .ow-btn:hover { transform: translateY(-2px); }
+        .ow-btn:focus-visible { outline: 2px solid var(--magenta); outline-offset: 3px; }
+        .ow-btn-ink { background: var(--ink); color: var(--ivory); box-shadow: 0 12px 28px -10px rgba(30, 20, 48, 0.55); }
+        .ow-btn-ink:hover { box-shadow: 0 16px 34px -10px rgba(30, 20, 48, 0.65); }
+        .ow-btn-outline { background: transparent; color: var(--ink); border: 1.5px solid rgba(30, 20, 48, 0.22); }
+        .ow-btn-outline:hover { border-color: var(--ink); }
+        .ow-btn-outline-light { background: transparent; color: var(--ivory); border: 1.5px solid rgba(249, 248, 245, 0.35); }
+        .ow-btn-outline-light:hover { border-color: var(--yellow); color: var(--yellow); }
+
+        .ow-secondary { display: grid; grid-template-columns: 1fr; gap: 28px; margin-top: 28px; }
+        @media (min-width: 860px) { .ow-secondary { grid-template-columns: 1fr 1fr; } }
+        .ow-card { border-radius: 16px; padding: 18px 18px 26px 18px; display: flex; flex-direction: column; }
+        .ow-card .mockup-browser { border: 1px solid var(--grey); box-shadow: 0 22px 50px -20px rgba(30, 20, 48, 0.3); }
+        .ow-card-dark { background: var(--ink); border: 1px solid rgba(249, 248, 245, 0.08); box-shadow: 0 24px 60px -24px rgba(30, 20, 48, 0.55); position: relative; overflow: hidden; }
+        .ow-card-dark .mockup-browser { border-color: rgba(249, 248, 245, 0.12); }
+        .ow-card-body { padding: 22px 6px 0 6px; display: flex; flex-direction: column; flex-grow: 1; }
+        .ow-shot { display: block; width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; object-position: top; }
+        @media (max-width: 640px) {
+          .ow-btn { width: 100%; }
+          .ow-flagship { padding: 12px 12px 24px 12px; }
+          .ow-info { padding: 0 6px; }
+        }
+      </style>
+
       <div class="light-blob light-blob-bl" style="top: 20%;" aria-hidden="true"></div>
 
       <div class="container" style="position: relative; z-index: 2;">
-        
-        <div style="text-align: center; max-width: 760px; margin: 0 auto 64px auto;">
+
+        <div style="text-align: center; max-width: 760px; margin: 0 auto 56px auto;">
           <span class="eyebrow-label" style="color: var(--magenta); margin-bottom: 14px;">
             OUR WORK
           </span>
           <h2 class="heading-display" style="font-size: clamp(34px, 4.5vw, 56px); color: var(--ink);">
             See the quality you're paying for.
           </h2>
+          <p style="font-size: 18px; color: var(--ink-soft); line-height: 1.5; margin-top: 18px;">
+            Live websites we've designed and built for South African businesses.
+          </p>
         </div>
 
-        <!-- 3 Portfolio Items in Browser Mockups -->
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 36px;">
-          
-          <!-- Project 1: Ditlhalefi Chauffeurs -->
-          <div class="reveal-on-scroll">
-            <div class="mockup-browser" style="margin-bottom: 20px;">
-              <div class="mockup-browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                </div>
-                <div class="browser-address-bar">
-                  <span>ditlhalefi.co.za</span>
+        <!-- Featured project: 2nd Chance Cycles -->
+        <article class="card-white ow-flagship reveal-on-scroll">
+          <div class="mockup-browser">
+            <div class="mockup-browser-header">
+              <div class="browser-dots" aria-hidden="true">
+                <span class="browser-dot" style="background: #FF7A6B;"></span>
+                <span class="browser-dot" style="background: #FFD93B;"></span>
+                <span class="browser-dot" style="background: #E9E9EC;"></span>
+              </div>
+              <div class="browser-address-bar">
+                <svg class="ow-lock" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5A4F6B" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>
+                <span class="ow-url">2ndchancecycles.co.za</span>
+              </div>
+            </div>
+            <!-- Hero of the live 2nd Chance Cycles site, playing its actual background video -->
+            <div class="cc-hero" aria-label="Preview of the 2nd Chance Cycles homepage hero" role="img">
+              <video id="ccHeroVideo" muted loop playsinline preload="none" aria-hidden="true"
+                data-src-small="https://cdn.pixabay.com/video/2025/03/08/263385_small.mp4"
+                data-src-medium="https://cdn.pixabay.com/video/2025/03/08/263385_medium.mp4"
+                data-src-large="https://cdn.pixabay.com/video/2025/03/08/263385_large.mp4"></video>
+              <div class="cc-nav" aria-hidden="true">
+                <img class="cc-logo" src="assets/work/2nd-chance-cycles-logo.webp" alt="" width="400" height="201" loading="lazy" decoding="async">
+                <div class="cc-links"><span>Home</span><span>Shop Bikes</span><span>Services</span><span>Contact</span></div>
+                <div class="cc-icons">
+                  <svg viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7l126.6 126.7a32 32 0 0 1-45.3 45.3L330.7 376A208 208 0 1 1 416 208Zm-208 144a144 144 0 1 0 0-288 144 144 0 1 0 0 288Z"/></svg>
+                  <svg viewBox="0 0 576 512"><path d="M0 24C0 10.7 10.7 0 24 0h45.5c22 0 41.5 12.8 50.6 32h411a32 32 0 0 1 30.8 40.7l-41 144A32 32 0 0 1 490 240H170.4l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488a24 24 0 1 1 0 48H199.4a72 72 0 0 1-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24A24 24 0 0 1 0 24Zm128 440a48 48 0 1 1 96 0 48 48 0 1 1-96 0Zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96Z"/></svg>
+                  <svg class="cc-burger" viewBox="0 0 448 512"><path d="M0 96a32 32 0 0 1 32-32h384a32 32 0 1 1 0 64H32A32 32 0 0 1 0 96Zm0 160a32 32 0 0 1 32-32h384a32 32 0 1 1 0 64H32a32 32 0 0 1-32-32Zm448 160a32 32 0 0 1-32 32H32a32 32 0 1 1 0-64h384a32 32 0 0 1 32 32Z"/></svg>
                 </div>
               </div>
-              <div style="background: #0E121A; height: 240px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(71,214,255,0.25) 0%, transparent 70%);"></div>
-                <div>
-                  <div style="font-size: 10px; letter-spacing: 0.15em; color: #47D6FF; font-weight: 700; text-transform: uppercase;">VIP Transfers</div>
-                  <div style="font-size: 20px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-top: 6px; font-family: var(--font-display);">Ditlhalefi Executive Fleet</div>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; backdrop-filter: blur(8px);">
-                  <div style="font-size: 11px; color: #8F9CA3;">Live Booking Engine & WhatsApp API Integration</div>
-                  <div style="font-size: 13px; font-weight: 600; color: #47D6FF; margin-top: 4px;">Premium High-Conversion Architecture</div>
+              <div class="cc-content" aria-hidden="true">
+                <h4>Your Next Ride <br><span class="cc-grad">Starts Here</span></h4>
+                <p>Premium Bikes. Trusted Service. Real Cyclists. Giving high-end pre-owned machines a second life with professional precision.</p>
+                <div class="cc-btns">
+                  <span class="cc-btn cc-btn-primary">Shop Bikes <svg viewBox="0 0 448 512"><path d="M438.6 278.6a32 32 0 0 0 0-45.3l-160-160a32 32 0 0 0-45.3 45.3L338.8 224H32a32 32 0 0 0 0 64h306.7L233.4 393.4a32 32 0 0 0 45.3 45.3l160-160Z"/></svg></span>
+                  <span class="cc-btn cc-btn-glass">Book a Service</span>
                 </div>
               </div>
             </div>
-            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 6px;">
-              Ditlhalefi Chauffeurs
-            </h3>
-            <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.45;">
-              Executive private chauffeur &amp; VIP corporate transfer fleet across Gauteng.
-            </p>
           </div>
 
-          <!-- Project 2: Beau Architectural Studio -->
-          <div class="reveal-on-scroll">
-            <div class="mockup-browser" style="margin-bottom: 20px;">
-              <div class="mockup-browser-header">
-                <div class="browser-dots" aria-hidden="true">
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                  <span class="browser-dot" style="background: #E9E9EC;"></span>
-                </div>
-                <div class="browser-address-bar">
-                  <span>beau-architecture.co.za</span>
-                </div>
-              </div>
-              <div style="background: #1B1816; height: 240px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(255,168,107,0.2) 0%, transparent 70%);"></div>
-                <div>
-                  <div style="font-size: 10px; letter-spacing: 0.15em; color: #FFA86B; font-weight: 700; text-transform: uppercase;">Residential & Commercial</div>
-                  <div style="font-size: 20px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-top: 6px; font-family: var(--font-display);">Beau Studio Design</div>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; backdrop-filter: blur(8px);">
-                  <div style="font-size: 11px; color: #D6CBC2;">Minimalist Editorial Portfolio</div>
-                  <div style="font-size: 13px; font-weight: 600; color: #FFA86B; margin-top: 4px;">High-Ticket Client Acquisition Funnel</div>
-                </div>
-              </div>
-            </div>
-            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 6px;">
-              Beau Architectural Studio
+          <div class="ow-info">
+            <span class="badge-ink-yellow">Featured project</span>
+            <h3 class="heading-display" style="font-size: clamp(32px, 3.4vw, 44px); color: var(--ink); margin-top: 20px;">
+              2nd Chance Cycles
             </h3>
-            <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.45;">
-              High-end contemporary residential architecture and bespoke spatial design.
+            <p style="font-size: 17px; color: var(--ink-soft); line-height: 1.55; margin-top: 14px;">
+              A premium online store for pre-owned mountain bikes. Riders can shop by level, browse product pages and book a bike service online.
             </p>
+            <div class="ow-badge-row">
+              <span class="ow-tag">Online shop</span>
+              <span class="ow-tag">Service bookings</span>
+              <span class="ow-tag">Mobile-first</span>
+            </div>
+            <a class="ow-btn ow-btn-ink" href="https://www.2ndchancecycles.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the 2nd Chance Cycles website (opens in a new tab)">
+              View Website
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </a>
           </div>
+        </article>
 
-          <!-- Project 3: Krummel Artisanal Bakery -->
-          <div class="reveal-on-scroll">
-            <div class="mockup-browser" style="margin-bottom: 20px;">
+        <!-- Secondary projects -->
+        <div class="ow-secondary">
+
+          <!-- Beau Nails -->
+          <article class="card-white ow-card reveal-on-scroll">
+            <div class="mockup-browser">
               <div class="mockup-browser-header">
                 <div class="browser-dots" aria-hidden="true">
                   <span class="browser-dot" style="background: #E9E9EC;"></span>
@@ -1068,32 +1141,109 @@
                   <span class="browser-dot" style="background: #E9E9EC;"></span>
                 </div>
                 <div class="browser-address-bar">
-                  <span>krummelbakery.co.za</span>
+                  <svg class="ow-lock" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5A4F6B" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>
+                  <span class="ow-url">beaunails.co.za</span>
                 </div>
               </div>
-              <div style="background: #201726; height: 240px; padding: 24px; position: relative; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between;">
-                <div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; background: radial-gradient(circle, rgba(216,27,143,0.25) 0%, transparent 70%);"></div>
-                <div>
-                  <div style="font-size: 10px; letter-spacing: 0.15em; color: #FFB6CC; font-weight: 700; text-transform: uppercase;">Western Cape Sourdough</div>
-                  <div style="font-size: 20px; font-weight: 700; color: #FFFFFF; line-height: 1.2; margin-top: 6px; font-family: var(--font-display);">Krummel Artisanal Bakery</div>
-                </div>
-                <div style="background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 8px; padding: 12px; backdrop-filter: blur(8px);">
-                  <div style="font-size: 11px; color: #D7CCD8;">Store Locator & Menu Pre-Ordering</div>
-                  <div style="font-size: 13px; font-weight: 600; color: #FFB6CC; margin-top: 4px;">Local SEO & Google Maps Rank #1</div>
-                </div>
-              </div>
+              <img class="ow-shot" src="assets/work/beau-nails-desktop.webp" alt="Beau Nails homepage: Luxury Nails, Wherever You Are" width="1200" height="750" loading="lazy" decoding="async">
             </div>
-            <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 22px; color: var(--ink); margin-bottom: 6px;">
-              Krummel Artisanal Bakery
-            </h3>
-            <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.45;">
-              Artisanal sourdough bakery and boutique coffee roastery in the Western Cape.
-            </p>
-          </div>
+            <div class="ow-card-body">
+              <span class="eyebrow-label" style="color: var(--magenta); font-size: 12px;">Mobile nail salon · Pretoria</span>
+              <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.015em; color: var(--ink); margin: 8px 0 8px 0;">
+                Beau Nails
+              </h3>
+              <p style="font-size: 16px; color: var(--ink-soft); line-height: 1.5; margin-bottom: 22px; flex-grow: 1;">
+                A boutique, luxury-feel website for a mobile nail service, with online booking and WhatsApp enquiries.
+              </p>
+              <a class="ow-btn ow-btn-outline" style="align-self: flex-start;" href="https://www.beaunails.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the Beau Nails website (opens in a new tab)">
+                View Website
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Ditlhalefi Chauffeurs -->
+          <article class="ow-card ow-card-dark reveal-on-scroll">
+            <div class="mockup-browser">
+              <div class="mockup-browser-header">
+                <div class="browser-dots" aria-hidden="true">
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                  <span class="browser-dot" style="background: #E9E9EC;"></span>
+                </div>
+                <div class="browser-address-bar">
+                  <svg class="ow-lock" viewBox="0 0 24 24" aria-hidden="true"><path fill="#5A4F6B" d="M17 9V7A5 5 0 0 0 7 7v2a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-9a2 2 0 0 0-2-2ZM9 7a3 3 0 0 1 6 0v2H9Z"/></svg>
+                  <span class="ow-url">ditlhalefichauffeurs.co.za</span>
+                </div>
+              </div>
+              <img class="ow-shot" src="assets/work/ditlhalefi-chauffeurs-desktop.webp" alt="Ditlhalefi Chauffeurs homepage: Executive Chauffeur Services in Johannesburg and Pretoria" width="1200" height="750" loading="lazy" decoding="async">
+            </div>
+            <div class="ow-card-body">
+              <span class="eyebrow-label" style="color: var(--yellow); font-size: 12px;">Executive chauffeurs · Johannesburg &amp; Pretoria</span>
+              <h3 style="font-family: var(--font-display); font-weight: 600; font-size: 24px; letter-spacing: -0.015em; color: var(--ivory); margin: 8px 0 8px 0;">
+                Ditlhalefi Chauffeurs
+              </h3>
+              <p style="font-size: 16px; color: rgba(249, 248, 245, 0.72); line-height: 1.5; margin-bottom: 22px; flex-grow: 1;">
+                A premium chauffeur website with instant quotes, airport-transfer service pages and online booking.
+              </p>
+              <a class="ow-btn ow-btn-outline-light" style="align-self: flex-start;" href="https://www.ditlhalefichauffeurs.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the Ditlhalefi Chauffeurs website (opens in a new tab)">
+                View Website
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
 
         </div>
 
       </div>
+
+      <!-- Loads the 2nd Chance Cycles video only when this section is near the screen, and pauses it when off-screen -->
+      <script>
+        (function () {
+          var video = document.getElementById('ccHeroVideo');
+          if (!video) return;
+          var reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          var saveData = navigator.connection && navigator.connection.saveData;
+          var loaded = false;
+
+          function pickSources() {
+            var px = video.parentNode.clientWidth * (window.devicePixelRatio || 1);
+            if (px <= 900) return [video.dataset.srcSmall, video.dataset.srcMedium, video.dataset.srcLarge];
+            return [video.dataset.srcMedium, video.dataset.srcLarge];
+          }
+
+          function load() {
+            if (loaded) return;
+            loaded = true;
+            var still = reduceMotion || saveData;
+            pickSources().forEach(function (src) {
+              var s = document.createElement('source');
+              s.src = still ? src + '#t=2' : src;
+              s.type = 'video/mp4';
+              video.appendChild(s);
+            });
+            video.preload = still ? 'metadata' : 'auto';
+            video.load();
+            if (!still) {
+              video.autoplay = true;
+              var p = video.play();
+              if (p && p.catch) p.catch(function () {});
+            }
+          }
+
+          if (!('IntersectionObserver' in window)) { load(); return; }
+          new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+              if (entry.isIntersecting) {
+                load();
+                if (!(reduceMotion || saveData) && video.paused) { var p = video.play(); if (p && p.catch) p.catch(function () {}); }
+              } else if (loaded && !video.paused) {
+                video.pause();
+              }
+            });
+          }, { rootMargin: '300px 0px' }).observe(video);
+        })();
+      </script>
 
     </section>
 
