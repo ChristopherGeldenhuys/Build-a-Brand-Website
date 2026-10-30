@@ -676,12 +676,23 @@
        ANNOUNCEMENT BAR
        ========================================== -->
   <style>
-    .bf-announce { background: linear-gradient(90deg, #6B3FA0 0%, #D81B8F 50%, #FF7A6B 100%); color: #FFFFFF; text-align: center; padding: 9px 16px; font-family: var(--font-display); font-weight: 600; font-size: 12.5px; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; overflow: hidden; position: relative; z-index: 11; }
+    .bf-announce { background: linear-gradient(90deg, #6B3FA0 0%, #D81B8F 50%, #FF7A6B 100%); color: #FFFFFF; text-align: center; padding: 9px 0; font-family: var(--font-display); font-weight: 600; font-size: 12.5px; line-height: 1.2; letter-spacing: 0.12em; text-transform: uppercase; white-space: nowrap; overflow: hidden; position: relative; z-index: 11; }
     .bf-announce .dot { color: var(--yellow); padding: 0 0.6em; }
+    /* Marquee: two identical groups slide left by exactly one group width, so the loop is seamless */
+    .bf-marquee { display: flex; width: max-content; animation: bf-marquee 38s linear infinite; will-change: transform; }
+    .bf-group { display: flex; flex-shrink: 0; }
+    .bf-item { padding-right: 0; }
+    .bf-item::after { content: '·'; color: var(--yellow); padding: 0 1.1em; }
+    @keyframes bf-marquee { from { transform: translate3d(0, 0, 0); } to { transform: translate3d(-50%, 0, 0); } }
+    .bf-static { display: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .bf-marquee { display: none; }
+      .bf-static { display: inline; }
+    }
     .bf-announce strong { color: var(--yellow); font-weight: 700; }
     @media (max-width: 899px) { .bf-announce .wide-only { display: none; } .bf-announce { letter-spacing: 0.09em; font-size: 12px; } }
-    @media (max-width: 479px) { .bf-announce .sm-hide { display: none; } .bf-announce { font-size: 11px; letter-spacing: 0.06em; padding: 8px 12px; } .bf-announce .dot { padding: 0 0.45em; } }
-    @media (max-width: 359px) { .bf-announce { font-size: 10px; letter-spacing: 0.04em; } }
+    @media (max-width: 479px) { .bf-announce .sm-hide { display: none; } .bf-announce { font-size: 11px; letter-spacing: 0.08em; padding: 8px 0; } .bf-announce .dot { padding: 0 0.45em; } .bf-marquee { animation-duration: 30s; } }
+    @media (max-width: 359px) { .bf-announce { font-size: 10.5px; } }
     .bab-logo-mark { width: 48px; height: 48px; display: block; }
     @media (max-width: 479px) {
       .bab-logo-mark { width: 42px; height: 42px; }
@@ -690,7 +701,8 @@
     @media (max-width: 359px) { .bf-header-badge { font-size: 10px; letter-spacing: 0.04em; padding: 5px 10px; } }
   </style>
   <div class="bf-announce" role="note" aria-label="Black Friday special: professional websites from R3,500, limited time only">
-    <span aria-hidden="true">Black Friday Special<span class="dot">·</span><span class="sm-hide">Professional </span>websites from <strong>R3,500</strong><span class="wide-only"><span class="dot">·</span>Limited time only</span></span>
+    <div class="bf-marquee" aria-hidden="true"><span class="bf-group"><span class="bf-item">Black Friday Special<span class="dot">·</span>Professional websites from <strong>R3,500</strong><span class="dot">·</span>Limited time only</span><span class="bf-item">Black Friday Special<span class="dot">·</span>Professional websites from <strong>R3,500</strong><span class="dot">·</span>Limited time only</span><span class="bf-item">Black Friday Special<span class="dot">·</span>Professional websites from <strong>R3,500</strong><span class="dot">·</span>Limited time only</span><span class="bf-item">Black Friday Special<span class="dot">·</span>Professional websites from <strong>R3,500</strong><span class="dot">·</span>Limited time only</span></span><span class="bf-group"><span class="bf-item">Black Friday Special<span class="dot">·</span>Professional websites from <strong>R3,500</strong><span class="dot">·</span>Limited time only</span><span class="bf-item">Black Friday Special<span class="dot">·</span>Professional websites from <strong>R3,500</strong><span class="dot">·</span>Limited time only</span><span class="bf-item">Black Friday Special<span class="dot">·</span>Professional websites from <strong>R3,500</strong><span class="dot">·</span>Limited time only</span><span class="bf-item">Black Friday Special<span class="dot">·</span>Professional websites from <strong>R3,500</strong><span class="dot">·</span>Limited time only</span></span></div>
+    <span class="bf-static" aria-hidden="true">Black Friday Special<span class="dot">·</span><span class="sm-hide">Professional </span>websites from <strong>R3,500</strong><span class="wide-only"><span class="dot">·</span>Limited time only</span></span>
   </div>
 
   <!-- ==========================================
