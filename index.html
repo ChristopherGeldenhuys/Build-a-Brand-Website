@@ -1014,6 +1014,12 @@
         .sw-tags { display: flex; flex-wrap: wrap; gap: 8px; }
         .sw-tag { font-family: var(--font-display); font-weight: 600; font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-soft); background: #FFFFFF; border: 1px solid var(--grey); border-radius: 9999px; padding: 6px 12px; white-space: nowrap; }
 
+        .sw-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; align-self: start; justify-self: start; font-family: var(--font-display); font-weight: 600; font-size: 16px; color: var(--ivory); background: var(--ink); padding: 14px 26px; border-radius: 9999px; text-decoration: none; box-shadow: 0 12px 28px -12px rgba(30, 20, 48, 0.6); transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+        .sw-btn svg { width: 15px; height: 15px; flex-shrink: 0; }
+        a.sw-btn:hover { transform: translateY(-2px); box-shadow: 0 16px 34px -12px rgba(30, 20, 48, 0.7); }
+        a.sw-btn:focus-visible { outline: 2px solid var(--magenta); outline-offset: 3px; }
+        span.sw-btn { cursor: default; user-select: none; }
+
         /* ---------- Device frames ---------- */
         .sw-browser { border-radius: 1.4cqw; overflow: hidden; box-shadow: 0 3cqw 7cqw -2cqw rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.06); }
         .sw-bar { height: 3.6cqw; display: flex; align-items: center; gap: 0.7cqw; padding: 0 1.4cqw; }
@@ -1051,7 +1057,7 @@
         .cc-cart { position: relative; }
         .cc-cart em { position: absolute; top: -0.6cqw; right: -0.8cqw; width: 1.3cqw; height: 1.3cqw; border-radius: 50%; background: #3B82FF; font: 700 0.8cqw/1.3cqw var(--font-body); text-align: center; font-style: normal; }
         .cc-navbtn { font-size: 1cqw; font-weight: 600; padding: 0.8cqw 1.5cqw; border-radius: 9999px; border: 1px solid rgba(255, 255, 255, 0.3); }
-        .cc-hero { position: absolute; top: 0; left: 0; right: 0; height: 60%; overflow: hidden; }
+        .cc-hero { position: absolute; top: 0; left: 0; right: 0; height: 100%; overflow: hidden; }
         .cc-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(7, 9, 13, 0.92) 0%, rgba(7, 9, 13, 0.55) 45%, rgba(7, 9, 13, 0.05) 75%), linear-gradient(0deg, #07090D 0%, rgba(7, 9, 13, 0) 30%); }
         .cc-copy { position: absolute; left: 3.2cqw; top: 8.4cqw; z-index: 2; width: 46cqw; }
         .cc-eyebrow { display: inline-flex; align-items: center; gap: 0.7cqw; font-size: 0.9cqw; font-weight: 700; letter-spacing: 0.2em; color: #7FB2FF; text-transform: uppercase; }
@@ -1094,22 +1100,22 @@
         .ccm-nav .cc-act svg { width: 5.4cqw; height: 5.4cqw; }
         .ccm-hero { position: absolute; top: 0; left: 0; right: 0; height: 128cqw; }
         .ccm-hero::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(7, 9, 13, 0.6) 0%, rgba(7, 9, 13, 0) 30%, rgba(7, 9, 13, 0.55) 60%, #07090D 100%); }
-        .ccm-copy { position: absolute; z-index: 2; left: 5.5cqw; right: 5.5cqw; top: 70cqw; }
+        .ccm-copy { position: absolute; z-index: 2; left: 5.5cqw; right: 5.5cqw; top: 64cqw; }
         .ccm-copy .cc-eyebrow { font-size: 2.7cqw; gap: 2cqw; }
         .ccm-copy .cc-eyebrow::before { width: 6cqw; }
         .ccm-copy .cc-h { font-size: 12.6cqw; margin-top: 3cqw; }
         .ccm-copy .cc-p { font-size: 3.7cqw; width: auto; margin-top: 3.4cqw; }
-        .ccm-btns { position: absolute; z-index: 2; left: 5.5cqw; right: 5.5cqw; top: 130cqw; display: grid; gap: 2.8cqw; }
+        .ccm-btns { position: absolute; z-index: 2; left: 5.5cqw; right: 5.5cqw; top: 122cqw; display: grid; gap: 2.8cqw; }
         .ccm-btns .cc-btn { justify-content: center; font-size: 3.9cqw; padding: 3.6cqw; }
-        .ccm-chips { position: absolute; top: 158cqw; left: 5.5cqw; display: flex; gap: 2.4cqw; white-space: nowrap; }
+        .ccm-chips { position: absolute; top: 155cqw; left: 5.5cqw; display: flex; gap: 2.4cqw; white-space: nowrap; }
         .ccm-chips span { font-size: 3.3cqw; font-weight: 600; padding: 2.2cqw 4cqw; border-radius: 9999px; background: #121722; border: 1px solid rgba(255, 255, 255, 0.08); }
         .ccm-chips span:first-child { background: #FFFFFF; color: #07090D; }
-        .ccm-card { position: absolute; top: 172cqw; left: 5.5cqw; right: 5.5cqw; border-radius: 4cqw; background: #10141B; border: 1px solid rgba(255, 255, 255, 0.07); overflow: hidden; display: flex; }
-        .ccm-card img { width: 36cqw; height: 30cqw; object-fit: cover; }
-        .ccm-card div { padding: 3.4cqw; }
+        .ccm-card { position: absolute; top: 171cqw; left: 5.5cqw; right: 5.5cqw; border-radius: 4cqw; background: #10141B; border: 1px solid rgba(255, 255, 255, 0.07); overflow: hidden; display: flex; }
+        .ccm-card img { width: 36cqw; height: 26cqw; object-fit: cover; }
+        .ccm-card div { padding: 2.6cqw 3.4cqw; }
         .ccm-card small { font-size: 2.4cqw; font-weight: 700; letter-spacing: 0.12em; color: #7FB2FF; }
         .ccm-card b { display: block; font-size: 3.8cqw; margin-top: 1cqw; }
-        .ccm-card p { font-size: 4.2cqw; font-weight: 800; margin-top: 2.4cqw; }
+        .ccm-card p { font-size: 4.2cqw; font-weight: 800; margin-top: 1.6cqw; }
         .ccm .sw-home { background: rgba(255, 255, 255, 0.85); }
 
         /* ---------- 02 · Beau Nails (desktop) ---------- */
@@ -1265,18 +1271,6 @@
                         <div class="cc-btns"><span class="cc-btn cc-btn-a">Shop Bikes →</span><span class="cc-btn cc-btn-b">Book a Service</span></div>
                       </div>
                       <div class="cc-float"><img src="assets/work/mock/cc-p2.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>Just in</small><b>Trail Pro 29 Carbon</b><span>Size L · R 48 500</span></div></div>
-                      <div class="cc-trust">
-                        <span><i>✓</i>50-point inspection</span><span><i>✓</i>Nationwide delivery</span><span><i>✓</i>Workshop warranty</span><span><i>✓</i>Secure checkout</span>
-                      </div>
-                      <div class="cc-shop">
-                        <div class="cc-shop-head"><b>Featured machines</b><span>View all bikes →</span></div>
-                        <div class="cc-grid">
-                          <div class="cc-card"><img class="sw-img" src="assets/work/mock/cc-p1.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>ADVANCED</small><b>Enduro X 29</b><p>R 62 000 <em>+</em></p></div></div>
-                          <div class="cc-card"><img class="sw-img" src="assets/work/mock/cc-p3.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>INTERMEDIATE</small><b>Ridge 140</b><p>R 34 500 <em>+</em></p></div></div>
-                          <div class="cc-card"><img class="sw-img" src="assets/work/mock/cc-p4.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>INTERMEDIATE</small><b>Summit Trail</b><p>R 27 900 <em>+</em></p></div></div>
-                          <div class="cc-card"><img class="sw-img" src="assets/work/mock/cc-p2.webp" alt="" width="360" height="300" loading="lazy" decoding="async"><div><small>ADVANCED</small><b>Trail Pro 29</b><p>R 48 500 <em>+</em></p></div></div>
-                        </div>
-                      </div>
                     </div>
                   </div>
                 </div>
@@ -1317,6 +1311,7 @@
             <div><span class="sw-num">01 · FEATURED</span><h3 class="sw-title" style="font-size: clamp(28px, 3.2vw, 40px); margin-top: 6px;">2nd Chance Cycles</h3></div>
             <p class="sw-desc">A premium online bike store with a bold, energetic look. Riders can shop by level, compare machines and book a workshop service on any device.</p>
             <div class="sw-tags"><span class="sw-tag">E-commerce</span><span class="sw-tag">Service bookings</span><span class="sw-tag">Mobile-first</span></div>
+            <a class="sw-btn" href="https://www.2ndchancecycles.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the 2nd Chance Cycles website (opens in a new tab)">View Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
           </div>
         </article>
 
@@ -1389,6 +1384,7 @@
               <div><span class="sw-num">02</span><h3 class="sw-title" style="font-size: clamp(24px, 2.4vw, 30px); margin-top: 6px;">Beau Nails</h3></div>
               <p class="sw-desc">A soft, elegant website for a luxury mobile nail studio, built around online bookings.</p>
               <div class="sw-tags"><span class="sw-tag">Online booking</span><span class="sw-tag">Service menu</span></div>
+              <a class="sw-btn" href="https://www.beaunails.co.za/" target="_blank" rel="noopener noreferrer" aria-label="View the Beau Nails website (opens in a new tab)">View Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></a>
             </div>
           </article>
 
@@ -1464,6 +1460,7 @@
               <div><span class="sw-num">03</span><h3 class="sw-title" style="font-size: clamp(24px, 2.4vw, 30px); margin-top: 6px;">Ditlhalefi Chauffeurs</h3></div>
               <p class="sw-desc">A dark, executive website for a premium chauffeur service, with instant quotes up front.</p>
               <div class="sw-tags"><span class="sw-tag">Instant quotes</span><span class="sw-tag">Airport transfers</span></div>
+              <span class="sw-btn" aria-disabled="true">View Website <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
             </div>
           </article>
 
