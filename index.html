@@ -2531,7 +2531,8 @@
             are NOT delivered anywhere and no conversion is recorded.
             =====================================================================
           */
-          const ENQUIRY_ENDPOINT = '';
+          // Vercel serverless function (api/enquiry.js) emails each lead via Gmail SMTP.
+          const ENQUIRY_ENDPOINT = '/api/enquiry';
 
           function goToThankYou() {
             window.__babFormSubmitted = true;

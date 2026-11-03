@@ -1,0 +1,12 @@
+{
+  "name": "build-a-brand-black-friday",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Build a Brand Black Friday landing page with Gmail enquiry function",
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "nodemailer": "^6.9.16"
+  }
+}
