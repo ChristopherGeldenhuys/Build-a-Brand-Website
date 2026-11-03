@@ -1993,7 +1993,7 @@
 
   <!-- ==========================================
        BLACK FRIDAY COUNTDOWN POPUP
-       Opens 15s after landing, once per browser session.
+       Opens 3.5s after landing, once per browser session.
        Counts down to 25 Nov 2026 23:59:59 SAST (UTC+2).
        CTA scrolls to the existing #claim form (no duplicate form).
        ========================================== -->
@@ -2089,7 +2089,7 @@
   <script>
     (function () {
       var DEADLINE = Date.parse('2026-11-25T23:59:59+02:00'); // SAST is UTC+2, no daylight saving
-      var DELAY_MS = 15000;
+      var DELAY_MS = 3500;
       var SESSION_KEY = 'bab_bf_popup_shown';
 
       var overlay = document.getElementById('bfCountdownPopup');
