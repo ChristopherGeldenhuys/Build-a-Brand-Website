@@ -60,6 +60,7 @@
   function locationOf(el) {
     if (el.closest('#stickyMobileBar')) return 'sticky_mobile_bar';
     if (el.closest('#privacyModal')) return 'privacy_modal';
+    if (el.closest('#bfCountdownPopup')) return 'bf_countdown_popup';
     if (el.closest('header')) return 'header';
     if (el.closest('footer')) return 'footer';
     var sec = el.closest('section[id]');

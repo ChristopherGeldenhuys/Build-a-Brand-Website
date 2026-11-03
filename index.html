@@ -1992,6 +1992,222 @@
 
 
   <!-- ==========================================
+       BLACK FRIDAY COUNTDOWN POPUP
+       Opens 15s after landing, once per browser session.
+       Counts down to 25 Nov 2026 23:59:59 SAST (UTC+2).
+       CTA scrolls to the existing #claim form (no duplicate form).
+       ========================================== -->
+  <style>
+    .bfp-overlay { position: fixed; inset: 0; z-index: 1050; display: flex; align-items: center; justify-content: center; padding: 20px; background: rgba(10, 5, 20, 0.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); opacity: 0; visibility: hidden; transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s linear 0.45s; }
+    .bfp-overlay.is-open { opacity: 1; visibility: visible; transition: opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1), visibility 0s; }
+    .bfp-card { position: relative; width: 100%; max-width: 520px; max-height: calc(100vh - 40px); max-height: calc(100dvh - 40px); overflow-y: auto; overscroll-behavior: contain; background: var(--ink); color: var(--ivory); border: 1px solid rgba(249, 248, 245, 0.10); border-radius: 24px; padding: 44px 40px 36px; text-align: center; isolation: isolate; box-shadow: 0 40px 100px rgba(5, 2, 12, 0.6), 0 0 0 1px rgba(216, 27, 143, 0.08); transform: translateY(24px) scale(0.97); opacity: 0; transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1); }
+    .bfp-overlay.is-open .bfp-card { transform: none; opacity: 1; }
+    .bfp-glow { position: absolute; inset: 0; border-radius: inherit; overflow: hidden; z-index: -1; pointer-events: none; }
+    .bfp-glow span { position: absolute; border-radius: 50%; filter: blur(60px); }
+    .bfp-glow .g1 { width: 300px; height: 300px; left: -110px; top: -130px; background: var(--deep-violet); opacity: 0.7; }
+    .bfp-glow .g2 { width: 260px; height: 260px; right: -120px; top: 30%; background: var(--magenta); opacity: 0.35; }
+    .bfp-glow .g3 { width: 280px; height: 220px; left: 20%; bottom: -150px; background: var(--coral); opacity: 0.28; }
+    .bfp-close { position: absolute; top: 14px; right: 14px; width: 44px; height: 44px; border-radius: 9999px; border: 1px solid rgba(249, 248, 245, 0.18); background: rgba(249, 248, 245, 0.06); color: var(--ivory); display: inline-flex; align-items: center; justify-content: center; cursor: pointer; transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1); }
+    .bfp-close:hover { background: rgba(249, 248, 245, 0.14); border-color: rgba(249, 248, 245, 0.32); transform: rotate(90deg); }
+    .bfp-close:focus-visible, .bfp-card .btn-primary:focus-visible, .bfp-secondary:focus-visible { outline: 2px solid var(--yellow); outline-offset: 3px; }
+    .bfp-close svg { width: 18px; height: 18px; }
+    .bfp-card:focus { outline: none; }
+    .bfp-badge { margin-bottom: 22px; }
+    .bfp-title { font-size: clamp(30px, 6.4vw, 42px); color: var(--ivory); margin: 0 auto 26px; max-width: 420px; }
+    .bfp-price { background: linear-gradient(95deg, #FFD93B 0%, #FFA86B 34%, #FF7A6B 66%, #FFB6CC 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--yellow); font-weight: 700; letter-spacing: -0.04em; white-space: nowrap; }
+    .bfp-label { color: var(--blush); font-size: 12.5px; margin-bottom: 14px; }
+    .bfp-timer { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin: 0 auto 26px; max-width: 420px; }
+    .bfp-unit { background: rgba(249, 248, 245, 0.06); border: 1px solid rgba(249, 248, 245, 0.12); border-radius: 16px; padding: 16px 4px 12px; }
+    .bfp-num { display: block; font-family: var(--font-display); font-weight: 700; font-size: clamp(32px, 9vw, 46px); line-height: 1; letter-spacing: -0.04em; font-variant-numeric: tabular-nums; color: var(--yellow); }
+    .bfp-unit-label { display: block; margin-top: 8px; font-family: var(--font-display); font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(249, 248, 245, 0.62); }
+    .bfp-copy { font-size: 16.5px; line-height: 1.55; color: rgba(249, 248, 245, 0.78); max-width: 400px; margin: 0 auto 28px; }
+    .bfp-card .btn-primary { width: 100%; max-width: 400px; font-size: 17px; }
+    .bfp-fine { margin-top: 18px; font-size: 12.5px; line-height: 1.5; color: rgba(249, 248, 245, 0.55); }
+    .bfp-secondary { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 32px; border-radius: 9999px; border: 1px solid rgba(249, 248, 245, 0.28); background: transparent; color: var(--ivory); font-family: var(--font-display); font-weight: 600; font-size: 16px; cursor: pointer; transition: background-color 0.2s ease; }
+    .bfp-secondary:hover { background: rgba(249, 248, 245, 0.08); }
+    .bfp-ended-only { display: none; }
+    .bfp-card.is-ended .bfp-live-only { display: none; }
+    .bfp-card.is-ended .bfp-ended-only { display: block; }
+    .bfp-sr { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+    html.bfp-lock, html.bfp-lock body { overflow: hidden; }
+    @media (max-width: 520px) {
+      .bfp-overlay { padding: 16px; }
+      .bfp-card { padding: 40px 20px 26px; border-radius: 20px; }
+      .bfp-close { top: 10px; right: 10px; }
+      .bfp-badge { margin-bottom: 18px; }
+      .bfp-title { margin-bottom: 22px; }
+      .bfp-timer { gap: 8px; margin-bottom: 22px; }
+      .bfp-unit { border-radius: 14px; padding: 14px 2px 10px; }
+      .bfp-unit-label { font-size: 10px; letter-spacing: 0.1em; }
+      .bfp-copy { font-size: 15.5px; margin-bottom: 24px; }
+      .bfp-card .btn-primary { font-size: 16px; padding: 17px 20px; }
+    }
+    @media (max-height: 640px) and (max-width: 520px) {
+      .bfp-card { padding-top: 34px; }
+      .bfp-copy { margin-bottom: 18px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .bfp-overlay, .bfp-card, .bfp-close { transition: none !important; }
+      .bfp-card { transform: none; }
+    }
+  </style>
+  <div id="bfCountdownPopup" class="bfp-overlay" aria-hidden="true">
+    <div class="bfp-card" role="dialog" aria-modal="true" aria-labelledby="bfpTitle" aria-describedby="bfpDesc" tabindex="-1">
+      <div class="bfp-glow" aria-hidden="true"><span class="g1"></span><span class="g2"></span><span class="g3"></span></div>
+
+      <button type="button" class="bfp-close" id="bfpClose" aria-label="Close Black Friday offer" data-track-text="Close popup">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg>
+      </button>
+
+      <span class="badge-yellow bfp-badge">Black Friday Special</span>
+
+      <!-- Live state -->
+      <div class="bfp-live-only">
+        <h2 id="bfpTitle" class="heading-display bfp-title">Your dream website for just <span class="bfp-price">R3,500.</span></h2>
+        <p class="eyebrow-label bfp-label">The offer ends in:</p>
+        <div class="bfp-timer" aria-hidden="true">
+          <div class="bfp-unit"><span class="bfp-num" data-bfp="d">00</span><span class="bfp-unit-label">Days</span></div>
+          <div class="bfp-unit"><span class="bfp-num" data-bfp="h">00</span><span class="bfp-unit-label">Hours</span></div>
+          <div class="bfp-unit"><span class="bfp-num" data-bfp="m">00</span><span class="bfp-unit-label">Minutes</span></div>
+          <div class="bfp-unit"><span class="bfp-num" data-bfp="s">00</span><span class="bfp-unit-label">Seconds</span></div>
+        </div>
+        <p class="bfp-sr">The offer ends on 25 November 2026 at 23:59 South African time.</p>
+        <p id="bfpDesc" class="bfp-copy">Don't miss your chance to get a professional website built for your business at this once-off special price.</p>
+        <a href="#claim" class="btn-primary" id="bfpCta">Claim your Black Friday deal &rarr;</a>
+        <p class="bfp-fine">Once-off price for a one-page starter website. Ends 25 November 2026, 23:59 SAST.</p>
+      </div>
+
+      <!-- Ended state (shown once the countdown hits zero; never resets) -->
+      <div class="bfp-ended-only">
+        <h2 class="heading-display bfp-title">The Black Friday special has ended.</h2>
+        <p class="bfp-copy">Thanks for your interest. The R3,500 offer closed at 23:59 on 25 November 2026.</p>
+        <button type="button" class="bfp-secondary" id="bfpEndedClose">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var DEADLINE = Date.parse('2026-11-25T23:59:59+02:00'); // SAST is UTC+2, no daylight saving
+      var DELAY_MS = 15000;
+      var SESSION_KEY = 'bab_bf_popup_shown';
+
+      var overlay = document.getElementById('bfCountdownPopup');
+      if (!overlay) return;
+      var card = overlay.querySelector('.bfp-card');
+      var els = { d: card.querySelector('[data-bfp="d"]'), h: card.querySelector('[data-bfp="h"]'), m: card.querySelector('[data-bfp="m"]'), s: card.querySelector('[data-bfp="s"]') };
+      var timer = null, ended = false, lastFocus = null;
+
+      function track(name, params) { if (window.babTrack) window.babTrack(name, params || {}); }
+      function pad(n) { return n < 10 ? '0' + n : String(n); }
+      // Session cookie (no expiry, so it clears when the browser closes and is shared across tabs) + sessionStorage as a backup
+      function alreadyShown() {
+        if (document.cookie.split('; ').indexOf(SESSION_KEY + '=1') !== -1) return true;
+        try { return sessionStorage.getItem(SESSION_KEY) === '1'; } catch (e) { return false; }
+      }
+      function markShown() {
+        document.cookie = SESSION_KEY + '=1; path=/; SameSite=Lax' + (location.protocol === 'https:' ? '; Secure' : '');
+        try { sessionStorage.setItem(SESSION_KEY, '1'); } catch (e) {}
+      }
+
+      function setEnded() {
+        ended = true; // latched: the countdown never restarts once it has finished
+        if (timer) { clearInterval(timer); timer = null; }
+        els.d.textContent = els.h.textContent = els.m.textContent = els.s.textContent = '00';
+        card.classList.add('is-ended');
+        card.removeAttribute('aria-labelledby');
+        card.removeAttribute('aria-describedby');
+        card.setAttribute('aria-label', 'The Black Friday special has ended');
+      }
+
+      function tick() {
+        if (ended) return;
+        var total = Math.ceil((DEADLINE - Date.now()) / 1000); // whole seconds remaining
+        if (total <= 0) { setEnded(); return; }
+        els.d.textContent = pad(Math.floor(total / 86400));
+        els.h.textContent = pad(Math.floor((total % 86400) / 3600));
+        els.m.textContent = pad(Math.floor((total % 3600) / 60));
+        els.s.textContent = pad(total % 60);
+      }
+
+      function startTimer() {
+        tick();
+        if (ended || timer) return;
+        // Align to the next whole second so the display ticks in step with the clock
+        setTimeout(function () { tick(); if (!ended && overlay.classList.contains('is-open')) timer = setInterval(tick, 1000); }, 1000 - (Date.now() % 1000) + 15);
+      }
+      function stopTimer() { if (timer) { clearInterval(timer); timer = null; } }
+
+      function focusables() { return Array.prototype.filter.call(card.querySelectorAll('a[href], button'), function (el) { return el.offsetParent !== null; }); }
+
+      function open() {
+        lastFocus = document.activeElement;
+        markShown();
+        startTimer();
+        overlay.setAttribute('aria-hidden', 'false');
+        overlay.classList.add('is-open');
+        document.documentElement.classList.add('bfp-lock');
+        setTimeout(function () { card.focus({ preventScroll: true }); }, 50); // focus the dialog itself (Tab moves to the buttons)
+        track('popup_view', { section_name: 'bf_countdown_popup' });
+      }
+
+      function close(restoreFocus) {
+        if (!overlay.classList.contains('is-open')) return;
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        document.documentElement.classList.remove('bfp-lock');
+        stopTimer();
+        if (restoreFocus !== false && lastFocus && lastFocus.focus) lastFocus.focus({ preventScroll: true });
+      }
+
+      // Don't interrupt someone who is busy with the form or the privacy modal; wait until they're done
+      function busy() {
+        var form = document.getElementById('blackFridayForm');
+        var a = document.activeElement;
+        var privacy = document.getElementById('privacyModal');
+        return (form && a && form.contains(a)) || (privacy && privacy.classList.contains('open'));
+      }
+
+      function tryOpen() {
+        if (alreadyShown()) return;
+        if (busy()) { setTimeout(tryOpen, 2000); return; }
+        open();
+      }
+
+      // Close: X button, ended-state button, overlay click, Escape
+      document.getElementById('bfpClose').addEventListener('click', function () { close(); });
+      document.getElementById('bfpEndedClose').addEventListener('click', function () { close(); });
+      overlay.addEventListener('click', function (e) { if (e.target === overlay) close(); });
+      document.addEventListener('keydown', function (e) {
+        if (!overlay.classList.contains('is-open')) return;
+        if (e.key === 'Escape') { close(); return; }
+        if (e.key === 'Tab') { // keep keyboard focus inside the popup
+          var f = focusables(); if (!f.length) return;
+          var first = f[0], last = f[f.length - 1];
+          if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+          else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+        }
+      });
+
+      // CTA: close, then smooth-scroll to the existing enquiry form
+      document.getElementById('bfpCta').addEventListener('click', function (e) {
+        e.preventDefault();
+        close(false);
+        var target = document.getElementById('claim');
+        if (!target) return;
+        var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        requestAnimationFrame(function () { target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' }); });
+      });
+
+      // Catch up immediately if the tab was in the background
+      document.addEventListener('visibilitychange', function () { if (!document.hidden && overlay.classList.contains('is-open')) tick(); });
+
+      if (!alreadyShown()) setTimeout(tryOpen, DELAY_MS);
+    })();
+  </script>
+
+
+  <!-- ==========================================
        PRIVACY POLICY MODAL
        (POPIA Compliant, doesn't leave the page)
        ========================================== -->
