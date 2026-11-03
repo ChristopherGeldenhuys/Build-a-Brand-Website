@@ -696,6 +696,8 @@
     @media (max-width: 899px) { .bf-announce .wide-only { display: none; } .bf-announce { letter-spacing: 0.09em; font-size: 12px; } }
     @media (max-width: 479px) { .bf-announce .sm-hide { display: none; } .bf-announce { font-size: 11px; letter-spacing: 0.08em; padding: 8px 0; } .bf-announce .dot { padding: 0 0.45em; } .bf-marquee { animation-duration: 30s; } }
     @media (max-width: 359px) { .bf-announce { font-size: 10.5px; } }
+    /* Mobile: hide the announcement bar completely (no space reserved). Tablet/desktop (768px+) unchanged. */
+    @media (max-width: 767px) { .bf-announce { display: none; } }
     .bab-logo-mark { width: 48px; height: 48px; display: block; }
     @media (max-width: 479px) {
       .bab-logo-mark { width: 42px; height: 42px; }
